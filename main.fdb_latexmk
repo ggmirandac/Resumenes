@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1647829079 "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.tex" "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.pdf" "main" 1647829080
+["pdflatex"] 1647829112 "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.tex" "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.pdf" "main" 1647829113
   "./img/departamentos/LogoPUCING.jpg" 1647827968 332459 f934522ee1d57ca00f3e30c9ade7442f ""
-  "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.aux" 1647829080 1546 abc0ce006370aa625fcc14be2f0a7487 ""
-  "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.tex" 1647829076 1893 b91bb15a2754e5991c9cef75a2639607 ""
+  "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.aux" 1647829113 1546 c9327c8d51c4a87c3b63aeb48c2725e6 ""
+  "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.tex" 1647829110 1941 27f9e0af11bf705c28eb646c6614ed9e ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1136768653 1536 06717a2b50de47d4087ac0e6cd759455 ""
@@ -240,9 +240,9 @@
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1647306160 2724742 d9e4c9050e49e2de0da78efc1ea67250 ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
   "img/departamentos/LogoPUCING.jpg" 1647827968 332459 f934522ee1d57ca00f3e30c9ade7442f ""
-  "main.aux" 1647829080 1546 abc0ce006370aa625fcc14be2f0a7487 "pdflatex"
-  "main.tex" 1647829076 1893 b91bb15a2754e5991c9cef75a2639607 ""
-  "main.toc" 1647829080 23 39d772808ad4a7ebd21da0b3c9cd2947 "pdflatex"
+  "main.aux" 1647829113 1546 c9327c8d51c4a87c3b63aeb48c2725e6 "pdflatex"
+  "main.tex" 1647829110 1941 27f9e0af11bf705c28eb646c6614ed9e ""
+  "main.toc" 1647829113 23 39d772808ad4a7ebd21da0b3c9cd2947 "pdflatex"
   "src/cfg/final.tex" 1647805880 14421 2b55e2c2adc012c65f036753c6469236 ""
   "src/cfg/init.tex" 1647805880 31609 a2447b0ea13ec8f3d20a3f54cd567e5b ""
   "src/cfg/page.tex" 1647805880 23768 851d47931a01338d75b45ce1aad3785b ""
@@ -267,9 +267,9 @@
   "template.tex" 1647805880 2521 f810808c8bd19fa1808715a655eb2448 ""
   "textarc/i1.tex" 1647828161 0 d41d8cd98f00b204e9800998ecf8427e ""
   (generated)
-  "main.log"
   "main.toc"
-  "main.pdf"
-  "main.aux"
+  "main.log"
   "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.pdf"
+  "main.pdf"
   "/Users/gabbo/Desktop/Latex cosas/Template-Informe/main.log"
+  "main.aux"
