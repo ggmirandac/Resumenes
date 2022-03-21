@@ -1,0 +1,309 @@
+\section{Introducción}
+
+La ingeniería de procesos estudia los procesos industriales en los que las materias primas se transforman en productos deseados
+mediante procesos físicos, químicos, o biológicos.
+
+
+Dentro de esto, la misión del ingeniero de procesos es desarrollar, diseñar, e implementar
+tanto el rpoceso como los equipos, lo que implica elegir materias primas adecuadas, y operar las plantas con eficacia, seguridad y economía.
+
+
+Los procesos químicose pueden definir como una sucesión de unidades para producir. Por lo cual, pueden separarse en operaciones unitarias.
+
+
+Es aquí donde el ingeniero de procesos se encuentra en la capacidad de diseñar, mejorar y operar,  comprender los procesos de producción.
+
+\subsection{Conceptos básicos}
+
+Cualquier proceso puede ser descompuesto en acciones unitarias. EStas operaciones se repiten en distintos procesos,
+poseen técnicas comunes y se basan en los mismo principios científicos.
+
+
+En cada una de ellas se cambian las condiciones de una determinada cantidad de materia de una o más de las siguientes formas:
+\begin{enumerate}
+    \item Modificando su masa o composición.
+    \item Modificando su energía.
+\end{enumerate}
+\subsubsection{Sistema}
+Un sistema es una porción del universo que está bajo estudio. Este se encuentra separado de los alrededores por los límites del sistema. 
+Y todo fenómeno que ocurre en un sistema se denomina \textbf{Proceso}.
+
+Los diferentes tipos de sistemas que existen son:
+\begin{enumerate}
+    \item Sistema Abierto/Cerrado: Estos son sistemas que presentan una entrada o salida, cuando son abiertos, y carecen de esta cuando son cerrados.
+    \item Sistema Reaccionante/No-Reaccionante: Aparace el término de generación. Cuando hay generación se dice que son reaccionantes, y cuando no hay generación, no-reaccionantes.
+    \item Sistema Transiente/Estacionario: Los sistemas transientes hay un cambio en las condiciones con el tiempo, mientras que los estacionarios no. En los primeros aparece el término de acumulación.
+    \item Sistemas de una unidad/multiples unidades: Los primeros se componen de una unidad (sistema) y la segunda de varios.
+\end{enumerate}
+
+A partir de estos sistemas se genera una ecuación que domina este proceso, y esta es la Ecuación General de Conservación.
+
+\insertimage[]{img/imagenes/ecuacion_de_balance}{width=10cm}{Esquema general de un sistema.}
+
+Este sistema se puede modelar por medio de la siguiente ecuación:
+
+\insertequation{\text{Entrada} + \text{Generación} - \text{Consumo} - \text{Acumulación} = \text{Salida}}
+
+Cuando no hay acumulación y no hay reacciones químicas de genración o consumo se tiene un: \textbf{Proceso Estacionario (Continuo)}. Y la ecuación de balance que lo describe es:
+\insertequation{\text{Entrada} = \text{Salida}}
+
+Si hauy reacciones químicas dentro del sistema la cantidad de generación del sistema se puede modelar de la siguiente forma:
+
+\insertequation{ \text{Generación neta} = \text{Generación en el sistema} - \text{Consumo en el sistema}}
+
+Y la ecuación de balance es:
+
+\insertequation{\text{Entrada}+ \text{Generación neta}-\text{Acumulación} = \text{Salida}}
+
+\clearpage
+\section{Sistema Simple}
+
+Este sistema es una unidad de proceso abierta, no reaccionante y estacionaria. No hay acumulación y no hay reacciones químicas de generación o comsumo.
+
+Este sistema se puede definir por el siguiente diagrama:
+
+\insertimage[]{img/imagenes/sist_simple}{width=10cm}{Diagrama representativo de un sistema simple.}
+
+Y la ecuación de balance que lo describe es:
+
+\insertequation{\text{Entrada}=\text{Salida}}{}
+
+En este sistema se pueden definir las siguientes variables que pueden ayudarnos:
+
+\begin{itemize}
+    \item \textbf{S}: Número de compuestos (sustancias) presentes en el sistema.
+    \item \textbf{Ne}: Número de corrientes de entrada al sistema. $Ne=N-Ns$
+    \item \textbf{N}: Número de corrientes totales del sistema. $N=Ne+Ns$
+    \item \textbf{Ns}: Número de corrientes de salida del sistema. $Ns=N-Ne$
+\end{itemize}
+
+\subsection{Definiciones importantes}
+
+\begin{itemize}
+    \item $F_{ij}$: Flujo másico del compuesto $i$ en la corriente $j$.
+    \item $F_j$: Flujo másico de la corriente $j$.
+    \item $w_{ij}$: Fracción másica del compuesto $i$ en la corriente $j$.
+\end{itemize}
+
+Y estas cantidades se relacionan por medio de la siguiente ecuación:
+
+\insertequation{F_{ij}=F_j\cdot w_{ij}}
+
+\subsection{Ecuaciones linealmente independientes}
+
+En primera instancia tenemos las ecuaciones de balance de componentes:
+
+\insertindexequation{\sum_{j=1}^{Ne}F_{ij}-\sum_{j=Ne+1}^{N}F{ij}=0}{i=1,2,...,S}
+
+A su vez también la ecuación de balance general:
+
+\insertequation{\sum_{j=1}^{Ne} F_{j}-\sum_{j=Ne+1}^{N}F{j}=0}{}
+
+Solo S ecuaciones son linealmente independientes (LI). Si se quiere usar el balance global se debe eliminar el balance de uno de los componentes para
+asegurar que no se utiliza una ecuacion de balance LD de las otras. De esta manera, de las (S+1) ecuaciones de balance que tenemos, solo S serán LI. Y tomamos solo S al momento de resolver el problema, 
+porque una es redundante.
+
+\section{Grados de Libertad}
+
+Los grados de libertad son una erramienta que nos permiten establecer cuando el problema se puede resolver o no.
+Es por esto que al momento de resolver un problema de balance, se debe tener en cuenta cuales son los grados de libertad.
+
+Los grados de libertad se pueden calcular por medio de la siguiente ecuación.
+
+\insertequation{GL=NV_c - NE - Rel - D - BC}
+
+Estas variables significan lo siguiente:
+\begin{itemize}
+    \item $GL$: Grados de libertad.
+    \item $NV_c$: Número de variables de corriente
+    \item $NE$: Número de ecuaciones.
+    \item $Rel$: Número de realaciones.
+    \item $D$: Cantidad de datos entregados.
+    \item $BC$: La base de cálculo.
+\end{itemize}
+
+¿Cómo establecer el valor de cada una de estas variables?
+
+\begin{itemize}
+    \item $NV_c$: Se puede calcular por medio de la sumatoria de la cantidad de sustancias que hay en cada corriente. Por lo cual: $NV_c=\sum_{i=1}^{N}S_i$
+    \item $NE$: Se puede calcular como la cantidad de sustancias involucradas en el proceso, por lo cual: $NE=S$
+    \item $Rel$: Es la cantidad de realciones que se pueden encontrar, ya sea por realciones que nacen de la naturaleza del proceso, o son dadas por el enunciado.
+    \item $D$: Es la cantidad de datos dados por el enunciado.
+    \item $BC$: Este valor es $1$ si no hay datos de las variables de corriente, y $0$ si hay datos. Cuando $BC=1$ se asume una cantidad para una de las corrientes para así resolver el problema.
+\end{itemize}
+
+A partir del valor de $GL$ podemos analizar si el problema se puede resolver o no. Si $GL=0$ el problema se puede resolver, si $GL>0$ no se puede resolver, y si $GL<0$ se puede resolver y existe información redundante.
+
+\clearpage
+\section{Extracción Sólido-Líquido (Lixiviación)}
+
+Este proceso es una separación de los componentes de una mezcla, mediante la solubilidad selectiva de un compuesto en un solvente.
+\insertimage[]{img/imagenes/diagrama_lixi}{scale=0.75}{Diagrama de un proceso de extracción sólido-líquido.}
+
+Este proceso es aplicado en los siguientes procesos.
+
+\begin{itemize}
+    \item Extracción de aceites de semillas oleaginosas.
+    \item Extracción de azúcar de remolacha.
+    \item Extracción de raíces, hojas y tallos para productos farmacéuticos.
+    \item Extracción de café para producción de café instantaneo
+\end{itemize}
+
+En este proceso el soluto (aceite) se va a extraer hasta que se alcanza el pseudo-equilibrio (la concentración no cambia en el tiempo). Pero este proceso posee la limitación de 
+que en una operación real es imposible separar totalmente la solución del sólido (éste queda mojado, solución ocluida\footnote{Queda atrapada dentro del sólido.}). Aquí podemos distinguir claramente las dos corrientes de salida.
+La primera es el \textbf{Refinado}, este consta del sólido, soluto (aceite) y el solvente utilizado. Y el segundo es el \textbf{Extracto}, el cual consta del soluto (aceite) y el solvente utilizado.
+
+\insertimage[]{img/imagenes/diagrama_3_lix}{scale=0.5}{Diagrama que representa las denominaciones de las corrientes de entrada y salida del proceso de extracción sólido-líquido.}
+
+Tomemos de ejemplo el siguiente proceso de extracción sólido-líquido.
+\insertimage[]{img/imagenes/diag_4_lix}{scale=0.5}{Diagrama que representa una separación sólido-líquido del aceite de semillas, usando como solvente la acetona.}
+
+En este tipo de procesos, donde hay un pseudo-equilibrio, se pueden definir una serie de relaciones que nos ayudan a resolver este problema. Estas realciones se conocen como relaciones de pseudo-equilibrio. Y estas se definen por las siguientes ecuaciones:
+
+\insertequation{w_{23}=\frac{w_{24}}{w_{24}+w_{34}+w_{44}}}{}
+\insertequation{w_{33}=\frac{w_{34}}{w_{24}+w_{34}+w_{44}}}{}
+\insertequation{w_{43}=\frac{w_{44}}{w_{24}+w_{34}+w_{44}}}{}
+
+Donde las sustancias son:
+\begin{itemize}
+    \item 2: Aceite
+    \item 3: Agua
+    \item 4: Solvente
+\end{itemize}
+
+Y las corrientes son:
+\begin{itemize}
+    \item 3: Extracto
+    \item 4: Refinado
+\end{itemize}
+
+En estas relaciones nace de que en el pseudo-equilibrio, la concentración de una sustancia en el refinado es igual a la concentración en el refinado. 
+
+La cantidad de relaciones que se agregan al sistema de ecuaciones que consta este proceso es igual a ($S_3$-1). Debido a que de las tres relaciones que se pueden obtener (en este caso), solo dos son LI.
+De modo que en este tipo de procesos, la cantidad de relaciones por defecto es $Rel=S_3-1$. Donde $S_3$ es la cantidad de sustancias en el extracto.
+
+\clearpage
+\section{Deshidratación Osmótica}
+
+El proceso de deshidratración osmótica es imporatnte debido a que el agua es un agente de deterioro importante en los alimentos. De modo que removiendo el agua a través de un proceso de deshidratración se puede aumentar la vida útil del alimento.
+Este proceso de remoción de agua de un trozo de alimento, se realiza por medio de la inmersión en una solución concentrada de un agente osmótico, que resulta de una simultanea salida de agua del producto y su impregnación con el agente osmótico (el alimento se impregna con el agente osmótico).
+Los procesos continúan hasta que se alcanza el equilibrio.
+
+Este sistema se puede representar de la siguiente manera:
+\insertimage[]{img/imagenes/do_1}{width=13cm}{Diagrama representativo de una deshidratración osmótica.}
+
+Aquí viene una denominación que es característica de este proceso. La solución osmótica concentrada es la que contiene los agentes que van a extraer el agua del alimento, mientras que la solución osmótica agotada es la solución osmótica después de deshidratar el alimento.
+
+En proceso, al igual que en la extracción sólido-líquido, se generan relaciones de equilibrio. En este caso la composición de la fase acuosa ocluida en el tejido tratado (en base libre de sólidos insolubles) es igual a la de la fase líquida de la solución osmótica agotada.
+De estos equilibrios podemos obtener las siguientes relaciones:
+
+\insertequation{
+    w_{14}=\frac{w_{13}}{1-w_{33}}=\frac{w_{13}}{w_{13}+w_{23}}
+}
+\insertequation{
+    w_{24}=\frac{w_{23}}{1-w_{33}}=\frac{w_{23}}{w_{13}+w_{23}}
+}
+
+De estas ecuaciones solo se utiliza una, debido a que la otra es LD de la otra.
+
+Por lo cual, el número de relaciones que se pueden considerar en este proceso es $Rel=S-2$.
+
+\clearpage
+\section{Contenido Energético de Corrientes}
+
+\subsection{Primera ley de la termodinámica}
+
+Esta ley estipula que la energía se conserva, no puede ni crearse ni destruirse. Para un sistema simple, podemos establecer que para un sistema simple, una ecuación única que definirá como se conserva la energía.
+\insertimage[]{img/imagenes/energia_1}{width=8cm}{Diagrama que representa como se comporta la energía del sistema.}
+\insertindexequation{\sum_{\text{flujos de entrada}}E_j+Q=\sum_{\text{flujos de salida}}E+W}{Ecuación de Balance de Energía, Entrada=Salida}
+
+\subsection{Energía de corriente}
+
+En una corriente podemos encontrar tres tipos de energía:
+\begin{itemize}
+    \item Energía Cinética (EC): Es la energía que posee un cuerpo o sistema en movimiento relativo al estado de reposo. $EC_j=\frac{1}{2}F_jv_j^2$
+    \item Energía Potencial (EP): Es la energía debido a la posición de un sistema en cun campo potencial. En este caso, gravitacional. $EP_j=F_jgz$
+    \item Energía Interna (U): Es la energía almacenada que posee un sistema debido a la energía atómica y molecular de la amteria. Esta incluye (1) energías de vibraciones de enlace, (2) energías rotacionales y (3) energía debido a fuerzas moleculares. $U_j=F_jU_j^*$
+\end{itemize}
+De esta forma la energía que trae un flujo es:
+\insertequation{E_j=F_j\left(\frac{v_j^2}{2}+gz+U_j^*\right)}{}
+
+En mayor profundidad la \textbf{Energía Interna} es una propiedad de estado, es decir, solo depende del estado del sistema, no del camino. Esta propiedad es extensiva, dado que depende del tamaño del sistema. Y además, depende del sistema de referencia.
+
+\subsection{Trabajo}
+El trabajo neto realizado por un sistema abierto se define por la siguiente ecuación:
+
+\insertequation{W_{total}=W_f+W}
+Donde $W$ es el trabajo externo, trabajo hecho por el fluido sobre una parte móvil dentro del sistema. Y $W_f$ es el trabajo de flujo, trabajo hecho sobre el fluido que entra más el efectuado por el fluido que sale del sistema.
+
+
+\insertimage[]{img/imagenes/work_1}{width=8cm}{Diagrama que representa las corrientes de un sistema abierto.}
+Dentro del $W_f$ podemos identificar dos trabajos, uno de salida y uno de entrada. En primera instancia el trabajo realizado sobre el fluido que entra al sistema es $W_{f(E)}$ y se calcula como:$W_{f(E)}=P_E\cdot V_E$. Por otro lado, el fluido que sale realiza trabajo sobre los alrededores,
+y este trabajo se calcula como $W_{f(S)}=P_S\cdot V_S$. Dejando así que $W_f=W_{f}(E)+W_{f}(S)=P_S\cdot V_S-P_E\cdot V_E$.
+
+De esta forma el trabajo total es:
+
+\insertequation{W_{total}=W+\sum_S P_jF_jV_j^* - \sum_E P_jF_jV_j^*}{}
+
+De esta forma el balance de energía queda expresado como:
+
+\insertequation{\sum_E F_j \left(\frac{v_j^2}{2}+gz_j+U_j^*+P_jV_j \right)+Q=\sum_S F_j \left(\frac{v_j^2}{2}+gz_j+U_j^*+P_jV_j \right)+W}{}
+
+Aquí podemos menospreciar los términos de la energía cinética y potencial. Y también podemos introducir un nuevo término conocido como Entalpía(H), la cual se cálcula como $H_j^*=U_j^*+P_jV_j$.
+Lo cual nos deja la siguiente expresión para el balance de energía:
+
+\insertequation{\sum_E F_jH_j^* + Q = \sum_S F_jH_j^* + W}{}
+
+La determinación de la entalpía (H) y la energía interna (U) de una corriente solo puede realizarse mediante el cambio de esta propiedad respectp a un estado de referencia, es decir solo se pueden calcular los $\Delta U$ y $\Delta H$. 
+Para realizar este cálculo es necesario especificar la temperatura, presión y fase del estado de referencia.
+
+\subsection{Capacidad calorífica}
+
+Cuando consideramos la entalpía específica de una fase de una sustancia pura, como una función de P y T, entonces para cambios isobáricos (dP=0) se cumple que:
+\insertalign{
+    dH &=\left(\frac{\partial H}{\partial T}\right)_P dT+\left(\frac{\partial H}{\partial P}\right)_T dP
+    \\
+    &= \frac{\partial H}{\partial T}_P dT
+    \\
+    &= C_P dT
+    }{}
+Esta nueva cantidad ($C_p$) se define como el calor específico a presión constante, el cual es:
+
+\insertequation{\left(\frac{\partial H}{\partial T}\right)_P=C_P}
+
+Luego el cambio de entalpía se puede calcular de la siguiente manera:
+\insertequation{\Delta H = \int_{T1}^{T2} C_P(T) dT}
+
+La cantidad del $C_P$ varia de compuesto a compuesto, y este puede ser cálculado de la siguiente manera:
+
+\insertequation{C_P(T)=a+b\cdot T+c\cdot T^2 + d\cdot T^3+ e\cdot T^4}
+
+Donde $a,b,c,d$ y $e$ son constantantes que están tabuladas.
+
+Cuando se tienen cambios de temperatura menores a 50K (o cuando se indique), una aproximación adecuada de $\Delta H$ es considerar que la $C_P$ es una constante, dejando la ecuación de la entalpía de la siguiente forma:
+
+\insertequation{\Delta H= \overline{C_P}\Delta T}{}
+
+Donde $\overline{C_P}$ es la capacidad calorífica promedio.
+
+\subsection{Entalpía de Cambio de fase}
+
+El cambio de entalpía ($\Delta H$) que es necesario para el cambio de fase es el calor de vaporización. Este se compone de una componente que se refiere al cambio de temperatura, y una que hace referencia al cambio de estado en sí ($\Delta H_{lv}^°$).
+Esta entalpía de vaporización es la siguiente:
+
+\insertequation{\Delta H_{lv}\approx \Delta H_{lv}^° + \int_{T_0}^T (C_{pv}-C_{pl})dT}{}
+
+Estos valores están tabulados a presiones normales (1atm). Por lo cual se requiere ciertas correcciones cuando se trata de presiones diferentes a las atmosféricas. 
+En este caso se debe utilizar la ecuación de Antoine:
+
+\insertindexequation{\ln(P)=A-\frac{B}{T_e+C}}{Ecuación de Antoine}{}
+
+Para esta ecuación el valor de la presión (P) debe estar en kPa. Y a partir de esta ecuación podemos encontrar la temperatura de ebullición de un fluido a cualquier presión a partir de las constantes A, B y C, las cuales se encuentran tabuladas.
+La ecuación utilizada para encontrar el valor de $T_e$ es:
+
+\insertequation{T_e=\frac{B}{A-\ln(P)}-C}{}
+
+Cuando queremos encontrar el cambio de entalpía de una sustancia, desde un punto de temperatura T1 hasta una temperatura T2, donde la temperatura de ebullición de esta sustancia ($T_e$) es tal que $T1<T_e<T2$.
+De esta manera hay que considerar el cambio de fase que sufre la sustancia, por lo cual la ecuación que define esta cantidad es:
+
+\insertequation{\Delta H= \int_{T1}^{T_e}C_{Pl}dT+\Delta H_{lv}(T_e)+\int_{T_e}^{T2}C_{Pv}dT}{}
