@@ -2199,6 +2199,7 @@ INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/main.toc
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/main.toc
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/main.toc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 OUTPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/main.toc
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/textarc/i1.tex
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/textarc/i1.tex
@@ -2211,6 +2212,114 @@ INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/textarc/i1.tex
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/textarc/i1.tex
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/textarc/i1.tex
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/textarc/i1.tex
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/wasy/wasy7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/wasy/wasy5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/wasy/wasy5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr5.tfm
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/ley0.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/ley0.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/ley0.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/ley0.png
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr9.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr9.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr6.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi9.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi6.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy9.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy6.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/wasy/wasy9.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/wasy/wasy6.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/wasy/wasy5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr9.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr6.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ts1-lmr5.tfm
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapvt.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapvt.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapvt.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapvt.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapv.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapv.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapv.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapv.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/palanca.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/palanca.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/palanca.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/palanca.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapt.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapt.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapt.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/diagramapt.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/balanceE.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/balanceE.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/balanceE.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/balanceE.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/path.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/path.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/path.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/path.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residual.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residual.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residual.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residual.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualvdw.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualvdw.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualvdw.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualvdw.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualsrk.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualsrk.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualsrk.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualsrk.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualpr.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualpr.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualpr.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualpr.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualvirial.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualvirial.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualvirial.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/residualvirial.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/lnphi0.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/lnphi0.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/lnphi0.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/lnphi0.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/lnphi1.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/lnphi1.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/lnphi1.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/lnphi1.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/fugacity_liq.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/fugacity_liq.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/fugacity_liq.png
+INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/img/imagenes/fugacity_liq.png
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
@@ -2223,9 +2332,27 @@ INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-utf8.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-utf8.def
 INPUT /usr/local/texlive/2021/texmf-dist/tex/generic/stringenc/se-utf8.def
 INPUT /Users/gabbo/Desktop/Latex cosas/Template-Informe/main.aux
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi5.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi8.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi9.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr10.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr17.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr6.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr8.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr9.pfb
 INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmri10.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy7.pfb
+INPUT /usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb
