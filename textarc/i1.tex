@@ -1,0 +1,822 @@
+\section{Repaso termodinámica}
+\subsection{Conceptos termodinámicos fundamentales}
+Hay ciertos conceptos que deben conocerse, y son fundamentales a la hora de estudiar fisicoquímica, estos son:
+\begin{itemize}
+    \item \textbf{Temperatura}: Esta caracteriza la transferencia de energía térmica, o calor, entre un sistema y otro. Es una medida de la energía cinética asociada a las colisiones de las partículas que componen el sistema.
+    \item \textbf{Presión}: Acumulación de fuerzas de colisión en le área total de las parades del recipiente.
+    \item \textbf{Calor y Trabajo}: Es la energía en tránsito. La fuerza motriz del flujo de calor es la diferencia de temperatura, mientras que la fuerza motriz del trabajo es el movimiento. Ambas son funciones de trayectoria, es decir, dependen del camino, no de los estados termodinámicos.
+    \item \textbf{Energía Interna, U}: Energía total de todos los componentes de un sistema. Es la sumatoria de las energías de traslación, rotación, vibración, electrónica, nuclear y energía de interacción molecular.
+    \item \textbf{Entalpía, H}: Cantidad termodinámica que se utiliza para describir cambios de calor que se efectúan a presión constante (esta definición es para un sistema cerrado).
+    \item \textbf{Entropía, S}: Cantidad termodinámica que expresa el grado de desorden o de aleatoriedad de un sistema.
+\end{itemize}
+
+\subsection{Leyes de la termodinámica}
+
+\textbf{Ley Cero:} Establece que, cuando dos cuerpos están en equilibrio térmico con un tercero, estos están a su vez en equilibrio térmico.
+
+\insertimage[]{img/imagenes/ley0}{width=5cm}{Diagrama de la ley cero de la termodinámica.}
+
+\textbf{Primera Ley:} La energía interna de un sistema no se crea ni se destruye, sólo se transforma. Esta ley puede ser representada por medio de la siguiente ecuación para un sistema cerrado:
+
+\insertequation{dU=\delta Q+\delta W}{}
+
+\textbf{Segunda Ley:} Si bien tdo el trabajo mecánico puede transformarse en calor, no todo el calor puede transformarse en trabajo mecánico. Esta ley restringe cuales procesos son posibles o no.
+
+\textbf{Tercera Ley:} No se puede alcanzar el cero absoluto en un número finito de etapas.
+
+\subsection{Ecuaciones de estado}
+
+Una ecuación de estado es una ecuación constitutiva que describe el estado de agregación de la materia como una relación matemática entre la temperatura, la presión, el volumen, la densidad, la energía interna y posiblemente otras funciones de estado\footnote{Una función de estado es una cantidad que no depende del camino, solo del estado inicial y final.} asociadas con la materia. 
+Estas ecuaciones nos permiten relacionar las variables del sistema, por lo general, utilizando valores medibles, como son la temperatura, la presión ,y el volumen.
+Algunas ecuaciones de estado son:
+\begin{itemize}
+    \item \textbf{Ecuación del gas ideal:} En esta ecuacion se asume que es un gas ideal, es decir, en condiciones de baja presión, alto volumen y alta temperatura. Cuando se asume esta idealidad, los gases pueden ser descritos según la siguiente ecuación de estado:
+    \insertequation{PV=RT}
+
+    Donde P es la presión (Pa), V es el volumen molar ($\frac{m^3}{mol}$),
+      es la constante de gas ideal  $(8.314\;\frac{J}{mol*K})$, y T es la temperatura (K).
+
+    \item \textbf{Factor de compresibilidad generalizado:} Esta ecuación se utiliza para, además de predecir ciertas funciones de estado, también nos permite saber que tan ideal es un fluido. Esta ecuación es:
+    \insertequation{PV=RTZ}
+
+    Donde Z es el factor de compresibilidad, y a medida que Z sea más cercano a 1, más ideal es su comportamiento. Si $Z\noteq 1$ implica que es un fluido real.
+    \item \textbf{Ecuación tipo Clausius:} Esta ecuación aproxima las funciones de estado por medio de:
+    \insertequation{P(V-b)=RT}{}
+
+    \item \textbf{Ecuación de Van der Waals:} Esta ecuación es una de las primeras que pude describir un fluido real, esta presenta una serie de variables que permiten que se pueda tener un mayor acercamiento al comportamiento de un fluido real:
+    
+    \insertalign{
+        P&= \frac{RT}{V-b}-\frac{a}{V^2}\label{eqn:vdw}\\
+        a &= \frac{27R^2 T_c^2}{64P_c}\\
+        b&= \frac{RT_c}{8 P_c}
+    }
+
+    En esta ecuación $P_c$ y $T_c$ son la presión y temperatura crítica. Cabe mencionar que esta ecuación, cuando analizamos el volumen nos da 3 raices; cuando tenemos una raiz real y dos imaginarias, la real es la que describe al fluido; cuando tenemos 3 raices reales, la menor describe al líquido, la mayor al vapor y la del medio no tiene significado físico. Por lo cual hay que tener presente la fase del fluido al realizar la ecuación cúbica.
+
+    Esta ecuación permite describir tanto gases como líquidos.
+    
+    \item \textbf{Ecuación de Soave-Redlich-Kwong:} Esta ecuación es la siguiente:
+    
+    \insertalign{
+        P&=\frac{RT}{V-b}-\frac{a}{\sqrt{T}V(V+b)}\label{eqn:srk}\\
+        a&=0.42748\frac{R^2 T_c^{2.5}}{P_c}\\
+        b&=0.08664\frac{RT_c}{P_c}
+    }
+    
+    Esta ecuación sigue los mismos principios que la ecuacion de Van der Waals.
+    Esta ecuación permite describir tanto gases como líquidos.
+    
+    \item \textbf{Ecuación de Peng-Robinson:} Esta ecuación es la siguiente:
+    
+    \insertalign{
+        P&= \frac{RT}{V-b}-\frac{a}{V^2+2bV-b^2}\label{eqn:pr}\\
+        a&=0.45723\frac{R^2 T_c^{2}}{P_c} [1+(0.37464+1.54226\omega-0.26992\omega^2)(1-T_r^{0.5})]^2\\
+        b&=0.07780\frac{RT_c}{P_c}\\
+        T_r&=\frac{T}{T_c}
+    }
+    
+    En esta ecuación se introducen las propiedades reducidas por medio del $T_r$ y el factor acéntrico, el cual nos permite cuantificar la esfericidad de las partículas del fluido.
+    Esta ecuació permite describir tanto gases como líquidos.
+
+    \item \textbf{Ecuación Virial:} Esta es una ecuación que, a diferencia de las anteriores, solo sirve para gases, y esta es:
+
+    \insertalign{
+        Z&= 1+\frac{B}{V}+\frac{C}{V^2} \label{eqn:virial}\\
+        \frac{BP_c}{RT_c} &= B^0 + \omega B^1\\
+        B^0&= 0.1445 - \frac{0.3300}{T_r} - \frac{0.1385}{T_r^2} - \frac{0.0121}{T_r^3} -\frac{0.000607}{T_r^8} \\
+        B^1&= 0.0637 + \frac{0.331}{T_r^2}-\frac{0.423}{T_r^3}-\frac{0.0008}{T_r^8} \\
+    }
+\end{itemize}
+
+\subsection{Grados de libertad termodinámicos}
+
+Los grados de libertad de un problema termodinámico se define seín la \textbf{Regla de las fases de Gibs}:
+
+\insertequation{GL=2-\phi +N}
+
+Donde $\phi$ es el número de fases (líquido, gas o sólido) y $N$ es el número de especies químicas.
+
+\subsection{Superficie P-V-T}
+
+Al graficar de forma tridimensional las relaciones entre la presión, el volumen y la temperatura, podemos encontrar una superficie que nos describe el comportamiento de los fluidos en función de estas variables.
+El gráfico general es:
+
+\insertimage{img/imagenes/diagramapvt}{scale=0.5}{Diagrama tridimensional de las relaciones entre la presión, temperatura y volumen.}
+
+Se pueden realizar análisis bidimensionales para poder entender mejor como se comportan los fluidos. En estos gráficos bidimensionales podemos encontrar el diagrama P-V:
+
+\insertimage[]{img/imagenes/diagramapv}{width=10cm}{Diagrama que gráfica la relación entre la presión y el volumen.}
+
+En este gráfico podemos encontrar zonas de líquido subenfriado, vapor sobrecalentado, fluido supercrítico y la campana líquido-vapor. Siendo la última la zona en la cual la muestra se encuentra en un equilibrio líquido vapor. Podemos encontrar también las isotermas, que son aquellas líneas que cruzan el gráfico. Y también podemos encontrar el punto crítico. Es en dicho punto donde se cumple que:
+
+\insertalign{
+    \left(\frac{\partial P}{\partial V}\right)_T=0\\
+    \left(\frac{\partial^2 P}{\partial V^2}\right)_T=0
+}
+
+Estas derivadas parciales de arriba significan, la derivada parcial de la presión con respecto al volumen, a temperatura constante.
+
+Dentro de la campana líquido-vapor se cumple la relga de la palaca, ésta nos permite analizar cuale son las fracciones molares de la fase vapor y la fase líquida:
+\insertimage{img/imagenes/palanca}{width=10cm}{Diagrama representativo de la regla de la palanca.}
+
+Esta regla se puede traducir a las siguientes ecuaciones:
+
+\insertalign{
+    V&= x_L V_L + x_V V_V\\
+    x_V&= \frac{V-V_L}{V_V-V_L}\\
+    x_L&= \frac{V-V_V}{V_L-V_V}
+}
+
+Donde $V$ es el volumen de la muestra, $V_V$ el volumen del vapor saturado, $V_L$ el volumen del líquido saturado, $x_L$ la fracción molar del líquido y $x_V$ la fracción molar del vapor.
+
+A su vez, también tenemos el diagrama P-T:
+
+\insertimage{img/imagenes/diagramapt}{width=10cm}{Diagrama de presión-temperatura.}
+
+En este diagrama podemos encontrar el punto crítico en C. El punto triple, que es donde las tres fases (sólido, líquido y gaseos) están en equilibrio, y cada punto en la linea que va desde F a C es un punto en donde se entra a al campana líquido-vapor que se ve representada en el diagrama P-V.
+
+\subsection{Balance de energía en un sistema abierto}
+
+El valance de energía en un sistema abierto puede ser descrito por la siguiente ecuación:
+
+\insertimage{img/imagenes/balanceE}{width=6cm}{Diagrama de balance de energía en un sistema abierto.}
+
+\insertequation{\frac{dU}{dt}=\sum_{i=1}^N \dot{m}_i U_i + \dot{W}_s + \dot{Q} - P\frac{dV}{dt}+\sum_{i=1}^N \dot{m}_i (PV)_i}
+
+El significado de cada uno de los parámetros es el siguiente:
+
+\begin{itemize}
+    \item Esta es la acumulación de enercía interna, este valor es diferente de cero en un sistema cerrado y en un sistema abierto con acumulación. Si no hay acumulación este término es 0. 
+        \insertequation{\frac{dU}{dt}}
+    \item  Esta expresión es el trabajo de eje, es el trabajo que realiza una máquina o turbina.
+    \insertequation{\dot{W}_s}
+    \item Calor que es entregado o retirado del sistema.
+    
+    \insertequation{\dot{Q}}
+
+    \item Trabajo de compresión o expanción, debe de haber una diferencia de volumen.
+    
+    \insertequation{-P\frac{dV}{dt}}
+
+    \item Energía interna que trae el flujo que entra, o se lleva el flujo que sale.
+    
+    \insertequation{ \sum_{i=1}^N \dot{m}_i U_i}
+
+    \item Es la energía que se relaciona con la entrada o salida del fluido del sistema.
+    
+    \insertequation{\sum_{i=1}^N \dot{m}_i (PV)_i}
+    
+    \item Podemos juntar estas dos expresiones de forma de generar el término de la entalpía, dado que $U+PV=H$. De modo que este término es la entalpía de los flujos de salida y entrada.
+    
+    \insertalign{
+        \sum_{i=1}^N \dot{m}_i U_i + \sum_{i=1}^N \dot{m}_i (PV)_i=\sum_{i=1}^N \dot{m}_i H_i
+    }
+\end{itemize}
+
+Lo interesante de estos balances de energía es que dependiendo del sistema que se tiene, su balance de energía va a cambiar según cuantas de las expresiones de arriba se anulan. Estas se anulan en las siguientes condiciones:
+
+\begin{itemize}
+    \item Si el sistema no presenta acumulación. Cuando es un sistema abierto, la carencia de acumulación se denomina estado estacionario.
+    \insertequation{\frac{dU}{dt}=0}
+
+    \item Si el sistema es cerrado:
+    \insertequation{\dot{m}_i=0}{}
+    
+    Lo que implica que:
+    \insertalign{\sum_{i=1}^N \dot{m}_i (PV)_i&=0\\
+    \sum_{i=1}^N \dot{m}_i U_i&=0
+    }
+    \item Si el sistema es adiabático:
+    
+    \insertequation{\dot{Q}=0}
+
+    \item Si no hay trabajo de compresnsión o expansión:
+    
+    \insertequation{-P\frac{dV}{dt}}{}
+
+    \item Si el sistema es rígido:
+    
+    \insertalign{
+        dV&=0\\ 
+        -P\frac{dV}{dt}&=0
+    }
+
+\end{itemize}
+
+\clearpage
+\section{Termodinámica clásica}
+
+\subsection{Introducción}
+
+¿Qué es la termodinámica clásica? La termodinámica clásica se refiere a el subtópico de la fisicoquímica que trabaja con las relaciones matemática
+de energía y Entropía en los fluidos\footnote{Es imporante la utilización de ecuaciones de estado en este cálculo.}. A través de ella se pueden generalizar el conocimiento acerca de cualquier fluído en cualquier estado termodinámico.
+
+La estimación de propiedades fisicoquímicas puede ser tanto para una fase como para procesos de cambios de fase, por ejemplo, la formación de condensado durante la expansión de un vapor en una turbina. Desarrollas estas habilidades ayudará a analizar de mejor manera la termodinámica no ideal y de mezclas.
+
+\subsection{Fundamentos de las relaciones termodinámicas}
+
+Se puede comenzar el análissi en un sistema simple cerrado. Con una sustancia pura y compresible el balance de energía es el siguiente:
+
+\insertequation{ dU = Q + W_{EC}}
+
+De forma diferencial esta ecuación queda:
+
+\insertequation{du=dQ-PdV}
+
+Donde podemos $-PdV$ hace referencia al trabajo de compresión/expansión reversible, no irreversible\footnote{Cuando es reversible la presión cambia lentamente, no hay roce. Mientras que cuando es irreversible hay roce, es un cambio brusco.}. Luego, por medio de la entropía tenemos la siguiente relación:
+
+\insertequation{ dS=\frac{Q_{rev}}{T_{sys}}}
+
+Dicha expresión viene del balance de entropía, que es el siguiente:
+
+\insertequation{  \frac{dS}{dt}=\frac{{\dot{Q}}}{T}+\sum_{i=1}^N \dot{m}_i S_i + \dot{S}_{generada}    }{}
+
+Lo cual nos deja la siguiente expresión para la energía interna en un sistema simple, cerrado e irreversible:
+
+\insertequation[\label{eqn:du1}]{ dU=TdS -PdV}{}
+
+En este caso se utiliza $-PdV$ dado a que se va desde lo reversiblea lo irreversible, permitiendo expresarlo de esta manera.
+
+Como en la ecuación \ref{eqn:du1} puede escribirse el $dU$ a partir de $dS$ y $dV$, se denomnina función natural de $S$ y $V$. 
+
+Podemos seguir trabajando con las expresiones de forma de poder generar más funciones naturales.
+
+Teniendo la definición de la entalpía como $H=U+PV$ podemos generar la siguiente función natural de $H$:
+
+\insertalign{
+    H&=U+PV \\
+    dH&=dU+VdP+PdV \nonumber\\ 
+    dH&=TdS-PdV+VdP+PdV \nonumber\\ 
+    dH&=TdS+VdP \label{eqn:dH1}
+}
+
+De modo que la ecuación \ref{eqn:dH1} muestra a la entalpía como una función natural de S y P. La manipulación que se realizó se denomina \textbf{Transformada de Legendre}.
+
+La entalpía es una \textbf{propiedad conveniente} debido a que esta definida para que fuera útil en problemas donde el calor y la presión son manipuladas. El hecho que la entalpía relacione la transferencia de calor a presión constante en sistemas cerrados y la transferencia de calor con el trabajo en sistemas de flujo estacionario muestra el resultado de una buena elección de la definición.
+
+En sistemas donde se pueden controlar T y V, como en situaciones de pistones o cilindros, la U no es función natural de T y V, por lo cual se requiere de otra definición para trabajar en estos sistemas. En esta situación se define la \textbf{energía de Helmholtz}, la cual se puede definir como un tipo de energía configuracional, también está relacionada con el trabajo de expanción/compresión en sistemas isotérmicos; esta energía está expresada por la siguiente ecuación:
+
+\insertequation{A=U-TS}
+
+De modo que al utilizar la transformada de Legendre podemos hacer lo siguiente:
+
+\insertalign{
+    dA&=dU-SdT-TdS \\
+    dA&= TdS-PdV-SdT-TdS \nonumber\\
+    dA&= -SdT-PdV \label{eqn:dA1}
+}
+
+De esta forma llegamos a la ecuación \ref{eqn:dA1} la cual es una expresión que muestra A como función natural de T y V, lo cual es muy beneficioso, ya que T y V son cantidades medibles.
+
+El equilibrio ocurre cuando la derivada de Helmholtz es cero para V y T constante. A esta propiedad se le llama \textbf{energía de Gibbs}\footnote{También se le llama energía libre de Gibbs.}. Esta energía se define como:
+
+\insertalign{
+    G&=U-TS+PV\\
+    G&=H-TS \\
+    G&= A+PV
+}
+
+Luego, al utilizar la transformada de Legendre tenemos:
+
+\insertalign{
+    dG&=dU-SdT-TdS+PdV+VdP\\
+    dG&=TdS-PdV-SdT-TdS+PdV+VdP \nonumber\\
+    dG&=-SdT+VdP \label{eqn:dG1}
+}
+
+De esta forma, en la ecuación \ref{eqn:dG1} se puede ver que la energía de Gibbs es una función natural de T y P. Lo cual también es beneficioso ya que T y P son cantidades medibles.
+
+La energía de Gibbs es usada específicamente en problemas de equilibrio de fase donde la temperatura y la presión son controladas. Cuando nos encontramos en un equilibrio de fases la temperatura y la presión son constantes, de forma que $dG=0$ en el equilibrio. También hay que mencionar que la energía de Helmholtz y Gibbs incluyen los efectos entrópicos de las fuerzas motrices, si la entroía aumenta le energía disminuye.
+
+En resumen, las relaciones fundamentales para cada una de las relaciones importantes son:
+
+\insertalign{
+    dU&=TdS-PdV \\
+    dH&=TdS+VdP \\
+    dA&=-SdT-PdV \\
+    dG&=-SdT+VdP
+}
+
+Como podemos notar de la ecuación \ref{eqn:dH1} y \ref{eqn:du1}, tanto la entalpía como la energía interna están en función de variables no medibles (de forma sencilla), como es la entropía. Por lo cual se quiere que estas esten en función de P o T, funciones medibles. Cabe recalcar que son \textbf{propiedades medibles}:
+
+\begin{itemize}
+    \item Presión, Volumen y Temperatura y derivadas que las incluyan.
+    \item $C_p$ y $C_v$ que son funciones conocidas de la temperatura a baja presión.
+    \item Se acepta también la entropía si no está dentro de un término derivativo. La entroía se puede carlcular desde propiedades medibles.
+\end{itemize}
+
+Por lo cual nuestro objetivo es encontrar una función que deje a H y U en función de propiedades medibles. Para esto es que es necesario introducir las siguientes propiedades matemáticas:
+
+Supongamos que $F=F(x,y)$ entonces tenemos:
+
+Identidades básica:
+
+\insertequation{ \left(\frac{\partial x}{\partial y}\right)_z=\frac{1}{\left(\frac{\partial y}{\partial x}\right)_z}  }
+
+\insertalign{
+    \left(\frac{\partial x}{\partial y}\right)_x&=0  &  \left(\frac{\partial x}{\partial y}\right)_y&=\infty  &  \left(\frac{\partial x}{\partial x}\right)_y &=1 
+}
+
+Regla del producto triple:
+
+\insertequation{  \left(\frac{\partial x}{\partial y}\right)_F \left(\frac{\partial y}{\partial F}\right)_x \left(\frac{\partial F}{\partial x}\right)_y = -1 }
+
+\hfill
+
+Regla de la cadena:
+
+\insertequation{ \left(\frac{\partial x}{\partial y}\right)_F = \left(\frac{\partial x}{\partial z}\right)_F \left(\frac{\partial z}{\partial y}\right)_F }{}
+
+Regla de la expansión:
+
+\insertequation{\left(\frac{\partial x}{\partial y}\right)_z = \left(\frac{\partial x}{\partial k}\right)_m \left(\frac{\partial k}{\partial y}\right)_z  + \left(\frac{\partial x}{\partial m}\right)_k \left(\frac{\partial m}{\partial y}\right)_z }
+
+
+Además de estas definiciones es imporante introducir la siguiente definición, debido a que nos ayudará a trabajar con las expresión del tipo $dx$ donde x es una variable termodinámica.
+
+\textbf{Diferenciales exactas}. Podemos definir cualquier propiedad de estado en termodinámica a partir de otras dos propiedades. De modo que para una función que solo depende de dos variables se puede obtener la siguiente relación diferencial, lo que se llama en matemática \textbf{diferencial exacta}:
+Por ejemplo, si definimos la energía interna como una función de la entropía y el volumen podemos generar la siguiente diferencial exacta.
+
+\insertequation[\label{eqn:du2}]{ U=U(S,V) \Rightarrow dU=\left(\frac{\partial U}{\partial S}\right)_V dS+ \left(\frac{\partial U}{\partial V}\right)_S dV}
+
+Sabiendo esta potente herramienta matemática podemos encontrar las expresiones de cualquier propiedad termodinámica a partir de diferenciales exactas y relaciones termodinámicas.
+
+Ahora, ahondadno más en la ecuacion \ref{eqn:du2}, teniendo presente lo presentado en la ecuación \ref{eqn:du1} podemos notar que:
+
+\insertalign{ T&=\left(\frac{\partial U}{\partial S}\right)_V & -P&=\left(\frac{\partial U}{\partial V}\right)_S }
+
+A partir de esta información se pueden obtener las \textbf{Relaciones de Maxwell}, estas son:
+
+\insertalign{
+    -\left(\frac{\partial P}{\partial T}\right)_V&=-\left(\frac{\partial S}{\partial V}\right)_T \label{eqn:maxw1} \\
+    \left(\frac{\partial T}{\partial P}\right)_S&=\left(\frac{\partial V}{\partial S}\right)_P \\
+    \left(\frac{\partial V}{\partial T}\right)_P&=-\left(\frac{\partial S}{\partial P}\right)_T\\
+    \left(\frac{\partial T}{\partial V}\right)_S&=-\left(\frac{\partial P}{\partial S}\right)_V
+}
+
+De esta forma podemos realizar conversiones por medio de estas relaciones para poder encontrar expresiones para cada propiedad termodinámica como una función natural de propiedades medibles P, T y V.
+
+\subsubsection{Propiedades importantes}
+
+Existen 3 propiedades típicamente usadas en termodinámica que están basadas en propiedades derivadas. Estas son:
+
+\break
+
+\textbf{Compresibilidad isotérmica}
+
+\insertequation{ \kappa_T = \frac{-1}{V} \left( \frac{\partial V}{\partial P}   \right)_T= \frac{1}{\rho} \left( \frac{\partial \rho}{\partial P}\right)_T  }{}
+
+Donde $\rho$ es la densidad molar de la sustancia.
+
+\textbf{Coefficiente de expansión térmico}
+
+\insertequation{\alpha_P = \frac{1}{V} \left( \frac{\partial V}{\partial T}   \right)_P= \frac{-1}{\rho} \left( \frac{\partial \rho}{\partial T}\right)_P  }{}
+
+\textbf{Coeficiente de Joule-Thompson}
+
+\insertequation{\mu_{JT}=\left( \frac{\partial T}{\partial P} \right)_H}{}
+
+Como fue mencionado antes, se dice que el $C_p$ y el $C_v$ se consideran como propiedades medibles, por lo cual llego la hora de definir estas dos propiedades:
+
+\insertalign{
+    C_v=\left(\frac{\partial U}{\partial T}\right)_V \\
+    C_p=\left(\frac{\partial H}{\partial T}\right)_P
+}
+
+\subsection{Propiedades Residuales}
+
+Gracias a las relaciones de Maxwell, podemos dejar cualquier varible termodinámica en término de otras variables. Por lo cual, las propiedades residuales nos permiten manipular las propiedades de estado de forma de dejarlas en términos de variables conocidas y manipulables.
+
+Sabemos en primera instancia que la energía interna puede ser expresada por medio de las siguientes varibales medibles:
+
+\insertalign{
+    dU&=\left( \frac{\partial U}{\partial T} \right)_V dT + \left( \frac{\partial U}{\partial V} \right)_T dV \nonumber\\
+    dU&= C_v dT - \left[ T \left( \frac{\partial S}{\partial V} \right) + P \left( \frac{\partial V}{\partial V} \right) \right] dV \nonumber\\
+    dU &= C_v dT + \left[ T \left( \frac{\partial P}{\partial T} \right)_v - P \right] dV \label{eqn:dutv}
+}
+
+Es a partir de la ecuación \ref{eqn:dutv} que podemos expresar la energía interna como función natural de la Temperatura y la Presión, las cuales son propiedades medibles. 
+También podemos expresar el cambio de energía interna al integrar dicha ecuación, de forma que:
+
+\insertequation{  \Delta U = \int_{T_1}^{T^2} C_v dT + \int_{V_1}^{V_2} \left[ T \left( \frac{\partial P}{\partial T} \right)_v - P \right] dV }{}
+
+Para la entalpía podemos realizar una operación similar partiendo de la ecuación \ref{eqn:dH1}. Sabemos que :
+\insertalign{
+    dS&= \left( \frac{\partial S}{\partial T} \right)_V dT + \left( \frac{\partial S}{\partial V} \right)_T dV \nonumber\\
+    dS&= \frac{C_p}{T} dT - \left( \frac{\partial V}{\partial T}  \right)_P dP \label{eqn:Stv}
+}{}
+
+El fundamento de estos reemplazos viene de que, para el primer término:
+
+\insertalign{
+    dH&= TdS + VdP \nonumber\\
+\intertext{Al dividir por $\frac{1}{dT}$ a presión constante, nos queda que:}\\
+    \left( \frac{\partial H}{\partial T} \right)_P &= T \left( \frac{\partial S}{\partial T} \right)_P + V \left( \frac{\partial P}{\partial T} \right)_P\\
+\intertext{Y como estamos a presión constante, y que $\left( \frac{\partial H}{\partial T} \right)_P =C_P$, entonces:}\\
+    \frac{C_P}{T} &=\left( \frac{\partial S}{\partial T} \right)_P
+}
+
+El segúndo término es reemplazado desde una de las relaciones de Maxwell, en específico de aquella en la ecuación \ref{eqn:maxw1}.
+
+Luego al reemplazar la ecuación \ref{eqn:Stv} en la ecuación \ref{eqn:dH1} tenemos que:
+
+\insertalign{
+    dH&=TdS + VdP \nonumber\\
+    dH&= T \left[ \frac{C_p}{T} dT - \left( \frac{\partial V}{\partial T}  \right)_P dP  \right] + VdP \nonumber\\
+    dH &= C_p dT - T \left( \frac{\partial V}{\partial T}\right)_P dP + VdP \nonumber\\
+    dH &= c_p dT + \left[ V - T \left( \frac{\partial V}{\partial T} \right)_P \right] dP
+}
+
+Integrando esta relación para poder encontrar el cambio de entalpía llegamos a que:
+
+\insertequation{  \Delta H = \int_{T_1}^{T_2} c_p dT + \int_{P_1}^{P_2}\left[ V - T \left( \frac{\partial V}{\partial T} \right)_P \right] dP }{}
+
+Podemos encontrar diferentes caminos para calcular el cambio de, por ejemplo, U, para llegar desde un estado ($V_L$,$T_L$) a un estado ($V_H$,$T_H$).
+\insertimage[\label{path}]{img/imagenes/path}{width=5cm}{Podemos ver dos caminos obvios, los cuales se aprovechan de cambios tanto isocóricos como isotérmicos.}
+
+Como podemos ver en la figura \ref{path}, los caminos obvios que se pueden tomar son dos.
+De esta forma tenemos dos formas de calcular la energía interna:
+
+\insertalign{
+  \nonumber  \Delta U &= \int C_v \vert_{V_L}dT + \int \left[ T \left( \frac{\partial P}{\partial T} \right)_v - P \right]\vert_{T_H} dV \\
+  \nonumber  \Delta U &= \int C_v \vert_{V_H} dT + \int \left[ T \left( \frac{\partial P}{\partial T} \right)_v - P \right]\vert_{T_L} dV 
+}
+
+Utilizando esta misma analogía es que definimos las propiedades residuales. Estas propiedades utilizan este principio de que al ser funciones de estado, no depende del camino, por lo cual buscamos evitar el uso de $C_v$ y $C_p$, para fluidos reales. Esto debido a que su cálculo se hace tedioso y poco confiable en situaciones lejanas de la idealidad.
+Las propiedades residuales se utilizan como una forma de calcular los $Delta$ de propiedades por medio del cálculo de dicha propiedad en idealidad, y después sumarle una corrección.
+De modo que se realiza el siguiente camino:
+
+\insertimage[\label{img:resi}]{img/imagenes/residual}{width=5cm}{Camino recorrido para calcular cambios de cierta propiedad por medio de las propiedades residuales.}
+
+Como podemos ver en la imagen \ref{img:resi} para calcular el cambio de la propiedad F, desde el punto A al punto B, se toma un camino donde \textbf{1} y \textbf{3} son caminos isotérmicos, por lo cual no se utiliza el $C_p$ ni el $C_v$; y el camino \textbf{2} es un camino que se hace en condiciones de gas ideal, por lo cual podemos usar $C_p^{ig}$ y $C_v^{ig}$ dado que se conoce el comportamiento de estos valores.
+De modo que el $\Delta F$ queda definido como:
+
+\insertalign{
+    \Delta F_{12}= (F_2 - F_2^{ig})+(\Delta F^{ig}) + (F_1^{ig}-F_1)\\
+    \Delta F_{12}= F_2^R +\Delta F^{ig} - F_1^R
+}
+
+Donde podemos darnos cuenta que la definición de $F^R$ es:
+
+\insertequation{ F^R=F-F^{ig}}{}
+
+Por medio de estas propiedades podemos calculas cualquier cambio de propiedades, por ejemplo:
+
+\insertalign{
+    \Delta H_{12}=\int_{T1}^{T2}C_p^{ig} dT + H_2^R - H_1^R\\
+    \Delta S_{12}=\int_{T1}^{T2}\frac{C_p^{ig}}{T} dT - R\ln(\frac{P_2}{P_1}) +S_2^R-S_1^R
+}
+
+Ahora procederemos a calcular las propiedades residuales:
+\vspace{0.5cm}
+
+\textbf{Entalpía residual:}
+
+Partimos desde que:
+
+\insertequation{dH^R=dH-dH^{ig}}
+
+Como en estas propiedades siempre tomaremos un camino isotérmico para llegar desde el punto "Real" al punto "ideal", podemos expresar la entalpía residual como:
+
+\insertequation{dH^R=\left[ V-T\left(\frac{\partial V}{\partial T} \right)_P \right]dP}{}
+
+Al integrar esta expresión, vamos a ir desde la  ´idealidad´, donde $P\approx 0$ hasta la presión del punto ´real´ $P$, quedando así que:
+
+\insertequation{ H^R= \int_{0}^P  \left[ V-T\left(\frac{\partial V}{\partial T} \right)_P \right] dP }{}
+
+
+\vspace{0.5cm}
+\textbf{Entropía residual:}
+
+De forma análoga a la entalpía, podemos calcular la entropía residual:
+\insertequation{ dS^R=dS-dS^{ig}}{}
+Como dT=0.
+\insertequation{dS^R=\left[ \frac{R}{P}-\left( \frac{\partial V}{\partial T} \right)_P \right] dP}{}
+Al igual que en la entalpía, tenemos que $P^{ig}\approx 0$, por lo cual tenemos que:
+\insertequation{    dS^R=\int_{0}^P \left[ \frac{R}{P}-\left( \frac{\partial V}{\partial T} \right)_P \right] dP
+}{}
+
+\vspace{0.5cm}
+\textbf{Volumen residual:}
+
+Sabemos por la ecuación de los gases ideales que:
+\insertequation{V^{ig}=\frac{RT}{P}}{}
+
+Por lo cual la definición del volumen residual es:
+
+\insertequation{V^R=V-\frac{RT}{P}}{}
+
+Si utilizamos el coeficiente de compresión, entonces obtenemos que:
+
+\insertequation{V^R=\frac{RT}{P}(Z-1)}
+
+\vspace{0.5cm}
+
+\textbf{Otras propiedades residuales:}
+
+A partir de $V^R$, $H^R$ y $S^R$ podemos calcular el resto de propiedades residuales:
+
+\insertalign{
+    U^R=H^R-PV^R\\
+    G^R=H^R-TS^R\\
+    A^R=U^R-TS^R
+}
+
+\subsubsection{Ecuaciones de estado y propiedades residuales}
+
+Podemos usar utilizar las ecuaciones de estado para predecir una propiedad residual. Como en este caso, las ecuaciones residuales antes presentadas tienen al volumen como variable, se deben utilizar las formas cúbicas de las ecuaciones de estado. Por lo cual es que dejar 
+las expresiones de las propiedades residuales en términos de la presión y la temperatura puede ser más ventajoso. De modo que:
+
+\insertalign{
+    H^R=PV-RT+\int_{\infty}^V \left[ T\left( \frac{\partial P}{\partial T} \right)_V -P\right]dV\\
+    S^R=R\ln(\frac{PV}{RT})+\int_{\infty}^V \left[ \left( \frac{\partial P}{\partial T} \right)_V - \frac{R}{V}\right]dV
+}
+
+Aquí la ventaja radica en que las ecuaciones cúbicas tienen una expresión explicita para la presión, por lo cual el cálculo de $\frac{\partial P}{\partial T}$ es más sencillo que $\frac{\partial V}{\partial T}$.
+
+Luego, para cada ecuación de estado, podemos encontrar una expresión para las propiedades residuales.
+
+\textbf{Van der Waals:}
+\insertimage{img/imagenes/residualvdw}{width=4.5cm}{Propiedades residuales para una EoS tipo Van der Waals.}
+
+\textbf{Soave-Redlich-Kwong:}
+\insertimage{img/imagenes/residualsrk}{width=7.7cm}{Propiedades residuales para una EoS tipo SRK.}
+\break
+\textbf{Peng-Robinson:}
+\insertimage{img/imagenes/residualpr}{width=10cm}{Propiedades residuales para una EoS tipo Peng-Robinson.}
+
+\textbf{Virial:}
+\insertimage{img/imagenes/residualvirial}{width=8cm}{Propiedades residuales para una EoS tipo Virial.}
+
+\subsection{Equilibrio de fases}
+
+Ek equilibrio de fases es una situación en donde hay equilibrio entre fases líquidas y gaseosas. En estas condiciones los balances de energía y materia se hacen insuficientes, por lo cual la determinación del equilibrio de fases
+es una de las propiedades que son difíciles de predecir.
+
+Para realizar este tipo de predicciones es necesario utilizar la energía libre de Gibbs, en función de la presión y la temperatura.
+
+\insertequation{dG=-SdT + VdP}{}
+
+\subsubsection{Críterio para el equilibrio de fases}
+
+El volumen del vapor y el volumen del líquido se mantienen constantes, sin embargo, el volumen total cambia y por tanto lo hace la cantidad de líquido como de vapor, esta relación es:
+
+\insertequation{\underline{V}=n^L V^{L,sat}+n^V V^{V,sat}}{}
+
+En definitiva, los moles de líquido saturado y vapor saturado cambian.
+
+Ahora, en términos de la energía de Gibbs, como en el equilibrio líquido-vapor, la isoterma también es isóbara, tenemos que $dT=0$ y $dP=0$. Por lo cual, tenemos que:
+
+\insertequation{dG=0}{}
+
+Lo cual se puede traducir a:
+
+\insertequation{G^L = G^V}{}
+
+Por lo cual, en condiciones de equilibrio en un compuesto puro, la presión, temperatura y energía libre de Gibbs molar son constante, sin importar la cantidad de fases.
+De esta forma, tenemos que la energía de Gibbs molar se le llama también como \textbf{potencial químico}$\mu$.
+
+\subsubsection{Ecuación de Clausius-Clapeyron}
+
+Si queremos encontrar la pendiente de la curva de presión de vapor $\frac{dP^{sat}}{dT}$, entonces debemos notar que cuando estamos en el equilibrio de fases, tenemos que:
+
+\insertequation{dG^L=dG^V}
+
+A partir de la ecuación \ref{eqn:dG1} podemos reordenar esta relación y llegar a:
+
+\insertequation[\label{eqn:precc}]{(V^V - V^L)dP^{sat}=(S^V-S^L)dT}{}
+
+Luego vamos a tener que la entropía puede ser relacionada con la entalpía de vaporización por medio de la siguiente ecuación:
+
+\insertequation{S^V-S^L=\Delta S^{vap}=\frac{H^V - H^L}{T}=\frac{\Delta H^{vap}}{T}}{}
+
+Reemplazando esta expresión en \ref{eqn:precc} logramos obtener la \textbf{Ecuación de Clapeyron:}
+
+\insertequation[\label{eqn:cla}]{\frac{dP^{sat}}{dT}=\frac{\Delta H^{vap}}{T(V^V - V^L)}}{}
+
+Si puede multiplicar por $T^2$ y dividir por $P^{sat}$ para poder obtener la ecuacion \ref{eqn:cla} en función de Z.
+
+\insertequation{\frac{T^2}{P^{sat}}\frac{dP^{sat}}{dT}=\frac{\Delta H^{vap}}{R(Z^V - Z^L)}}{}
+
+Luego aplicando algunas reglas de cálculo\footnote{Magia matemática.} podemos obtener la siguiente expresión:
+
+\insertequation{d\ln P^{sat}=\frac{-\Delta H^{vap}}{R(Z^V-Z^L)}d\left(\frac{1}{T}\right)}{}
+
+Cuando estamos tratando con gases lejanos del punto crítico a baja temperatura reducida, tenemos que $Z^V - Z^L \approx Z^V$, y en presiones cercanas a 1 $bar$, donde estamos en condiciones cercanas a la idealidad, $Z^V \approx 1$. Entonces
+
+\insertequation[\label{eqn:cc}]{d\ln P^{sat}=\frac{-\Delta H^{vap}}{R}d\left(\frac{1}{T}\right)}{}
+
+La ecuación \ref{eqn:cc} se conoce como \textbf{ecuacion de Clausius-Clapeyron}\footnote{Para esta ecuación es más sencillo calcular el $\frac{dP^{sat}}{dT}$ por medio de calcular la pendiente.}.
+
+La ecuación \ref{eqn:cc} es importante debido a que a partir de esta se puede generar la \textbf{ecuación de Antoine} por medio de ajustar los parámetros.
+Esta ecuación es:
+
+\insertequation[\label{eqn:Antoine}]{\log_{10} (P^{sat})= A-\frac{B}{T-C}}{}
+
+La ecuación de Antoine (\ref{eqn:Antoine}) presenta 3 parámetros $A,B,C$, estos parámetros son extraidos desde bibliografía, y solo funcionan en los intervalos de temperatura que se encuentran estipulados en la bibliografía; a su vez, en la bibliografía podremos encontrar si es $ln$ o $log_{10}$ y cuales son las unidades de medida de la presión y temperatura.
+Esta ecuación es muy importante, debido a que nos permite encontrar la presión de saturación a una temperatura dada de una forma más sencilla que la ecuacion \ref{eqn:cc}
+
+\subsubsection{Cambios en la energía de Gibbs con la presión}
+
+Partiendo desde la ecuación fundamental de la energía de Gibbs:
+
+\insertequation{dG=-SdT + VdP}{}
+
+Como queremos ver el efecto de la presión, asumimos $dT=0$, entonces tenemos que:
+
+\insertequation{dG=VdP}{}
+
+Esta ecuación es la base de la mayoría de las derivaciones en equilibrios de fase. Para evaluar los cambios de G necesitamos P-V-T de los fluidos\footnote{Pueden estar tabuladas o extraidas de EoS}. Integrando esta expresión tenemos que:
+
+\insertequation{G_2-G_1=\int_{P1}^{P2}VdP \text{(T cte)}}{}
+
+Cuando estamos trabajando con fluidos reales, podemos dejar $dG$ en función de Z a través de la siguiente ecuacion:
+
+\insertequation{dG=RTZ \frac{dP}{P}}{}
+
+Esto nos permite utilizar correlaciones generalizadas o EoS explicitas para Z en función de T y P. Cuando estamos en un gas ideal $Z=1$, por ende:
+
+\insertequation{dG^{ig}=RT\frac{dP}{P}=RTd\ln P}{}
+
+Luego
+
+\insertequation{\Delta G^{ig}=\int_{P1}^{P2}\frac{RT}{P}dP = RT \ln \frac{P_2}{P_1}}{}
+
+Tanto $dG$ como $dG^{ig}$ tienden a infinito cuando $P\approx 0$, por lo cual son difíciles de tratar a bajas presiones. Pero cuando estamos trabajando con fluidos reales, cuando $P\rightarrow 0 \Rightarrow Z\rightarrow 1$. De esta forma $dG-dG^{ig}$ se mantiene finito, y tiende a 0 cuando la presión tiende a 0.
+
+A partir de $dG-dG^{ig}$ podemos obtener una nueva función residual:
+
+\insertalign{dG-dG^{ig}&= (V-V^{ig})dP\\
+    &=\left( \frac{ZRT}{P}-\frac{RT}{P}  \right) dP \\
+    &= \frac{RT}{P} (Z-1) dP 
+}
+Con lo que llegamos a
+
+\insertequation[\label{eqn:Dgibbs}]{\frac{d(G-G^{ig})}{RT}=\frac{Z-1}{P}dP}{}
+
+Esta nueva propiedad residual se utiliza para definir una nueva propiedad, la \textbf{fugacidad}.
+
+\subsubsection{Fugacidad}
+
+En un principio la energía libre de Gibbs nos permite resolver todos los problemas de equilibrio de fase, sin embargo se introdujo la fugacidad como una propiedad que nos permite hacer esto mismo. Pero la fugacidad posee una ventaja por sobre G, y es que para mezclas es una sencilla extensión del trabajo para fluidos puros.
+
+G.N. Lewis define la fugacidad como:
+
+\insertequation{dG=VdP=RTd\ln f}{}
+
+Por medio de la definición en \ref{eqn:Dgibbs} tenemos que:
+
+\insertequation[\label{eqn:DG}]{d(G-G^{ig}) = RTd\ln \frac{f}{P}   }{}
+
+Donde $f$ es la fugacidad del fluido. Y esta se define por:
+
+\insertequation[\label{eqn:defuga}]{f=\varphi P}{}
+
+Donde $\varphi$ se define como el coeficiente de fugacidad. Cuando estamos tratando con un gas ideal se cumple que $\varphi=1$ lo que implica que $f^{ig}=P$. Mientras que para un fluido real $\varphi \neq 1$.
+Integrando la ecuacion \ref{eqn:DG} desde una presión baja, a temperatura constante, tenemos que:
+
+\insertequation[\label{eqn:fuga}]{\frac{G-G^{ig}}{RT}=\ln(\frac{f}{P})=\ln \varphi}{}
+
+De esta forma, el coeficiente de fugacidad es otra manera de caracterizar la energía residual de Gibbs a T y P fijas. 
+Podemos seguir trabajando la ecuación \ref{eqn:fuga} de forma de llegar a que:
+
+\insertequation[\label{eqn:fugav}]{\ln(\frac{f}{P})= \ln \varphi = \frac{1}{RT} \int_{0}^{P} \left( V-\frac{RT}{P}  \right) dP }{}
+
+Utilizando el coeficiente de compresibilidad en la ecuación \ref{eqn:fugav} llegamos a que:
+
+\insertequation{ \ln(\frac{f}{P})= \ln \varphi = \frac{1}{RT} \int_{\infty}^{V} \left( \frac{RT}{V}-P \right)dV + (Z-1)-\ln Z  }{}
+
+La fugacidad nos permite evaluar la no-idealidad de un fluido mediante que tan lejano es este valor de 1.
+
+\subsubsubsection{Fugacidad para equilibrio de fases}
+
+Partiendo de que en el equilibrio de fases, tenemos que:
+
+\insertequation{G^L = G^V }{}
+
+Al restar a ambos lados la energía de Gibbs ideal, y dividir por RT, llegamos a que:
+
+\insertequation{ \frac{(G^L-G^{ig})}{RT} = \frac{(G^V-G^{ig})}{RT} }{}
+
+Reemplazando en la ecuación \ref{eqn:fuga} tenemos que:
+
+\insertequation{ \ln(\frac{f^L}{P}) = \ln(\frac{f^V}{P}) }{}
+
+Lo que permite llegar a que:
+\insertequation{ f^V=f^L}{}
+
+\insertequation{ \varphi^V  = \varphi^L}{}
+
+De esta forma, tanto la fugacidad como el coeficiente de fugacidad nos van a permitir calcular las fases de equilibrio.
+
+\subsubsubsection{Cálculo de fugacidad en gases}
+
+Para el cálculo de la fugacidad en gases se debe proceder primero al cálculo del coeficiente de fugacidad, y luego utilizar la ecuación \ref{eqn:defuga}.
+
+La forma de calcular $\varphi$ será diferente para cada ecuación de estado:
+
+\textbf{Gas ideal:}
+
+\insertequation{\varphi^{ig}=1 \text{ y } f^{ig}=P}{}
+
+\textbf{Ecuación Virial:}
+
+\insertalign{ \ln \varphi &= \frac{BP}{RT}\\
+&= \frac{P_r}{T_r} (B^0 + \omega B^1)
+}{}
+
+Donde $B^0$ y $B^1$ son los coeficientes de la ecuación virial definidos en \ref{eqn:virial}.
+
+\textbf{Van der Waals:}
+
+\insertequation{ \ln \varphi = Z-1-\frac{a}{RTV}-\ln\left[ Z\left( 1-\frac{b}{V} \right)  \right]  }
+
+Donde $a$ y $b$ son los coeficientes de la ecuación van der Waals definida en \ref{eqn:vdw}.
+
+\textbf{Soave-Redlich-Kwong:}
+
+\insertalign{
+    \ln \varphi &= Z-1-\ln(Z-B') -\frac{A'}{B'}\ln\frac{Z+B'}{Z}\\
+    A'&=\frac{aP}{(RT)^2}\\
+    B'&=\frac{bP}{RT}
+}
+
+Donde $a$ y $b$ son los coeficientes de la EoS SRK en la ecuación \ref{eqn:srk}.
+
+\textbf{Peng-Robinson:}
+
+\insertalign{
+    \ln \varphi &= Z-1-\ln(Z-B') - \frac{A'}{2\sqrt{2}B' \ln \frac{Z+(1+\sqrt{2}B')}{Z+(1-\sqrt{2}B'}}\\
+    A'&=\frac{aP}{(RT)^2}\\
+    B'&=\frac{bP}{RT}
+}
+
+
+Para casos generalizados podemos usar:
+
+\insertequation{  \ln \varphi = \frac{1}{RT} \int_{0}^{P} \left( V-\frac{RT}{P}  \right) dP = \frac{1}{RT} \int_{\infty}^{V} \left( \frac{RT}{V}-P \right)dV + (Z-1)-\ln Z 
+}{}
+
+Y también, para aquellos casos que se disponga de gráficos tenemos que 
+
+\insertequation{\ln \varphi = \ln \varphi^0 + \omega \ln \varphi^1}{}
+
+Estos valores se obtienen de los siguiente gráficos:
+
+\begin{images}{Diagramas que representan los dos parámetros de la ecuación de arriba.}
+    \addimage{img/imagenes/lnphi0}{width=7cm}{$\ln \varphi^0$}{}
+    \addimage{img/imagenes/lnphi1}{width=7cm}{$\ln \varphi^1$}{}
+\end{images}
+
+\subsubsection{Cálculo de fugacidad en líquidos}
+
+Para entender como calcular la fugacidad de un líquido, hay que tener presente el siguiente diagramam:
+
+\insertimage[\label{img:poy}]{img/imagenes/fugacity_liq}{width=7cm}{Diagrama que representa el cambio de estados a temperatura constante.}{}
+
+Para poder obtener la fugacidad de un líquido se utiliza el \textbf{Método de Poynting}.
+En primer lugar a partir de la definición de fugacidad podemos obtener que:
+
+\insertequation{ RT\ln \frac{f_D}{f_{sat}}=\int_{P^{sat}}^{P_D}VdP }{}
+
+Los líquidos por lo general al sufrir cambios grandes de presión, no sufren grandes cambios de volumen, como se puede ver en el cambio desde el estado D al C en la figura \ref{img:poy}.
+Por lo cual, podemos asumir que el líquido es incompresible, lo que nos deja que:
+
+De esta forma obtenemos:
+
+\insertequation[\label{eqn:poy1}]{f = \varphi^{sat}P^{sat} \exp(\frac{V^{L,sat}(P-P^{sat})}{RT})  }{}
+
+El volumen del líquido saturado puede ser obtenido de forma experimental (por medio de la densidad) o estimando con la ecuación de \textbf{Rackett}\footnote{Esta ecuación solo debe ser usada para este caso, en otros casos no tiende a funcionar bien la aproximación}. La ecuación de \textbf{Rackett} es:
+
+\insertequation{V^{L,sat} = V_c Z_c^{(1-T_r)^{0.2857}} }{}
+
+En la ecuación \ref{eqn:poy1} el exponencial presente se denomina como factor de Poynting:
+
+\insertequation{POY= \exp(\frac{V^{L,sat}(P-P^{sat})}{RT})  }
+
+Cuando estamos en presiones bajas tenemos que $\varphi^{sat}\approx 1$. Cuando $P\approx P^{sat}$ se tiene que $POY\approx 1$.
+Luego, por esta razón, cuando tenemos presiones bajas y cercanas a la de saturación:
+
+\insertequation{f=P^{sat}}{}
+
+Cabe recalcar que para la mayoría de compuestos en condiciones normales se tiene que $POY\approx 1$, por lo cual:
+
+\insertequation{f^L\approx \varphi^{sat}P^{sat}}{}
+
+Cabe mencionar que el método de Poynting no solamente puede ser utilizado según plantea la ecuación \ref{eqn:poy1}. Este método en realidad lo que hace es hacer una corrección a la fugacidad en un punto isocórico e isotérmico (mismo volumen y temperatura), y le hace una corrección, la cual viene dada por el $POY$. De esta forma,
+generalizando tenemos que, si sabemos la fugacidad en el punto A, la cual es $f_A=\varphi_A P_A$, podemos cálcular la fugacidad en el punto B, por medio de la siguiente ecuación:
+
+\insertequation{ f_B= f_A \exp( \frac{V (P_B - P_A)}{RT} ) }{}
+
+Siempre y cuando $V_B=V_A=V$ y $T_B=T_A=T$.
+\subsubsection{Cálculo de fugacidad en sólidos}
+
+Para el cálculo de la fugacidad en la fase sólida también se utiliza el método de Poynting, la única diferencia es que el volumen utilizado es $V^{S}$. Quedando la ecuación como:
+
+\insertequation{f^S =   \varphi^{sat}P^{sat} \exp(\frac{V^{S}(P-P^{sat})}{RT})}{}
+
+El coeficiente de fugacidad en la saturación se puede obtener con cualquiera de los métodos utilizados para la fase de vapor.
+
+Al igual que con los líquidos, el factor de Poynting es usualmente cercano a 1, por lo que la fugacidad se puede aproximar a:
+
+\insertequation{f^S \approx \varphi^{sat}P^{sat}}{}
