@@ -182,6 +182,11 @@ En estas relaciones nace de que en el pseudo-equilibrio, la concentración de un
 La cantidad de relaciones que se agregan al sistema de ecuaciones que consta este proceso es igual a ($S_3$-1). Debido a que de las tres relaciones que se pueden obtener (en este caso), solo dos son LI.
 De modo que en este tipo de procesos, la cantidad de relaciones por defecto es $Rel=S_3-1$. Donde $S_3$ es la cantidad de sustancias en el extracto.
 
+Por otro lado, también tenemos una relación que aparece si y sólo si esta es mencionada en el enunciado del problema (o se pide cálcular), esta es la \textbf{relación de oclusión}. Esta hace referencia a cuantas partes de la solución el sólido atrapa. Esta se cálcula por medio de la siguiente ecuación:
+
+\insertequation{\{\text{\% Oclusión}\}=\frac{\text{Sólución en refinado}}{\text{Sólido en refinado}}=\frac{F_4*(w_{w24}+w_{34}+w_{44})}{F_4*(w_{14})}
+}
+
 \clearpage
 \section{Deshidratación Osmótica}
 
@@ -355,7 +360,7 @@ Cuando tenemos este tipo de balances, hay que realizar los dos, es decir, se deb
 Dependiendo de cuales son los resultados podemos sacar diferentes conclusiones.
 
 \begin{table}[h]
-    \begin{tabular}{|l|l|l|}
+    \begin{tabular}{|l|l|p{10cm}|}
     \hline
     $GL_{BM}$  & $GL_{BC}$  & Conclusión                                                                                                        \\ \hline
     1 o más    & 1 o más    & El problema no se puede resolver                                                                                  \\ \hline
@@ -366,6 +371,336 @@ Dependiendo de cuales son los resultados podemos sacar diferentes conclusiones.
     -1 o menos & -1 o menos & El problema se puede resolver, y los balances están desacoplados. Pero ambos están sobreespecificados.            \\ \hline
     \end{tabular}
 \end{table}
-
+\clearpage
 \subsection{Intercambiadores de Calor}
+
+Los intercambiadores de calor tienen la finalidad de trnasferir energía calórica entre dos fluidos a distintas temperaturas.
+\insertimage[]{img/imagenes/intercambiador1}{width=10cm}{Modelo de un intercambiador de calor.}
+Estos son usados para:
+
+\begin{itemize}
+    \item Calefacción, refrigeración y acondicionamiento del aire.
+    \item Pasterurización de leche y otros fluidos en la industria de alimentos.
+    \item Obtención de vapor de agua en procesos de generación de electricidas y otras aplicaciones.
+    \item Refinación del petroleo y otros procesos petroquímicos.
+    \item Separación de gases a bajas temperaturas de criogenia.
+\end{itemize}
+
+Estos intercambiadores pueden ser clasificados en 3 tipos:
+
+\begin{itemize}
+    \item \textbf{Intercambiador de calor de tubos concéntricos}: Este intercambiador proporciona superficies de transferencia de calor a bajo costo siendo usado mayoritariamente cuando la superficie total requerida es pequeña.
+    \item \textbf{Intercambiador de calor de tubos y carcasa}: Este es ampliamente usado en la indstria de procesos químicos y bioprocesos para transferencia de calor sensible y latente. Aporta mayores superficies de transferencia de calor que el de doble tuvo.
+    \item \textbf{Intercambiador de calor de placas}: Este es un intercambiador de calor cmpacto con gran superficie de intercambio de calor por unidad de volumen, es de fácil limpieza y ampliación. Este siempre es a contraflujo.
+\end{itemize}
+
+\begin{images}[\label{imagenmultiple}]{Tipos de intercambiadores de calor.}
+    \addimage[]{img/imagenes/intercambiadortubos}{width=5cm}{Intercambiador de calor de tubos concentricos.}
+    \addimage{img/imagenes/intercambiadorcarca}{width=5cm}{Intercambiador de calor detubos y carcasa.}
+    \addimage{img/imagenes/intercambiadorplacas}{width=5cm}{Intercambiador de de calor deplacas}
+\end{images}
+
+Estos intercambiadores pueden ser modelados por el siguiente sistema, dependiendo si los flujos que intercambian calor son a contra o co corriente.
+
+
+\begin{images}[\label{imagenmultiple}]{Tipos de intercambiadores de calor.}
+    \addimage[]{img/imagenes/cocorriente}{width=7.5cm}{Intercambiador de calor con flujos a cocorriente.}
+    \addimage{img/imagenes/contracorriente1}{width=7.5cm}{Intercambiador de calor con flujos a contracorriente.}
+\end{images}
+
+Este tipo de procesos se basa en que hay un intercambio de calor entre los dos flujos. Por ende se tiene el siguiente balance de energía.
+
+\insertequation{  \text{Energía flujo in 1} + \text{Energía flujo in 2} = \text{Energía flujo out 1} + \text{Energía flujo out 2}}
+
+Dado que tenemos dos flujos separados, podemos asumir dos temperaturas de referencia, una para cada flujo del intercambiador de calor. 
+
+Por otra parte, dado que no se mezclan los flujos, se puede hacer una trivialización del balance de masa de los flujos del intercambiador, de esta manera, se tienen que el flujo y composición de los flujos de cada compartimento del intercambiador
+se mantienen constantes tanto a la entrada como a la salida del flujo. De esta forma simplemente tomamos las variables de corriente de una corriente, y asumimos que es la misma al otro lado. Así no usamos el balance de materia, de modo que los grados de libertad cambian.
+
+\clearpage
+
+\section{Sistemas Reaccionantes}
+
+En los sistemas reaccionantes van a haber reacciones químicas que ocurren dentro de la unidad de procesos. En este caso va a haber un componente de generación y consumo. De esta forma el diagrama del procesos queda.
+
+\insertimage[]{img/imagenes/Reaccion}{width=10cm}{Diagrama de un sistema reaccionante.}
+
+En este sistema tenemos que el balance queda expresado como:
+
+\insertalign{
+    \text{Entrada} + \text{Generación Neta}&=\text{Salida} \\
+    \text{Generación Neta}&=\text{Generación en el sistema}-\text{Consumo en el sistema}
+}
+
+\subsection{Velocidad de reacción}
+
+En una reacción química vamos a tener un término que define la generación neta de esta. Esta se define como la velocidad neta de generación, esta sigue la siguiente ecuación:
+
+\insertequation{R_i = \sigma_i r}
+
+Donde:
+\begin{itemize}
+    \item $R_i$: Velocidad neta de generación del componente i.
+    \item $\sigma_i$: Coeficiente estequiométrico del compuesto i.
+    \item $r$: Velocidad de específica de la reacción.
+\end{itemize}
+
+Los valores de $R_i$ y $\sigma_i$ son negativos para las sustancias consumidas (reactantes) y positivos para las sustancias producidas (productos). También, se define $r$ como una variable de unidad en estos sistemas reaccionantes.
+
+Un ejemplo de como extraer los $\sigma$ de una reacción química es:
+\begin{center}
+    \schemestart
+    \chemfig{CH_4 + 2O_2} \arrow{->} \chemfig{2H_2O + CO_2}
+    \schemestop 
+\end{center}
+
+En este caso si tomamos (1) \chemfig{CH_4}, (2) \chemfig{O_2}, (3)\chemfig{H_2O} y (4)\chemfig{CO_2}. Entonces:
+
+\begin{itemize}
+    \item $\sigma_1 = -1$
+    \item $\sigma_2 = -2$
+    \item $\sigma_3 = 2$
+    \item $\sigma_4 = 1$
+\end{itemize}
+
+Cabe recalcar que el $\sigma$ de los reactantes es negativo, y el de los productos positivo.
+\subsection{Balance de componentes}
+
+El balance de componentes en un sistema reaccionante toma en cuanta la generación neta de los componentes. De esta menera se puede definir el balance de componentes para el compuesto i como:
+
+\insertequation{
+    \sum_{j=1}^{N_e} N_i x_{ij} + \sigma_i r - \sum_{j=N_e+1}^{N} N_j x_{ij}=0
+}
+
+Si una sustancia no participa de la reacción, entonces $\sigma_i=0$.
+
+\subsubsection{Grados de libertad}
+
+Los grados de libertad en estos sistemas toman en consideración la nueva variable de unidad que se agrega al sistema. De modo que los grados de libertad quedan como:
+
+\insertequation{GL=NV_c +NV_u - NE - Rel - D - BC}
+
+Estas variables significan lo siguiente:
+\begin{itemize}
+    \item $GL$: Grados de libertad.
+    \item $NV_c$: Número de variables de corriente
+    \item $NV_u$: Número de variables de unidad. En este caso este valor es igual al número de reacciones químicas.
+    \item $NE$: Número de ecuaciones.
+    \item $Rel$: Número de realaciones.
+    \item $D$: Cantidad de datos entregados.
+    \item $BC$: La base de cálculo.
+\end{itemize}
+
+\subsection{Relaciones en sistemas reaccionantes}
+
+En los sistemas reaccionantes definimos diferentes relaciones para poder describir y estudiar mejor estos sistemas.
+\subsubsection{Reactivo limitante}
+
+Para definir cual es el reactivo limitante de la reacción se define la siguiente relación.
+
+\insertequation{ 
+    \frac{\sum_{j=1}^{N_e}N_{i,j}}{\sum_{j=1}^{N_e}N_{k,j}}=\frac{\sigma_i}{\sigma_k}
+}
+
+Donde $k$ es el reactivo limitante. De forma que, si esta relación se satisface para el reactivo limitante $k$ y el reactivo en exceso $i$, entonces tenemos que $k$ es el reactivo limitante. Si no se cumple y sólo hay dos reactantes, entonces el reactivo limitante es el otro compuesto.
+
+En este caso, podemos  definir el exceso de i como:
+
+\insertequation{
+    \text{Exceso de i}=\sum_{j=1}^{N_e}N_{i,j}-\frac{\sigma_i}{\sigma_k}\sum_{j=1}^{N_e}N_{k,j}
+}
+
+\subsubsection{Porcentajes}
+
+El \textbf{porcentaje de exceso} se define como:
+
+\insertequation{
+    \{\text{Porcentaje de exceso de 'i'}\}=100 \frac{\sum_{j=1}^{N_e}N_{i,j}-\frac{\sigma_i}{\sigma_k}\sum_{j=1}^{N_e}N_{k,j}}{\frac{\sigma_i}{\sigma_k}\sum_{j=1}^{N_e}N_{k,j}}
+}
+
+Este porcentaje describe la relación porcentual entre los  moles de exceso de un reactante 'i' y los moles requeridos para reaccionar completamente con el limitante 'k'.
+
+Por otro lado, tenemos el \textbf{porcentaje de conversión} del compuesto 'i', este se puede definir como:
+
+\insertalign{
+    \{\text{\% conversión de 'i'}\}&=100 *\frac{\text{Lo que se convierte}}{\text{Lo que entra}}=100*\frac{(\sigma_i)r}{\sum_{j=1}^{N_e}N_{i,j}}\\
+    &=100*\frac{\text{Lo que entra}-\text{Lo que sale}}{\text{Lo que entra}}=100*\frac{\sum_{j=1}^{N_e}N_{i,j}-\sum_{j=N_e+1}^{N}N_{i,j}}{\sum_{j=1}^{N_e}N_{i,j}}
+}
+
+En aquellos casos donde 'i' corresponde al reactivo limitante de la reacción, su porcentaje de conversión coincide con el grado de complementamiento de la reacción.
+\subsection{Balance de energía}
+\subsubsection{Reacciones de combustión}
+
+Este tipo de reacciones se pueden definir como reacciones de oxidación rápidas a altas temperaturas. Estas reacciones poseen una gran importancia en la industría química dada la alta cantidad de calor generado para producir el vapor. Un ejemplo de una reacción de combustión es la siguiente:
+
+\begin{center}
+    \schemestart
+    \chemfig{C_3H_8  + 5O_2} \arrow{->} \chemfig{4H_2O  + 3CO_2 }
+    \schemestop 
+\end{center}
+
+En estas reacciones solo si la T° en algún punto del reactor excede los 500°C, la velocidad de generación de calor superará la velocidad de pérdida de calor en la zona de reacción.
+El gas adyacente a esa zona se calienta por encima de los 500°C y así sucesivamente aumentando la T° del gas rápidamente hasta varios miles de grados en sólo una fracción de segundos.
+
+Existen diferentes tipos de combustibles.
+\begin{itemize}
+    \item \textbf{Combustibles sólidos}: Principalmente carbón (mezcla de carbono, agua, cenizas no combustibles, hidrocarburos y azufre) y en menor medida madera y desperdicios sólidos.
+    \item \textbf{Combustibles líquidos}: Principalmente hidrocarburos obtenidos por la destilación de petróleo. Existe un interés creciente en el uso de alcoholes que se obtienen por fermentación.
+    \item \textbf{Combustibles gaseosos}: Principalmente gas natural (80-95\% de metano, el resto es etano, propano y butano), hidrocarburos ligeros obtenidos a partir del petróleo e hidrógeno.
+\end{itemize}
+
+\subsubsection{Calor de reacción}
+ 
+Las reacciones químicas tienen asociado un componente energético (entálpico) que viene dado por la transformación de los reactantes a productos. Este se denomina \textbf{Calor de reacción $\Delta H_r$} el cual se expresa en unidades de energía por mol de reacción.
+Esta cantidad depende de tanto la presión, temperatura y las fases en las que se encuentran los reactantes y productos.
+
+En condiciones estándar este calor se cálcula de la siguiente manera:
+
+\insertequation{
+    \Delta H_{r}^{\circ}=\sum_{i=1}^{S}\sigma_i (\Delta H_f^{\circ})_i
+}
+
+En esta ecuación se hace presente el \textbf{calor de formación $\Delta H_f^{\circ}$}, este calor hace referencia al calor de la formación del compuesto S a partir de sus comstituyentes elementales en condiciones estandar (p°=1 atm, T°=25°C).
+Este valor puede ser obtenido a partir de tablas.
+
+Cuando no estamos en condiciones estandar el calor de reacción se cálcula mediante la siguiente ecuación:
+
+\insertequation{
+    \Delta H_r =  \Delta H_r^{\circ} + \sum_{i=1}^{S} \sigma_i [ H_i(T)-H_i° ]
+}
+Donde 
+
+\insertequation[\label{eqn:cp_reac}]{
+    H_i(T)-H_i°=\int_{T°}^{T} (c_p)_i dT
+}
+
+Considerar que T° y $H_i°$ son las respectivas cantidades en condiciones estándar.
+
+Hay que tener cuidado cuando se utiliza la ecuación \ref{eqn:cp_reac} dado que el $c_p$ que se debe utilizar es aquel que corresponde a la fase a la cual se enuentra el compuesto en la temperatura $T$. Es decir, si por ejemplo el compuesto entra en una corriente a una temperatura $T_a$ y está en estado líquido, el $c_p$ es el $c_{pl}$.
+
+\subsubsection{Ecuación de balance de energía}
+
+El balance de energía en un sistema reaccionante puede ser modelado por la siguiente expresión:
+
+\insertequation{
+    \sum_{j=1}^{N_e} \sum_{i=1}^{S} N_{ij}\Delta H_{ij}+\frac{\partial Q}{\partial t} - r \Delta H_r=  \sum_{j=N_e+1}^{N} \sum_{i=1}^{S} N_{ij}\Delta H_{ij}
+}
+
+En este caso hay que tener presente que cuando estamos tratando con un sistema reaccionante la temperatura de referencia para calcular los $\Delta H$ es \textbf{siempre 25°C}.
+
+\subsection{Calderas}
+
+\insertimage[]{img/imagenes/caldera}{width=8cm}{Modelo de una caldera.}
+
+Las calderas son utilizadas para calentar agua a temperatura superior a la ambiente y generar vapor a una presión mayor que la atmosférica.
+Estas consisten de una cámara en la que se realiza la combustión usando aire. La transferencia de calor se realiza a través de una superficie como en los intercambiadores de calor.
+Esta unidad de proceso puede ser diagramada por medio del siguiente diagrama de flujo.
+
+\insertimage[]{img/imagenes/calderadiagra}{width=7.5cm}{Diagrama de flujo de una caldera.}
+
+\subsubsection{Calor de combustión}
+
+Este es el calor que se libera al oxidar una sustancia completamente con una cantidad estequimétrica de oxígeno atmosférico en condiciones estándar.
+Cuando se genera la combustión de un combustible se genera a partir del carbono \chemfig{CO_2}, a partir del hidrógeno \chemfig{H_2O}, a partir del nitrógeno \chemfig{N_2} y a partir del azufre \chemfig{SO_2}. 
+La mayor parte de estos productos están en estado gaseoso bajo condiciones estándar, \chemfig{H_2O} se encuentra en estado líquido aunque la combustión (muy exotérmica) normalmente produce vapor de agua.
+
+A partir de esto último es que se definen dos calores de combustión.
+
+\begin{itemize}
+    \item \textbf{Calor alto de combustión}: Este calor es el que se genera cuando los compuestos alcanzan su estado estándar. Es a partir de esto que se aprovevha del calor latente del agua dado que esta se encuentra en estado líquido.
+    \item \textbf{Calor bajo de combustión}: En este calor no se aprovecha el calor latente del agua, por lo cual que todos los productos de la combustión se encuentran en fase gaseosa.
+\end{itemize}
+
+\begin{images}[\label{imagenmultiple}]{Calores de combustión.}
+    \addimage[]{img/imagenes/caloralto}{width=7.5cm}{Reacción del calor alto.}
+    \addimage{img/imagenes/calorbajo}{width=7.5cm}{Reacción del calor bajo.}
+\end{images}
+
+Se puede generar una relación sobre como calcular el calor bajo a partir del calor alto, y viceversa. Esta es:
+
+\insertequation[\label{eqn:calor_bajoyalto}]{
+    \Delta H_{r1}°=\Delta H_{r2}°-21896 n
+}
+
+En esta ecuación $\Delta H_{r1}°$ es el calor de combustión del calor alto y $\Delta H_{r2}°$ es el calor de combustión del calor bajo, y $n$ es el factor estequiométrico del agua en la ecuación balanceada. En términos más sencillos, $n$ es el factor que está en la composición general del combustible.
+
+\subsubsection{Temperatura de llama adiabática}
+
+La temperatura de llama adiabática ($T_{ll}$) de un combustible corresponde a la máxima temperatura que se puede alcanzar al quemarlo, cuando tanto él como el aire se encuentran inicialmente en condiciones estándar (25°C @ 1 atm).
+
+\insertimage{img/imagenes/llama1}{width=7.5cm}{Diagrama de la temperatura de llama adiabática.}
+
+Luego tenemos diferentes condiciones de los sistemas en los cuales la temperatura de los flujos que salen del quemador cambian.
+
+\begin{images}[\label{imagenmultiple}]{Casos de la temperatura de llama adiabática.}
+    \addimage[]{img/imagenes/llama2}{width=7.5cm}{Combustión con conversión incompleta.}
+    \addimage{img/imagenes/llama3}{width=7.5cm}{Combustión con exceso de aire.}
+    \addimage{img/imagenes/llama4}{width=7.5cm}{Combustión con quemador no adiabático.}
+\end{images}
+
+\subsubsection{Composición atómica del carbón}
+
+Si tenemos que el combustible que se utiliza en una combustión posee la siguiente composición \chemfig{C_mH_nO_oN_pS_q} el cual está compuesto por $w_C$ de carbono, $w_H$ de hidrógeno, $w_O$ de oxígeno, $w_N$ de nitrógeno, $w_S$ de azufre y $w_{Ceniza}$ de ceniza. Asumiendo
+una masa molar de $100 g/mol$ de combustible libre de ceniza, entonces tenemos que:
+
+\insertalign{
+    m=\frac{100*w_C}{12(1-w_{Ceniza})}\\
+    n=\frac{100*w_H}{1(1-w_{Ceniza})}\\
+    o=\frac{100*w_O}{16(1-w_{Ceniza})}\\
+    p=\frac{100*w_N}{14(1-w_{Ceniza})}\\
+    q=\frac{100*w_S}{32(1-w_{Ceniza})}
+}{}
+
+Y la ecuación estequimétrica de la combustión queda definida por:
+
+\insertequation{
+    \chemfig{C_mH_nO_oN_pS_q}+(m+\frac{n}{4}-\frac{o}{2}+q)\chemfig{O_2} \rightarrow m \chemfig{CO_2}+ \frac{n}{2} \chemfig{H_2O}+\frac{p}{2} \chemfig{N_2}+q \chemfig{SO_2}
+}
+
+La composición atómica del carbón nos permite además predecir el calor de combustión alto del combustible usado.
+Esta puede ser cálculada mediante la siguiente formula:
+
+\insertequation{
+    \Delta H_{r1}°=-PM_{carbon}*Q_{carbon}+RT°(-\frac{n}{4}+\frac{o}{2}+\frac{p}{2})
+}
+
+Donde
+\insertequation{
+    Q_{carbon}=34072*w_C+132210*w_H-11978(w_O+w_N)+6834*w_S-1529*w_{Cenizas}
+}
+
+Luego este valor puede ser utilizado en la ecuación \ref{eqn:calor_bajoyalto} para calcular el calor bajo de combustión $\Delta H_{r2}°$.
+
+\subsection{Sistemas con Multiples Reacciones}
+
+Si ocurre más de una reacción química independiente de forma simultánea, los términos de generación y consumo para cada sustancia reaccionante estarán relacionados por la estequiometría de las mismas de acuerdo a la siguiente ecuación:
+
+\insertequation{
+    R_i= \sum_{k=1}^{R} R_{ik}=\sum_{k=1}^{R}\sigma_{ik}r_k
+}
+
+De esta forma tenemos cual es la generación neta del compuesto 'i' a partir de las velocidades de reacción y coeficientes estequimétricos de cada compuesto en la respectiva reacción.
+
+Dentro de un sistema de multiples reacciones tenemos relaciones que describen a este sistema.
+
+
+\subsubsection{Selectividad}
+
+
+Este es la razón molar entre las producciones de un componente deseado 'i' y uno indeseado 'j', es decir.
+
+\insertalign{
+    \text{Selectividad}_{i/j}&=\frac{\text{Producción deseado}}{\text{Producción indeseado}}\\
+    &=\frac{\sum_{k=1}^{R}\sigma_{ik}r_k}{\sum_{k=1}^{R}\sigma_{jk}r_k}\\
+    &=\frac{\sum_{k=1}^{N_e}N_{ik}-\sum_{k=N_e+1}^{N} N_{ik}}{\sum_{k=1}^{N_e}N_{jk}-\sum_{k=N_e+1}^{N} N_{jk}}
+}{}
+
+\subsubsection{Rendimiento fraccional}
+
+Este valor es la razón porcentual entre la producción de un componente deseado 'i', a partir del reactante limitante 'k', y la máxima producción posible de 'i' a partir de 'k'.
+\textit{Moles de producto formado por moles que se formarían, si el reactivo limitante se utilizara solo para producir el compuesto de interés.}
+
+\insertalign{
+    \text{Rendimiento fraccional}_{i/k}&=100 \frac{\sum_{j=1}^{R}\sigma_{ij}r_j}{\frac{\sigma_{ij} }{\sigma_{kj}} \left( \sum_{m=1}^{N_e} N_{ij}-\sum_{m=N_e+1}^{N} N_{ij}  \right) } \\
+}{}
 
