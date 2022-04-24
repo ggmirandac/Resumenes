@@ -288,17 +288,19 @@ Donde $\overline{C_P}$ es la capacidad calorífica promedio.
 
 \subsection{Entalpía de Cambio de fase}
 
-El cambio de entalpía ($\Delta H$) que es necesario para el cambio de fase es el calor de vaporización. Este se compone de una componente que se refiere al cambio de temperatura, y una que hace referencia al cambio de estado en sí ($\Delta H_{lv}^°$).
+El cambio de entalpía ($\Delta H$) que es necesario para el cambio de fase es el calor de vaporización. Este se compone de una componente que se refiere al cambio de temperatura, y una que hace referencia al cambio de estado en sí ($\Delta H_{lv}$).
 Esta entalpía de vaporización es la siguiente:
 
 \insertequation{\Delta H_{lv}\approx \Delta H_{lv}^° + \int_{T_0}^T (C_{pv}-C_{pl})dT}{}
 
+Donde $H_{lv}°$ es la entalpía de vaporización estandar, es decir, a 25°C y a 1 atm. La expresión de la integral es la corrección que se debe hacer cuando no estamos en condiciones ideales.
+En este caso $T_0$ hace referencia a la temperatura estándar (25°C) y $T$ es la temperatura de cambio de fase a las condiciones que se están, la cual puede ser cálculada por medio de la Ecuación de Antoine.
 Estos valores están tabulados a presiones normales (1atm). Por lo cual se requiere ciertas correcciones cuando se trata de presiones diferentes a las atmosféricas. 
 En este caso se debe utilizar la ecuación de Antoine:
 
 \insertindexequation{\ln(P)=A-\frac{B}{T_e+C}}{Ecuación de Antoine}{}
 
-Para esta ecuación el valor de la presión (P) debe estar en kPa. Y a partir de esta ecuación podemos encontrar la temperatura de ebullición de un fluido a cualquier presión a partir de las constantes A, B y C, las cuales se encuentran tabuladas.
+Para esta ecuación el valor de la presión (P) debe estar en kPa (o lo que se mencione en la ecuación dada). Y a partir de esta ecuación podemos encontrar la temperatura de ebullición de un fluido a cualquier presión a partir de las constantes A, B y C, las cuales se encuentran tabuladas.
 La ecuación utilizada para encontrar el valor de $T_e$ es:
 
 \insertequation{T_e=\frac{B}{A-\ln(P)}-C}{}
@@ -307,3 +309,63 @@ Cuando queremos encontrar el cambio de entalpía de una sustancia, desde un punt
 De esta manera hay que considerar el cambio de fase que sufre la sustancia, por lo cual la ecuación que define esta cantidad es:
 
 \insertequation{\Delta H= \int_{T1}^{T_e}C_{Pl}dT+\Delta H_{lv}(T_e)+\int_{T_e}^{T2}C_{Pv}dT}{}
+
+Hay que notar que si estamos en condiciones diferentes a las estandar, la temperatura de ebullición cambia, y por ende, cambia el $\Delta H_{lv}$ también.
+
+\section{Balances de Energía}
+
+Como recordamos anteriormente, a partir de la primera ley de la termodinámica, nos podemos dar cuenta que la energía de un sistema no se crea ni se destruye. Por lo cual, cuando estamos analizando sistemas que tienen un cambio de temperatura se debe cumplir el siguiente balance:
+
+\insertalign{
+    \sum_{j=i}^{N_e} \sum_{i=1}^{S} F_{ij}\Delta H_{ij} (T_r) + \frac{\partial Q}{\partial T} = \sum_{j=N_e+1}^{N} \sum_{i=1}^{S} F_{ij}\Delta H_{ij} (T_r) + \frac{\partial W}{\partial T}
+}
+
+De esta ecuación, podemos darnos cuenta que hay que tomar un sistema de referencia, el cual se utiliza para poder calcular el $\Delta H$ de los compuestos que están intercambiando energía.
+La energía de referncia puede ser escogida de tal forma que, si es la misma que la de la corriente, está genera que el $\Delta H=0$ a través de la misma definición de $\Delta H$.
+
+Cuando seleccionamos nuestra temperatura de referencia, el $\Delta H$ queda como:
+
+\insertequation{\Delta H = \int_{Tr}^{T_{syst}} C_P(T) dT}
+
+Donde $T_r$ es la temperatura de referencia, y $T_{syst}$ es la temperatura del sistema (o la corriente). De aquí queda en evidencia la afirmación anterior que si $T_r = T_{syst}$ entonces $\Delta H=0$.
+\clearpage
+\subsection{Grados de libertad en un balance de energía}
+
+El análisis de grados de libertad en un sistema con un intercambio de energía difiere del balance de grados de libertad de un sistema solamente definido por el balance de masas.
+En estos sistemas hay que tener presente las variables energéticas del sistema.
+
+Para el cálculo de los grados de libertad de un balance de energía tenemos que:
+
+\insertalign{GL_{BC}=NV_c+NV_u-NE-Rel-D-BC}{}
+
+Los grados de libertad se denominan $GL_{BC}$ dado que es un balance combinado, hay tanto un balance de masa como uno de energía. 
+Las variables de ésta ecuación son:
+
+\begin{itemize}
+    \item $NV_c$: Número de variables de corriente. En este caso se cuentan tanto las cantidad de sustancias de cada corriente, como las temperaturas de estas corrientes. De modod que esta variable puede ser calculada por medio de la siguiente expresión. $\sum_{i=1}^{S} S_i+1$.
+    \item $NV_u$: Número de variables de unidad. Este número indica algún tipo de cambio en el tiempo, como puede ser una corriente de calor que está entrando al sistema, o algún tipo de reacción. En este caso se tiene que $NV_u=0$ si el sistema es adiabático, y $NV_u=0$ en el caso contrario.
+    \item $NE$: Número de ecuaciones. En este caso, dado que tenemos por un lado nuestro balance de masa, y además tenemos el balance de energía, podemos llegar a que $NE=S+1$.
+\end{itemize}
+
+
+
+El resto de valores permanece bajo la misma definición anterior, salvo que en este caso hay que considerar aquellos datos y relaciones enegéticas, es decir, que presenten componenetes como temperatura, calor, etc.
+
+Cuando tenemos este tipo de balances, hay que realizar los dos, es decir, se debe realizar tanto el análisis de grados de libertad del balance de masa $GL_{BM}$, como el del balance combinado $GL_{BC}$.
+Dependiendo de cuales son los resultados podemos sacar diferentes conclusiones.
+
+\begin{table}[h]
+    \begin{tabular}{|l|l|l|}
+    \hline
+    $GL_{BM}$  & $GL_{BC}$  & Conclusión                                                                                                        \\ \hline
+    1 o más    & 1 o más    & El problema no se puede resolver                                                                                  \\ \hline
+    1          & 0          & El problema se puede resolver, pero primero se debe resolver el balance de energía.                               \\ \hline
+    0          & 0          & El problema se puede resolver, y los balances están desacoplados.                                                 \\ \hline
+    -1 o menos & 0          & El problema se puede resolver, y los balances están desacoplados. Pero el balance de masa está sobreespecificado. \\ \hline
+    0          & -1 o menos & El problema se puede resolver, y los balances están desacoplados. Pero el balance de masa está sobreespecificado. \\ \hline
+    -1 o menos & -1 o menos & El problema se puede resolver, y los balances están desacoplados. Pero ambos están sobreespecificados.            \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Intercambiadores de Calor}
+
