@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1651544056 "/Users/gabrielmiranda/Desktop/Universicosas/Resumenes/main.tex" "main.pdf" "main" 1651544059
+["pdflatex"] 1651596383 "/Users/gabrielmiranda/Desktop/Universicosas/Resumenes/main.tex" "main.pdf" "main" 1651596387
   "/Users/gabrielmiranda/Desktop/Universicosas/Resumenes/main.tex" 1651541987 1952 f32cd10569557b82df20c0b18115f653 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -290,9 +290,9 @@
   "img/imagenes/residualvdw.png" 1651540882 23790 5a27df12b914b496725d48f6b4a7a0c8 ""
   "img/imagenes/residualvirial.png" 1651540882 48516 f48621c915b212230b7377620d7b857d ""
   "img/imagenes/tvscomp1.jpeg" 1651542494 156213 1cbaa8428b94c1ca25e08d06c67dfe16 ""
-  "main.aux" 1651544059 23641 b9ff756a8218ad84f7f208e6ea2b7646 "pdflatex"
+  "main.aux" 1651596386 25426 5caa9a56648511d12183b55caaaacdcd "pdflatex"
   "main.tex" 1651541987 1952 f32cd10569557b82df20c0b18115f653 ""
-  "main.toc" 1651544059 2794 7db599f38acdd48dbcce4f2fa7aedfdb "pdflatex"
+  "main.toc" 1651596386 3102 620536bee3620ca3277334f8e49e00eb "pdflatex"
   "src/cfg/final.tex" 1650336002 14421 2b55e2c2adc012c65f036753c6469236 ""
   "src/cfg/init.tex" 1650336002 31609 a2447b0ea13ec8f3d20a3f54cd567e5b ""
   "src/cfg/page.tex" 1650336002 23768 851d47931a01338d75b45ce1aad3785b ""
@@ -316,7 +316,7 @@
   "src/style/other.tex" 1650336002 1562 c09ed47646c682f35c5c498a0f01f3ce ""
   "template.tex" 1650336002 2521 f810808c8bd19fa1808715a655eb2448 ""
   "textarc/i1.tex" 1651542740 43481 3b6aa8eb921fc0d22f42e88d6c33ee0c ""
-  "textarc/i2.tex" 1651544056 4680 dbbab67c16e10f82b991e5629e2bb0ab ""
+  "textarc/i2.tex" 1651596380 6449 b6ce558833d7221125d51b12588d4b31 ""
   (generated)
   "main.aux"
   "main.log"
