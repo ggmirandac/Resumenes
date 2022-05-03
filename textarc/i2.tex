@@ -1,0 +1,77 @@
+
+\section{Sistemas Multicomponentes}
+
+\subsection{Introducción}
+
+En primer lugar vale la pena introducir qué es un sistema múlticomponente. Un sistema múlticomponente es aquel que presenta más de dos sustancias diferentes, por lo cual ya no nos encontramos trabajando con compuestos puros.
+Es en este caso donde tenemos sistemas compuestos por mezclas con elementos similares o completamente diferentes.
+
+El comportamiento de estas mezclas es el componente básico en la industria donde ocurren separaciones. Lo que hace que las separaciones sean factibles es que podemos llevar la mezcla a un estado donde las distintas fases con diferentes composiciones pueden coexistir.
+
+En primera instancia, para analizar estos sistemas hay que tener presenta la \textbf{Regla de las Fases de Gibbs}, la cuál viene dada por la siguiente ecuación.
+
+\insertequation{GL=2-\phi+N}{}
+
+Esta ecuación define los grados de libertad que se tienen en un problema. Donde $\phi$ es el número de fases en equilibrio, y $N$ corresponde al número de compuestos.
+
+Por ejemplo, en una mezcla binaria (dos compuestos) existen dos grados de libertad. Es decir, a presión constante, tanto la temperatura como la composición\footnote{Este comcepto será introducido más adelante.} pueden variar. De esta manera, para resolver estos problemas
+Cuando tenemos una variable constante, se requeriran de dos para resolverlo.
+
+\subsubsection{Los diagramas de fases}
+
+Cuando analizamos un sistema multicomponentes vamos a tener un gráfico en el cual vamos a mantener una de las variables (presión o temperatura), analizar el comportamiento P vs composición, o T vs composición. 
+
+Este comportamiento se ve reflejado en los siguientes diagramas.
+
+\begin{images}{Diagramas de fases}
+    \addimage[]{img/imagenes/tvscomp1}{width=7.5cm}{Diagrama Temperatura v/s Composición.}
+    \addimage[]{img/imagenes/pvscomp1}{width=7.5cm}{Diagrama Presión v/s Composición.}
+\end{images}
+
+La zona que podemos encontrar demarcada con blanco, en contraste con el gris del gráfico, es la zona donde coexisten las dos fases de ambos compuestos; en otras palabras,
+esta zona se compone de los dos compuestos en un equilibrio líquido-vapor, esta zona se denomina \textbf{envoltura de fases} o clásicamente \textit{\textbf{la lenteja}}.
+
+\subsubsubsection{Análisis de diagramas de fases}
+\clearpage
+\subsection{Separadores Flash}
+
+Los separadores flash son frecuentemente usados en la industria para separar una corriente de vapor saturado de una de líquido saturado.
+
+Este se puede diagramar por medio del siguiente diagrama.
+\insertimage[\label{img:flash}]{img/imagenes/flash1}{width=7cm}{Diagrama de un separador flash, la corriente F hace referencia a la correinte de entrada, la corriente V a la corriente de salida de vapor saturado, y la corriente L a la corriente de salida de líquido saturado.}
+
+\subsubsection{Cálculos Flash}
+A la hora de realizar cálculos en separadores Flash tenemos que las cantidades molares de cada uno de los compuestos 
+junto con un balance de masa nos permiten hacer cálculos sobre composiciones en la región de dos fases, esto se conoce como cálculos flash.
+
+Tenemos en un principio que el número inicial de moles se denota F, los cuales se separan en L moles de líquido y V moles de vapor. Esto nos deja el siguiente balance global:
+
+\insertequation[\label{eqn:flash1}]{F=L+V}{}
+
+Con esto también podemos darnos cuenta que las fracciones de vapor y líquido suman uno, esto viene por la siguiente relación dada por dividir por F la ecuación \ref{eqn:flash1}.
+\insertequation{1=\frac{L}{F}+\frac{V}{F}}{}
+
+Podemos tomarlo por componentes, con lo cual llegariamos a que:
+
+\insertequation{
+    z_A F= y_a V+ x_A L
+}
+
+Lo que en palabras es "\textit{La composición global por el flujo de entrada es igual: a la composición de vapor por la correinte de vapor,mas la composición de líquido por la corriente de líquido}. 
+
+Con esta ecuación podemos deducir una regla importante para este análisis, la \textbf{regla de la palanca}. Esta se deduce de la siguiente forma:
+
+\insertalign{
+    z_A F= y_a V+ x_A L \nonumber\\ 
+    z_A=y_A\frac{V}{F}+x_A\frac{L}{F} \nonumber\\
+    z_A=x_A\left( 1-\frac{V}{F} \right) + y_A \frac{V}{F}\nonumber\\
+    z_A=x_A - x_A\frac{V}{F}+y_A\frac{V}{F}\nonumber\\
+    \frac{z_A-x_A}{y_A-x_A}=\frac{V}{F} \nonumber\\
+    \frac{V}{F}= \frac{z_A-x_A}{y_A-x_A} \label{eqn:palanca1}
+}
+
+Donde la última expresión, la ecuación \ref{eqn:palanca1} es la regla de la palanca. También esta se puede tomar por la siguiente relación:
+
+\insertequation{ \frac{L}{F}=\frac{y_A-z_A}{y_A-x_A}  }{}
+
+La cual se obtiene de una forma similar a la anterior.

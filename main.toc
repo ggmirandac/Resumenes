@@ -1,4 +1,4 @@
-\babel@toc {spanish}{}
+\babel@toc {spanish}{}\relax 
 \contentsline {section}{\numberline {1}Repaso termodinámica}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Conceptos termodinámicos fundamentales}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Leyes de la termodinámica}{1}{subsection.1.2}%
@@ -21,3 +21,9 @@
 \contentsline {subsubsubsection}{\numberline {2.4.4.2}Cálculo de fugacidad en gases}{24}{subsubsubsection.2.4.4.2}%
 \contentsline {subsubsection}{\numberline {2.4.5}Cálculo de fugacidad en líquidos}{26}{subsubsection.2.4.5}%
 \contentsline {subsubsection}{\numberline {2.4.6}Cálculo de fugacidad en sólidos}{27}{subsubsection.2.4.6}%
+\contentsline {section}{\numberline {3}Sistemas Multicomponentes}{28}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Introducción}{28}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Los diagramas de fases}{28}{subsubsection.3.1.1}%
+\contentsline {subsubsubsection}{\numberline {3.1.1.1}Análisis de diagramas de fases}{29}{subsubsubsection.3.1.1.1}%
+\contentsline {subsection}{\numberline {3.2}Separadores Flash}{30}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Cálculos Flash}{30}{subsubsection.3.2.1}%
