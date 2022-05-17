@@ -49,6 +49,7 @@ Tenemos en un principio que el número inicial de moles se denota F, los cuales 
 \insertequation[\label{eqn:flash1}]{F=L+V}{}
 
 Con esto también podemos darnos cuenta que las fracciones de vapor y líquido suman uno, esto viene por la siguiente relación dada por dividir por F la ecuación \ref{eqn:flash1}.
+
 \insertequation{1=\frac{L}{F}+\frac{V}{F}}{}
 
 Podemos tomarlo por componentes, con lo cual llegariamos a que:
@@ -112,5 +113,136 @@ Pueden notar que solo existen 6 tipos de problemas que involucran un ELV. Usualm
 que se ubican dentro de la tabla. Se puede utilizar como estrategia general los siguientes puntos:
 
 \begin{itemize}
-    \item a
+    \item Decicidir si se conoce la composición del líquido, vapor o la global del enunciado.
+    \item Identigicar si el fluido está en el punto de burbuja o rocío.
+    \item Identificar si P, T o ambas son constantes. Decidir si el sistema es adiabático.
+    \item Utilizando la informaicón anterior, decicir en que fila nos debemos posicionar.
 \end{itemize}
+
+\subsubsection{Diagrama xy}
+
+Este diagrama es un diagrama que nos indica como se comporta la composición del vapor en función de la composición del líquido.
+En este cuando se tiene una intersección entre la línea de la composición de y con la recta que nos indica x=y, se dice que hay un azeótropox. Este punto es aquel en el cual la composición del líquido es la misma que la del vapor.
+\insertimage[]{img/imagenes/diagxy}{width=7.5cm}{Diagram de composición \textit{y} vs composición \textit{x}}
+\clearpage
+\subsection{Destilación}
+\insertimage[]{img/imagenes/desti1}{width=10cm}{Diagrama del proceso se destilación.}
+
+La destilación es un proceso continuo de separadores Flash lo cual nos permite purificar un compuesto de otro.
+En este proceso un compuesto \textit{light} sube dado que es más volátil, mientras que otro \textit{heavy} va a bajar dado que es menor volátil. Esta separación de fases es fundamental y para esto se define la \textbf{volatilidad relativa}.
+
+\insertequation{\alpha_{ij}=\frac{K_i}{K_j}}{}
+
+Donde i hace referencia al más liviano, mientras que j al más pesado, quedando definida como:
+
+\insertequation{\alpha_{LH}=\frac{K_LK}{K_HK}}{}
+
+Para una buena separación es primordial que $\alpha_{LH}>1$.
+
+Estos proceso de destilación se analizan por las siguientes curvas de destilación.
+
+\begin{images}{Diagramas de Destilación.}
+    \addimage[]{img/imagenes/desti2}{width=5cm}{Diagrama Temperatura-Composición de una destilación.}
+    \addimage[]{img/imagenes/desti3}{width=5cm}{Diagrama Composición-Composición de una destialción.}
+\end{images}
+
+Hay que tener presente que dado que se hacen separaciones según las fases, cuando nos encontramos con un azeótropo, no se puede destilar sobre este punto. Por eso, por ejemplo, el etanol no se puede alcanzar una pureza del 100\%.
+
+\subsection{Sistemas No Ideales}
+
+La Ley de Raoult nos sirviría solamente en los casos que los compuestos son de similar función y estructura química. Sin embargo, en la realidad estos sistemas son escasos en la naturales.
+Existen 4 casos de no-idealidad, estos son:
+\begin{itemize}
+    \item Desviación positiva de la Ley de Raoult: Hace referencia a cuando la curva del diagrama presión-composición esta por sobre lo estimado por la Ley de Raoult.
+    \item Azeótropo de presión máxima: Es cuando se forma un azeótropo en condiciones de una Desviación positiva de la Ley de Raoult.
+    \item Desviación negativa de la Ley de Raoult: Hace referencia a cuando la curva del diagrama presión-composición esta por debajo a lo estimado por la Ley de Raoult.
+    \item Azeótropo de presión mínima: Es cuando se forma un azeótropo en condiciones de una Desviación negativa de la Ley de Raoult.
+\end{itemize}
+
+Siendo los dos últimos casos los más extraños. Podemos ver estos casos representados en las siguientes imágenes.
+
+\begin{images}{Diagramas que representan la no-idealidad.}
+    \addimage[]{img/imagenes/raoultdp}{width=8cm}{Diagrama que presenta una desviación positiva de la ley de Raoult, junto a un azeótropo de presión máxima.}
+    \addimage[]{img/imagenes/raoultdn}{width=8cm}{Diagrama que presenta una desviación negativa de la ley de Raoult, junto a un azeótropo de presión mínima.}
+\end{images}
+
+\subsubsection{Conceptos para un equilibrio de fases generalizado}
+
+La generalización desde los Principios de compuesto puro a multicomponente requiere que consideremos como las propiedades termodinámicas cambian con respecto a la
+cantidad individual de cada componente. Para un fluido puro, las propiedades eran sencillamente una función de dos variables. Para una mezcla multicomponente, las energías
+y entropía también dependen de la composición.
+\insertalign{
+    d\underline{U}(T,P,n1,n2,\ldots,ni)=\left(\frac{\partial \underline{U}}{\partial P}\right)_{T,n} dP+\left(\frac{\partial \underline{U}}{\partial T}\right)_{P,n}+ \sum_i \left( \frac{\partial \underline{U}}{\partial ni} \right)_{P,T,n_{j\noteq i}} dn_i\\
+    d\underline{G}(T,P,n1,n2,\ldots,ni)=\left(\frac{\partial \underline{G}}{\partial P}\right)_{T,n} dP+\left(\frac{\partial \underline{G}}{\partial T}\right)_{P,n}+ \sum_i \left( \frac{\partial \underline{G}}{\partial ni} \right)_{P,T,n_{j\noteq i}} dn_i
+}{}
+
+A composición constante la mezcla debe seguir las mismas restricciones que un fluido puro. Esto se puede traducir en:
+\insertalign{
+    \left(\frac{\partial \underline{G}}{\partial P}\right)_{T,n}=\underline{V}\\
+    \left(\frac{\partial \underline{G}}{\partial T}\right)_{P,n}=-\underline{S}
+}
+
+Con esto podemos reordenar la ecuación antes mencionada, quedando en:
+\insertequation{
+    d\underline{G}=\underline{V} dP-\underline{S}dT+\sum_i \left( \frac{\partial \underline{G}}{\partial ni} \right)_{P,T,n_{j\noteq i}} dn_i
+}{}
+
+La propiedad que se encuentra en la sumatoria se define como el potencial químico ($\mu_i=\left( \frac{\partial \underline{G}}{\partial ni} \right)$). Quedando finalmente la ecuación como:
+
+\insertequation{
+    d\underline{G}=\underline{V} dP-\underline{S}dT+\sum_i \mu_i dn_i
+}{}
+
+\subsubsection{Propiedades parciales molares}
+
+Tenemos que el potencial químico queda definido como:
+\insertequation{
+    \mu_i=\left( \frac{\partial \underline{G}}{\partial ni} \right)_{P,T,n_{j\noteq i}}
+}{}
+
+Lo cual también tiene el nombre de \textbf{energía parcial molar de Gibbs}. Con esto se define una nueva propiedad llamada \textbf{propiedad parcial molar}, y cualquier propiedad extensiva se puede describir desde una propiedad parcial molar.
+Esta propiedad se definde de la siguiente forma: Para una propiedad M cualquiera, se define una propiedad parcial molar M como:
+
+\insertequation{
+    \overline{M}=\left( \frac{\partial \underline{M}}{\partial ni} \right)_{P,T,n_{j\noteq i}}
+}{}
+
+Luego también podemos definir a partir de esta cantidad las siguientes cantidades:
+\insertalign{
+    \underline{M}=\sum_i n_i \overline{M}_i\\
+    M = \sum_i x_i \overline{M}_i
+}
+Por lo cual podemos escribir la energía libre de Gibbs como:
+
+\insertalign{
+    \underline{G}=\sum_i n_i \overline{G}_i=\sum_i n_i \mu_i\\
+    M = \sum_i x_i \overline{G}_i=\sum_i x_i \mu_i
+}
+
+\subsection{Criterios de Equilibrio}
+
+Para equilibrio a T y P constantes, se debe minimizar la energía libre de Gibbs. De todas maneras, como dT y dP son cero, en un sistema cerrado, la condición de equilibrio indica que $dG=0$ en el equilibrio, para T y P constantes.
+
+Esta ecuación la podemos utilizar para cualquier problema, quedando como:
+
+
+\insertimage[]{img/imagenes/ec3}{width=10cm}{}
+
+Lo cual se define por:
+\insertalign{
+    \mu_1^V=\mu_1^L//
+    \mu_2^V=\mu_2^L//
+}
+
+\subsubsection{Potencial químico de un fluido puro}
+
+Anteriormente se mostro que para un fluido puro la reacción de equilibrio se debe igualar con la energía molar de Gibbs para cada una de las fases.
+\insertimage[]{img/imagenes/ec4}{width=10cm}{}
+
+Para un fluido puro, solo hay un componente asi que dn_i=dn y como $G(T,P)$ es intensiva $n(\partial G/\partial n)_{T,P}=0$. Luego:
+
+\insertequation{
+    \mu_{i,puro}=G_i
+}
+
+Con lo cual se demuestra que el potencial químico de un fluido puro es simplemente la energía molar de Gibbs. Los componentes puros pueden ser considerados un caso especial dentro del problema global de las restricciones de equilibrio.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.20)  3 MAY 2022 12:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.20)  16 MAY 2022 22:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1784,10 +1784,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
- (./main.aux
-LaTeX Info: Redefining \. on input line 30.
-LaTeX Info: Redefining \% on input line 30.
-)
+ (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
@@ -2029,10 +2026,7 @@ Package pdftex.def Info: ./img/departamentos/LogoPUCING.jpg  used on input line 
  [1.2
 
 
-] (./main.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-)
+]
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
@@ -2048,7 +2042,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5.13335> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <3.66669> on input line 5.
-<img/imagenes/ley0.png, id=88, 371.3875pt x 217.81375pt>
+<img/imagenes/ley0.png, id=26, 371.3875pt x 217.81375pt>
 File: img/imagenes/ley0.png Graphic file (type png)
 <use img/imagenes/ley0.png>
 Package pdftex.def Info: img/imagenes/ley0.png  used on input line 17.
@@ -2071,12 +2065,12 @@ LaTeX Info: Redefining \% on input line 58.
 LaTeX Info: Redefining \. on input line 95.
 LaTeX Info: Redefining \% on input line 95.
  [3.6]
-<img/imagenes/diagramapvt.png, id=139, 403.5075pt x 435.6275pt>
+<img/imagenes/diagramapvt.png, id=81, 403.5075pt x 435.6275pt>
 File: img/imagenes/diagramapvt.png Graphic file (type png)
 <use img/imagenes/diagramapvt.png>
 Package pdftex.def Info: img/imagenes/diagramapvt.png  used on input line 104.
 (pdftex.def)             Requested size: 201.75325pt x 217.81322pt.
-<img/imagenes/diagramapv.png, id=140, 665.48625pt x 522.95375pt>
+<img/imagenes/diagramapv.png, id=82, 665.48625pt x 522.95375pt>
 File: img/imagenes/diagramapv.png Graphic file (type png)
 <use img/imagenes/diagramapv.png>
 Package pdftex.def Info: img/imagenes/diagramapv.png  used on input line 108.
@@ -2084,7 +2078,7 @@ Package pdftex.def Info: img/imagenes/diagramapv.png  used on input line 108.
 LaTeX Info: Redefining \. on input line 109.
 LaTeX Info: Redefining \% on input line 109.
  [4.7 <./img/imagenes/diagramapvt.png>]
-<img/imagenes/palanca.png, id=150, 756.8275pt x 495.8525pt>
+<img/imagenes/palanca.png, id=94, 756.8275pt x 495.8525pt>
 File: img/imagenes/palanca.png Graphic file (type png)
 <use img/imagenes/palanca.png>
 Package pdftex.def Info: img/imagenes/palanca.png  used on input line 120.
@@ -2092,7 +2086,7 @@ Package pdftex.def Info: img/imagenes/palanca.png  used on input line 120.
 LaTeX Info: Redefining \. on input line 121.
 LaTeX Info: Redefining \% on input line 121.
  [5.8 <./img/imagenes/diagramapv.png>]
-<img/imagenes/diagramapt.png, id=161, 650.43pt x 534.99875pt>
+<img/imagenes/diagramapt.png, id=105, 650.43pt x 534.99875pt>
 File: img/imagenes/diagramapt.png Graphic file (type png)
 <use img/imagenes/diagramapt.png>
 Package pdftex.def Info: img/imagenes/diagramapt.png  used on input line 134.
@@ -2100,7 +2094,7 @@ Package pdftex.def Info: img/imagenes/diagramapt.png  used on input line 134.
 LaTeX Info: Redefining \. on input line 135.
 LaTeX Info: Redefining \% on input line 135.
  [6.9 <./img/imagenes/palanca.png>]
-<img/imagenes/balanceE.png, id=173, 390.45876pt x 340.27126pt>
+<img/imagenes/balanceE.png, id=116, 390.45876pt x 340.27126pt>
 File: img/imagenes/balanceE.png Graphic file (type png)
 <use img/imagenes/balanceE.png>
 Package pdftex.def Info: img/imagenes/balanceE.png  used on input line 142.
@@ -2114,43 +2108,88 @@ LaTeX Info: Redefining \% on input line 184.
 LaTeX Info: Redefining \. on input line 206.
 LaTeX Info: Redefining \% on input line 206.
  [9.12]
+
+LaTeX Warning: Reference `eqn:du1' on page 10 undefined on input line 240.
+
 LaTeX Info: Redefining \. on input line 244.
 LaTeX Info: Redefining \% on input line 244.
- [10.13
+[10.13
 
 ]
+
+LaTeX Warning: Reference `eqn:dH1' on page 11 undefined on input line 253.
+
+
+LaTeX Warning: Reference `eqn:dA1' on page 11 undefined on input line 269.
+
 LaTeX Info: Redefining \. on input line 286.
 LaTeX Info: Redefining \% on input line 286.
- [11.14]
+[11.14]
+
+LaTeX Warning: Reference `eqn:dG1' on page 12 undefined on input line 287.
+
+
+LaTeX Warning: Reference `eqn:dH1' on page 12 undefined on input line 300.
+
+
+LaTeX Warning: Reference `eqn:du1' on page 12 undefined on input line 300.
+
 LaTeX Info: Redefining \. on input line 328.
 LaTeX Info: Redefining \% on input line 328.
- [12.15]
+[12.15]
+
+LaTeX Warning: Reference `eqn:du2' on page 13 undefined on input line 344.
+
+
+LaTeX Warning: Reference `eqn:du1' on page 13 undefined on input line 344.
+
 LaTeX Info: Redefining \. on input line 363.
 LaTeX Info: Redefining \% on input line 363.
- [13.16]
+[13.16]
+
+LaTeX Warning: Reference `eqn:dutv' on page 14 undefined on input line 398.
+
+
+LaTeX Warning: Reference `eqn:dH1' on page 14 undefined on input line 403.
+
 LaTeX Info: Redefining \. on input line 408.
 LaTeX Info: Redefining \% on input line 408.
- [14.17]
-<img/imagenes/path.png, id=292, 246.9225pt x 235.88126pt>
+[14.17]
+
+LaTeX Warning: Reference `eqn:maxw1' on page 15 undefined on input line 419.
+
+
+LaTeX Warning: Reference `eqn:Stv' on page 15 undefined on input line 421.
+
+
+LaTeX Warning: Reference `eqn:dH1' on page 15 undefined on input line 421.
+
+<img/imagenes/path.png, id=228, 246.9225pt x 235.88126pt>
 File: img/imagenes/path.png Graphic file (type png)
 <use img/imagenes/path.png>
 Package pdftex.def Info: img/imagenes/path.png  used on input line 435.
 (pdftex.def)             Requested size: 142.26378pt x 135.9006pt.
 LaTeX Info: Redefining \. on input line 436.
 LaTeX Info: Redefining \% on input line 436.
- [15.18]
-<img/imagenes/residual.png, id=306, 591.20876pt x 426.59375pt>
+[15.18]
+
+LaTeX Warning: Reference `path' on page 16 undefined on input line 437.
+
+<img/imagenes/residual.png, id=241, 591.20876pt x 426.59375pt>
 File: img/imagenes/residual.png Graphic file (type png)
 <use img/imagenes/residual.png>
 Package pdftex.def Info: img/imagenes/residual.png  used on input line 449.
 (pdftex.def)             Requested size: 142.26378pt x 102.65146pt.
+
+LaTeX Warning: Reference `img:resi' on page 16 undefined on input line 451.
+
 LaTeX Info: Redefining \. on input line 458.
 LaTeX Info: Redefining \% on input line 458.
- [16.19 <./img/imagenes/path.png> <./img/imagenes/residual.png>]
+[16.19 <./img/imagenes/path.png> <./img/imagenes/residual.png>]
 LaTeX Info: Redefining \. on input line 502.
 LaTeX Info: Redefining \% on input line 502.
  [17.20]
-<img/imagenes/residualvdw.png, id=336, 208.78pt x 176.66pt>
+<img/imagenes/residualvdw.png, id=271, 208.78pt x 176.66pt>
 File: img/imagenes/residualvdw.png Graphic file (type png)
 <use img/imagenes/residualvdw.png>
 Package pdftex.def Info: img/imagenes/residualvdw.png  used on input line 540.
@@ -2158,7 +2197,7 @@ Package pdftex.def Info: img/imagenes/residualvdw.png  used on input line 540.
 LaTeX Info: Redefining \. on input line 541.
 LaTeX Info: Redefining \% on input line 541.
  [18.21]
-<img/imagenes/residualsrk.png, id=350, 393.47pt x 295.1025pt>
+<img/imagenes/residualsrk.png, id=286, 393.47pt x 295.1025pt>
 File: img/imagenes/residualsrk.png Graphic file (type png)
 <use img/imagenes/residualsrk.png>
 Package pdftex.def Info: img/imagenes/residualsrk.png  used on input line 543.
@@ -2166,12 +2205,12 @@ Package pdftex.def Info: img/imagenes/residualsrk.png  used on input line 543.
 LaTeX Info: Redefining \. on input line 544.
 LaTeX Info: Redefining \% on input line 544.
  [19.22 <./img/imagenes/residualvdw.png> <./img/imagenes/residualsrk.png>]
-<img/imagenes/residualpr.png, id=360, 527.9725pt x 338.26375pt>
+<img/imagenes/residualpr.png, id=296, 527.9725pt x 338.26375pt>
 File: img/imagenes/residualpr.png Graphic file (type png)
 <use img/imagenes/residualpr.png>
 Package pdftex.def Info: img/imagenes/residualpr.png  used on input line 546.
 (pdftex.def)             Requested size: 284.52756pt x 182.28807pt.
-<img/imagenes/residualvirial.png, id=361, 432.61626pt x 256.96pt>
+<img/imagenes/residualvirial.png, id=297, 432.61626pt x 256.96pt>
 File: img/imagenes/residualvirial.png Graphic file (type png)
 <use img/imagenes/residualvirial.png>
 Package pdftex.def Info: img/imagenes/residualvirial.png  used on input line 549.
@@ -2179,48 +2218,106 @@ Package pdftex.def Info: img/imagenes/residualvirial.png  used on input line 549
 LaTeX Info: Redefining \. on input line 565.
 LaTeX Info: Redefining \% on input line 565.
  [20.23 <./img/imagenes/residualpr.png> <./img/imagenes/residualvirial.png>]
+
+LaTeX Warning: Reference `eqn:dG1' on page 21 undefined on input line 585.
+
+
+LaTeX Warning: Reference `eqn:precc' on page 21 undefined on input line 593.
+
+
+LaTeX Warning: Reference `eqn:cla' on page 21 undefined on input line 597.
+
 LaTeX Info: Redefining \. on input line 604.
 LaTeX Info: Redefining \% on input line 604.
- [21.24]
+[21.24]
+
+LaTeX Warning: Reference `eqn:cc' on page 22 undefined on input line 609.
+
+
+LaTeX Warning: Reference `eqn:cc' on page 22 undefined on input line 611.
+
+
+LaTeX Warning: Reference `eqn:Antoine' on page 22 undefined on input line 616.
+
+
+LaTeX Warning: Reference `eqn:cc' on page 22 undefined on input line 617.
+
 LaTeX Info: Redefining \. on input line 639.
 LaTeX Info: Redefining \% on input line 639.
- [22.25]
+[22.25]
+
+LaTeX Warning: Reference `eqn:Dgibbs' on page 23 undefined on input line 667.
+
+
+LaTeX Warning: Reference `eqn:DG' on page 23 undefined on input line 676.
+
 LaTeX Info: Redefining \. on input line 679.
 LaTeX Info: Redefining \% on input line 679.
- [23.26]
+[23.26]
+
+LaTeX Warning: Reference `eqn:fuga' on page 24 undefined on input line 681.
+
+
+LaTeX Warning: Reference `eqn:fugav' on page 24 undefined on input line 685.
+
+
+LaTeX Warning: Reference `eqn:fuga' on page 24 undefined on input line 701.
+
+
+LaTeX Warning: Reference `eqn:defuga' on page 24 undefined on input line 714.
+
 LaTeX Info: Redefining \. on input line 721.
 LaTeX Info: Redefining \% on input line 721.
- [24.27]
-<img/imagenes/lnphi0.png, id=449, 537.00626pt x 435.6275pt>
+[24.27]
+
+LaTeX Warning: Reference `eqn:virial' on page 25 undefined on input line 728.
+
+
+LaTeX Warning: Reference `eqn:vdw' on page 25 undefined on input line 734.
+
+
+LaTeX Warning: Reference `eqn:srk' on page 25 undefined on input line 744.
+
+<img/imagenes/lnphi0.png, id=375, 537.00626pt x 435.6275pt>
 File: img/imagenes/lnphi0.png Graphic file (type png)
 <use img/imagenes/lnphi0.png>
 Package pdftex.def Info: img/imagenes/lnphi0.png  used on input line 767.
 (pdftex.def)             Requested size: 199.16928pt x 161.56519pt.
-<img/imagenes/lnphi1.png, id=450, 543.02875pt x 437.635pt>
+<img/imagenes/lnphi1.png, id=376, 543.02875pt x 437.635pt>
 File: img/imagenes/lnphi1.png Graphic file (type png)
 <use img/imagenes/lnphi1.png>
 Package pdftex.def Info: img/imagenes/lnphi1.png  used on input line 768.
 (pdftex.def)             Requested size: 199.16928pt x 160.5134pt.
 LaTeX Info: Redefining \. on input line 769.
 LaTeX Info: Redefining \% on input line 769.
- [25.28]
-<img/imagenes/fugacity_liq.png, id=469, 297.11pt x 306.14375pt>
+[25.28]
+<img/imagenes/fugacity_liq.png, id=396, 297.11pt x 306.14375pt>
 File: img/imagenes/fugacity_liq.png Graphic file (type png)
 <use img/imagenes/fugacity_liq.png>
 Package pdftex.def Info: img/imagenes/fugacity_liq.png  used on input line 775.
 (pdftex.def)             Requested size: 199.16928pt x 205.23203pt.
+
+
+LaTeX Warning: Reference `img:poy' on page 26 undefined on input line 782.
+
 LaTeX Info: Redefining \. on input line 785.
 LaTeX Info: Redefining \% on input line 785.
- [26.29 <./img/imagenes/lnphi0.png> <./img/imagenes/lnphi1.png> <./img/imagenes/fugacity_liq.png>]
+[26.29 <./img/imagenes/lnphi0.png> <./img/imagenes/lnphi1.png> <./img/imagenes/fugacity_liq.png>]
+
+LaTeX Warning: Reference `eqn:poy1' on page 27 undefined on input line 793.
+
+
+LaTeX Warning: Reference `eqn:poy1' on page 27 undefined on input line 806.
+
 LaTeX Info: Redefining \. on input line 821.
 LaTeX Info: Redefining \% on input line 821.
- [27.30]) (./textarc/i2.tex
-<img/imagenes/tvscomp1.jpeg, id=503, 859.21pt x 930.47626pt>
+[27.30]) (./textarc/i2.tex
+<img/imagenes/tvscomp1.jpeg, id=429, 859.21pt x 930.47626pt>
 File: img/imagenes/tvscomp1.jpeg Graphic file (type jpg)
 <use img/imagenes/tvscomp1.jpeg>
 Package pdftex.def Info: img/imagenes/tvscomp1.jpeg  used on input line 27.
 (pdftex.def)             Requested size: 213.39566pt x 231.08511pt.
-<img/imagenes/pvscomp1.jpeg, id=504, 858.20625pt x 914.41624pt>
+<img/imagenes/pvscomp1.jpeg, id=430, 858.20625pt x 914.41624pt>
 File: img/imagenes/pvscomp1.jpeg Graphic file (type jpg)
 <use img/imagenes/pvscomp1.jpeg>
 Package pdftex.def Info: img/imagenes/pvscomp1.jpeg  used on input line 28.
@@ -2231,43 +2328,142 @@ LaTeX Info: Redefining \% on input line 29.
 LaTeX Info: Redefining \. on input line 35.
 LaTeX Info: Redefining \% on input line 35.
  [29.32 <./img/imagenes/tvscomp1.jpeg> <./img/imagenes/pvscomp1.jpeg>]
-<img/imagenes/flash1.jpeg, id=524, 1007.765pt x 506.89375pt>
+<img/imagenes/flash1.jpeg, id=453, 1007.765pt x 506.89375pt>
 File: img/imagenes/flash1.jpeg Graphic file (type jpg)
 <use img/imagenes/flash1.jpeg>
 Package pdftex.def Info: img/imagenes/flash1.jpeg  used on input line 41.
 (pdftex.def)             Requested size: 199.16928pt x 100.17809pt.
-LaTeX Info: Redefining \. on input line 72.
-LaTeX Info: Redefining \% on input line 72.
- [30.33
+
+
+LaTeX Warning: Reference `eqn:flash1' on page 30 undefined on input line 51.
+
+LaTeX Info: Redefining \. on input line 73.
+LaTeX Info: Redefining \% on input line 73.
+[30.33
 
  <./img/imagenes/flash1.jpeg>]
-LaTeX Info: Redefining \. on input line 107.
-LaTeX Info: Redefining \% on input line 107.
- [31.34]) (/usr/local/texlive/2022/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
+
+LaTeX Warning: Reference `eqn:palanca1' on page 31 undefined on input line 74.
+
+LaTeX Info: Redefining \. on input line 108.
+LaTeX Info: Redefining \% on input line 108.
+[31.34]
+<img/imagenes/diagxy.png, id=476, 504.88625pt x 457.71pt>
+File: img/imagenes/diagxy.png Graphic file (type png)
+<use img/imagenes/diagxy.png>
+Package pdftex.def Info: img/imagenes/diagxy.png  used on input line 126.
+(pdftex.def)             Requested size: 213.39566pt x 193.4591pt.
+LaTeX Info: Redefining \. on input line 127.
+LaTeX Info: Redefining \% on input line 127.
+ [32.35 <./img/imagenes/diagxy.png>]
+<img/imagenes/desti1.png, id=486, 695.59875pt x 360.34625pt>
+File: img/imagenes/desti1.png Graphic file (type png)
+<use img/imagenes/desti1.png>
+Package pdftex.def Info: img/imagenes/desti1.png  used on input line 129.
+(pdftex.def)             Requested size: 284.52756pt x 147.39651pt.
+<img/imagenes/desti2.png, id=487, 251.94125pt x 272.01625pt>
+File: img/imagenes/desti2.png Graphic file (type png)
+<use img/imagenes/desti2.png>
+Package pdftex.def Info: img/imagenes/desti2.png  used on input line 145.
+(pdftex.def)             Requested size: 142.26378pt x 153.59814pt.
+<img/imagenes/desti3.png, id=488, 247.92625pt x 266.9975pt>
+File: img/imagenes/desti3.png Graphic file (type png)
+<use img/imagenes/desti3.png>
+Package pdftex.def Info: img/imagenes/desti3.png  used on input line 146.
+(pdftex.def)             Requested size: 142.26378pt x 153.20865pt.
+LaTeX Info: Redefining \. on input line 150.
+LaTeX Info: Redefining \% on input line 150.
+ [33.36
+
+ <./img/imagenes/desti1.png> <./img/imagenes/desti2.png> <./img/imagenes/desti3.png>]
+<img/imagenes/raoultdp.png, id=504, 560.0925pt x 354.32375pt>
+File: img/imagenes/raoultdp.png Graphic file (type png)
+<use img/imagenes/raoultdp.png>
+Package pdftex.def Info: img/imagenes/raoultdp.png  used on input line 165.
+(pdftex.def)             Requested size: 227.62204pt x 143.99773pt.
+<img/imagenes/raoultdn.png, id=505, 604.2575pt x 355.3275pt>
+File: img/imagenes/raoultdn.png Graphic file (type png)
+<use img/imagenes/raoultdn.png>
+Package pdftex.def Info: img/imagenes/raoultdn.png  used on input line 166.
+(pdftex.def)             Requested size: 227.62204pt x 133.8493pt.
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+ [34.37 <./img/imagenes/raoultdp.png> <./img/imagenes/raoultdn.png>]
+LaTeX Info: Redefining \. on input line 225.
+LaTeX Info: Redefining \% on input line 225.
+ [35.38]
+<img/imagenes/ec3.png, id=539, 749.80125pt x 68.255pt>
+File: img/imagenes/ec3.png Graphic file (type png)
+<use img/imagenes/ec3.png>
+Package pdftex.def Info: img/imagenes/ec3.png  used on input line 229.
+(pdftex.def)             Requested size: 284.52756pt x 25.90071pt.
+
+
+./textarc/i2.tex:240: LaTeX Error: File `img/imagenes/ec4' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 ...rtimage[]{img/imagenes/ec4}{width=10cm}{}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./textarc/i2.tex:242: Missing $ inserted.
+<inserted text> 
+                $
+l.242 ... puro, solo hay un componente asi que dn_
+                                                  i=dn y como $G(T,P)$ es in...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./textarc/i2.tex:242: Missing $ inserted.
+<inserted text> 
+                $
+l.242 ... y como $G(T,P)$ es intensiva $n(\partial
+                                                   G/\partial n)_{T,P}=0$. L...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
 Package babel Info: Importing font and identification data for spanish
 (babel)             from babel-es.ini. Reported on input line 11.
 ) (/usr/local/texlive/2022/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 )
+
+Package totalcount Warning: Total counter(s) have changed.
+(totalcount)                Rerun to get them right.
+
 LaTeX Info: Redefining \. on input line 81.
 LaTeX Info: Redefining \% on input line 81.
- [32.35] (./main.aux
+[36.39 <./img/imagenes/ec3.png>] (./main.aux
 LaTeX Info: Redefining \. on input line 30.
 LaTeX Info: Redefining \% on input line 30.
-) ) 
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 33327 strings out of 478268
- 564207 string characters out of 5846347
- 1131927 words of memory out of 5000000
- 50564 multiletter control sequences out of 15000+600000
+ 33486 strings out of 478268
+ 567607 string characters out of 5846347
+ 1131503 words of memory out of 5000000
+ 50671 multiletter control sequences out of 15000+600000
  572318 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  118i,16n,123p,17439b,2179s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main.pdf (35 pages, 2741529 bytes).
+Output written on main.pdf (39 pages, 3066146 bytes).
 PDF statistics:
- 802 PDF objects out of 1000 (max. 8388607)
- 678 compressed objects within 7 object streams
- 261 named destinations out of 1000 (max. 500000)
- 348 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 833 PDF objects out of 1000 (max. 8388607)
+ 691 compressed objects within 7 object streams
+ 298 named destinations out of 1000 (max. 500000)
+ 439 words of extra memory for PDF output out of 10000 (max. 10000000)
 
