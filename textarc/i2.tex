@@ -230,8 +230,8 @@ Esta ecuación la podemos utilizar para cualquier problema, quedando como:
 
 Lo cual se define por:
 \insertalign{
-    \mu_1^V=\mu_1^L//
-    \mu_2^V=\mu_2^L//
+    \mu_1^V=\mu_1^L \\
+    \mu_2^V=\mu_2^L 
 }
 
 \subsubsection{Potencial químico de un fluido puro}
@@ -246,3 +246,308 @@ Para un fluido puro, solo hay un componente asi que $dn_i=dn$ y como $G(T,P)$ es
 }
 
 Con lo cual se demuestra que el potencial químico de un fluido puro es simplemente la energía molar de Gibbs. Los componentes puros pueden ser considerados un caso especial dentro del problema global de las restricciones de equilibrio.
+
+\subsubsection{Fugacidad de componente y equilibrio}
+
+Para generalizar el concepto de fugacidad utilizaremos la ecuación que ocupamos para compuesto puro. A temperatura constante definimos $RT d\ln f = dG$. Lo cual puede ser generalizado a:
+
+\insertequation{
+    RT d\ln \hat{f}_i = d\mu_i
+}{}
+
+En esta ecuación $\hat{f}_i$ es la fugacdad del componente i en la mezcla y $\mu_i$ es el potencial químico del componente. La fugacidad del componente NO es una propiedad parcial molar.
+
+Esta ecuación nos permite analizar como se comporta la fugacidad de componentes en el equilibrio. Al integrar dicha ecuación llegamos a:
+
+\insertequation{
+    \mu_i^{V}-\mu_{i, puro}=RT \ln \frac{\hat{f}_i^{V}}{f_i}
+}
+
+Y para el líquido:
+\insertequation{
+    \mu_i^{L}-\mu_{i, puro}=RT \ln \frac{\hat{f}_i^{L}}{f_i}
+}
+
+De esta forma llegamos a:
+
+\insertequation{
+    \mu_i^{V}-\mu_i^{L}=RT \ln \frac{\hat{f}_i^{V}}{\hat{f}_i^{L}}
+}
+
+Quedando finalmente que en el equilibrio
+
+\insertequation{\hat{f}_i^{V}=\hat{f}_i^{L}}{}
+
+\subsubsection{Propiedades de mezcla para gas ideal}
+
+El potencial químico para un componente de una mezcla analizada como un gas ideal se define como
+
+\insertequation{
+    \mu_i^{ig}=G_i^{ig} +  RT \ln y_i
+}{}
+
+Utilizando las ecuaciones anteriores se puede llegar a una expresión para la fugacidad de un componente gas ideal
+
+\insertalign{
+    \mu_i^{ig}-\mu_{i,puro}^{ig}&= RT \ln \frac{\hat{f}_i^{ig}}{f_{i,puro}^{ig}}=RT \ln y_i\\
+    \intertext{O lo que es equivalente a:}\\
+    \hat{f}_i^{ig}&= yi f_{i,puro}^{ig} \cdot y_i
+}
+
+Como la fugacidad de un gas ideal se define como
+
+\insertequation{
+    \hat{f}_i^{ig}=yi P
+}{}
+
+Con una derivación similar, tenemos que se cumple la regla de Lewis-Randall:
+\insertalign{
+    \hat{f}_i^{is}/f_i &= x_i \\
+    &\Rightarrow f_i^{is}=x_i f_i^{ig}
+}
+
+\subsubsection{Aproximación de la solución ideal}
+
+En el equilibrio tenemos que
+
+\insertequation{
+    \hat{f}_i^{V}=\hat{f}_i^{L}
+}{}
+
+Luego usando la aproximación ideal para ambas fases, tenemos que:
+
+\insertequation{y_i f_i^{V}= x_i f_i^{L}}{}
+
+Recordando que
+
+\insertalign{
+    f_i^{V}=\varphi_i^{V} P \\
+    f_i^{L}=\varphi_i^{L} P \\
+}
+
+Según el factor de Poynting
+
+\insertequation[\label{eqn:poy1}]{f_i^{L} = \varphi^{sat}_i P^{sat}_i \exp(\frac{V^{L}_i(P-P^{sat}_i)}{RT})  }{}
+
+Combinando en función del K-Ratio llegamos a:
+\insertimage[]{img/imagenes/ec5}{width=9cm}{}
+
+A bajas presiones y además a presiones cercanas a la de saturación tenemos lo siguiente:
+
+\insertalign{
+    POY_i=1 \\
+    \varphi_i^{L}=1 \\
+    \varphi_i^{V}=1
+}
+
+Quedando así la siguiente expresión
+
+\insertequation[\label{eqn:raoult}]{y_iP=x_iP^{sat}_i }{}
+
+Esta ecuación, la ecuación \ref{eqn:raoult} se denomina \textbf{Ley de Raoult}
+
+\subsection{Ecuación de Raoult}
+\subsubsection{Estimaciónes de presión con ley de Raoult}
+Por medio de la ecuación de Raoult podemos calcular las condiciones de la primera burbuja o primera gota cuando se cálcula la presión de burbuja o de rocío.
+
+En primera instancia, teniendo la presión de burbuja definica como:
+
+\insertequation{
+    P=x_1P_1^{sat}+x_2P_2^{sat}
+}{}
+
+Podemos calcular la fracción gaseosa como:
+
+\insertequation{
+    y_1=x_1P_1^{sat}/P \\
+}{}
+
+Mientras que para la presión de rocío, la cual se obtiene de la siguiente forma:
+
+\insertequation{
+    P=\frac{1}{
+        \frac{y_1}{P_1^{sat}}+\frac{y_2}{P_2^{sat}}
+    }
+}{}
+
+Y la fracción líquida es:
+\insertequation{
+    x_i=y_i P/P_i^{sat}
+}{}
+\subsubsection{Estimaciones de temperatura con ley de Raoult}
+
+Para estos casos se debe hacer una iteración con respecto a la ecuación de Antoine, para esto se debe hacer que la presión definida anteriormente sea
+en función de la temperatura, para esto se reemplaza el valor de la presión de saturación por su expresión de Antoine, la cual viene dada por:
+
+\insertequation{P^{sat}= \exp \left(  A- \frac{B}{T+C}  \right)}{}
+
+Aquí tener en consideración que la forma de esta ecuación varia de acuerdo a cual es la expresión de Antoine dada.
+
+\subsubsection{Flash general}
+
+Para un destilador Flash, tenemos que se pueden calcular las composiciones de la fracción líquida y gaseosa por medio de la siguiente ecuación:
+
+\insertequation{
+    x_i =  \frac{z_i}{1+(V/F)(K_1-1)}
+}{}
+
+Y su fracción gaseosa
+
+\insertequation{
+    y_i =  \frac{z_i K_i}{1+(V/F)(K_1-1)}
+}{}
+
+\subsubsection{Ecuación de Rachford y Rice}
+
+La ecuación de Rachford y Rice se basa en que se puede obtener la razón $V/F$ a partir del hecho de que $\sum_i  x_i=1$ y que $\sum_i y_i=1$ en el destilador Flash.
+
+Con esto se tiene la siguiente función objetivo $\sum_i x_i - \sum_i y_i = 0$, la cual se busca resolver. Para un sistema binario, esta ecuación se define como:
+
+\insertequation{
+    \frac{z_1(1-K_1)}{1+(V/F)(K_1-1)}+\frac{z_2(1-K_2)}{1+(V/F)(K_1-1)}
+}{}
+
+A partir de esto tenemos la siguiente tabla resumen que describe los diferentes problemas y su resolución:
+
+\insertimage[]{img/imagenes/problems1}{width=15cm}{Tabla resumen de los diferentes problemas y como resolverlos.}
+\clearpage
+\subsection{Mezclas No Ideales}
+
+Para mezclas no ideales, la ecuación de Raoult definida en \ref{eqn:raoult} no describe de forma correcta el comportamiento de la mezcla, para esto es que 
+se genera la ecuación de Raoult modificada, la cual tiene en consideración los factores de coeficientes de actividad $\gamma$.
+
+\insertimage[]{img/imagenes/raoultmodi}{width=10cm}{Comparación entre comportamiento entre lo modelado por la ecuación de Raoult y la ecuación de Raoult modificada.}
+
+La ecuación de Raoult modificada se define como:
+
+\insertequation{
+    y_i P = x_i \gamma_i P_i^{sat}
+}{}
+
+Donde $\gamma$ es el \textbf{coeficiente de actividad}, el cual es una muestra de las desviaciones positivas o negativas de la ley de Raoult.
+
+De esta manera, las ecuaciones para calcular la presión de burbuja y de rocío son respectivamente:
+
+\insertalign{
+    P=x_1\gamma_1P_1^{sat}+x_2\gamma_2P_2^{sat} \\
+    P=\frac{1}{
+        \frac{y_1}{\gamma_1 P_1^{sat}}+\frac{y_2}{ \gamma_2 P_2^{sat}}
+    }
+}
+
+\subsubsection{Energía de Gibbs de Exceso}
+
+Los coeficientes de actividad pueden ser obtenidos a partir de la ecuación de Raoult modificada por medio de la siguiente ecuación:
+
+\insertequation{
+    \gamma_i=\frac{y_i P }{x_i P_i^{sat}}
+}{}
+
+Aunque también se pueden obtener mediante el modelamiento a través de la energía de Gibbs de exceso.
+
+\insertequation{
+    \frac{G^E}{RT}=x_1 \ln \gamma_1+x_2 \ln \gamma_2
+}{}
+
+Esta cantidad, la energía de Gibbs de exceso, es una desviación del comportamiento energético de la mezcla.
+
+Cuando se hace un modelamiento mediante estos modelos de exceso se sigue la siguiente estrategia.
+\insertimage[]{img/imagenes/modelexces}{width=10cm}{En primera instancia se realiza un cálculo teórico de los valores de los coeficientes de actividad. Estos valores luego son analizados y se realiza un ajuste a modelos, con los cuales se pueden resolver los problemas planteados.}
+
+Es gracias a estos modelos que podemos modelar sistemas que presentan azeótropos.
+
+\subsubsection{Derivando la Ley de Raoult modificada}
+
+El coeficiente de actividad se define como la razón entre la fugacidad de un componente con la fugacidad de la solución ideal a la misma fracción molar, en otras palabras:
+
+\insertequation{
+    \gamma_i = \frac{\hat{f}_i}{x_i f_i^{\circ}}
+}
+
+\textbf{Desarrollo de la Ley modificada}
+
+Para la fase de vapor usamos el coeficiente de fugacidad
+
+\insertequation{
+    \hat{f}_i^{V}=y_i \hat{\varphi}_i P
+}{}
+
+Y para la fase líquida utilizamos el coeficiente de actividad
+
+\insertequation{
+    \hat{f}_i^{L}=x_i \gamma_i f_i^{L}
+}{}
+
+Usando la expresión de la fugacidad en la fase líquida:
+
+\insertequation{
+    f_i^{L} = \varphi_i^{sat}P_i^{sat} \exp(\frac{V^{L}_i(P-P^{sat}_i)}{RT})  
+}{}
+
+Combinando ambas expresiones tenemos que a partir del hecho de que $\hat{f}_i^{V}=\hat{f}_i^{L}$:
+
+\insertalign{
+    \hat{f}_i^{V}&=\hat{f}_i^{L} \\
+    y_i \hat{\varphi_i} P &= x_i \gamma_i f_i^{L} \\
+    y_i \hat{\varphi_i} P &= x_i \gamma_i \hat{\varphi_i} P_i^{sat} \exp(\frac{V^{L}_i(P-P^{sat}_i)}{RT}) 
+}{}
+
+Este método es denominado \textbf{gamma-phi}. Luego al escribir esta relación en función del K-Ratio, llegamos a que 
+\insertimage[]{img/imagenes/gamaphi}{width=10cm}{}
+
+Realizando las asunciones típicas que se realizan a bajas presiones ($\varphi_i^{sat}=1;\, P\approx P^{sat}_i;\, \hat{\varphi_i}=1$), con esto llegamos a:
+\insertequation{
+    y_iP=x_i\gamma_i P_i^{sat}
+}{}
+
+La cual es la expresión de la ecuacion de Raoult modificada.
+
+\subsection{Propiedades de Exceso}
+
+La desviación de una propiedad desde la solución es llamada \textbf{propiedad de exceso}, en otras palabras es como se desvia la solución real de la solución ideal. A partir de esto, el cálculo que se realiza 
+para calcular estas propiedades es:
+
+\insertequation{
+    M^E=M-M^{is}
+}{}
+
+Donde M es cualquier propiedad, $M^E$ es la propiedad M de exceso, $M$ la propiedad M de la mezcla real y $M^{is}$ la propiedad M de la mezcla ideal.
+
+Por ejemplo, el volumen de la solución ideal se define como 
+\insertequation{
+    V^{is}=\sum_i x_iV_i
+}{}
+
+Por lo cual, el volumen de exceso se define como
+\insertequation[\label{eqn:vex}]{
+    V^{E}=V-\sum_i x_iV_i
+}{}
+
+Y para calcular la propiedad parcial molar de una propiedad de exceso se realiza de la misma manera que cualquier otra propiedad.
+
+\insertequation{
+    \overline{M}^{E}_i=\left( \frac{\partial \underline{M}^E}{\partial n_i} \right)_{T,P, n_{j\noteq i}}
+}{}
+
+Estos valores pueden ser gráficados y estos nos van a dar cierta información respecto a el comportamiento de la mezcla real.
+
+Para el caso del volumen de exceso tenemos el siguiente gráfico.
+
+\insertimage[]{img/imagenes/vexceso}{width=10cm}{Diagrama de Volumen de exceso vs composición.}
+
+De este gráfico podemos extraer la siguiente información:
+
+\begin{itemize}
+    \item El volumen de la mezcla es mayor que el de la mezcla ideal: Como podemos notar, el volumen de exceso es positivo para cualquier composición, por lo cual 
+    a partir de la ecuación \ref{eqn:vex} podemos darnos cuenta que el volumen de la mezcla será mayor al de la solución ideal.
+    \item Interacción negativa entre compuesto 1 y 2: Dado que hay una desviación positiva de la mezcla real con respecto a la ideal, podemos darnos cuenta que tienen una interacción negativa, es decir, se repelen.
+    \item Volumenes de exceso parcial molar de 1 y 2: A partir de la reacta que tangente a cualquier composición (x1), podemos obtener los volumenes de exceso a tal composición mediante donde corta esta reacta a los puntos $x1=0$, el cual nos da el $\overline{V}_2^E$, y el corte de la reacta a $x1=1$, el cual nos da el $\overline{V}_1^E$.
+\end{itemize}
+
+También tenemos casos en los cuales el volumen de exceso es negativo, por lo cual el volumen de la mezcla real será menor al de la mezcla ideal.
+
+\insertimage[]{img/imagenes/vexceso2}{width=10cm}{Diagramas de volumen de exceso vs composición, podemos ver un caso de volumen de exceso negativo.}
+
+En este gráfico podemos ver un caso en el cual el volumen de exceso es negativo para cierta composición. Por lo cual, en estas composiciones el volumen de la mezcla es menor al de la mezcla ideal. En estos casos
+se dice que hay una interacción positiva entre los compuestos, dado que estos interactuan, decrementando el volumen de la mezcla real.
+
