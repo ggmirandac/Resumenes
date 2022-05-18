@@ -197,7 +197,7 @@ La propiedad que se encuentra en la sumatoria se define como el potencial quími
 
 Tenemos que el potencial químico queda definido como:
 \insertequation{
-    \mu_i=\left( \frac{\partial \underline{G}}{\partial ni} \right)_{P,T,n_{j\noteq i}}
+    \mu_i=\left( \frac{\partial \underline{G}}{\partial ni} \right)_{P,T,n_{j\noteq i}} \label{eqn: muG}
 }{}
 
 Lo cual también tiene el nombre de \textbf{energía parcial molar de Gibbs}. Con esto se define una nueva propiedad llamada \textbf{propiedad parcial molar}, y cualquier propiedad extensiva se puede describir desde una propiedad parcial molar.
@@ -209,8 +209,8 @@ Esta propiedad se definde de la siguiente forma: Para una propiedad M cualquiera
 
 Luego también podemos definir a partir de esta cantidad las siguientes cantidades:
 \insertalign{
-    \underline{M}=\sum_i n_i \overline{M}_i\\
-    M = \sum_i x_i \overline{M}_i
+    \underline{M}=\sum_i n_i \overline{M}_i \label{eqn: parcialmolar2}\\
+    M = \sum_i x_i \overline{M}_i \label{eqn: parcialmolar1}
 }
 Por lo cual podemos escribir la energía libre de Gibbs como:
 
@@ -218,6 +218,16 @@ Por lo cual podemos escribir la energía libre de Gibbs como:
     \underline{G}=\sum_i n_i \overline{G}_i=\sum_i n_i \mu_i\\
     M = \sum_i x_i \overline{G}_i=\sum_i x_i \mu_i
 }
+
+También, las propiedades parciales molares se pueden calcular mediante las siguientes ecuaciones.
+
+Teniendo 2 componentes en la mezcla, las propiedades parciales molares de cada uno se definen como:
+
+\insertalign{
+    \overline{M}_1&=M+(1-x_1)\left( \frac{\partial M}{\partial x1}  \right)_{P,T}\\
+    \overline{M}_2&=M-x1\left( \frac{\partial M}{\partial x1}  \right)_{P,T}
+}
+
 
 \subsection{Criterios de Equilibrio}
 
@@ -452,7 +462,7 @@ Aunque también se pueden obtener mediante el modelamiento a través de la energ
 Esta cantidad, la energía de Gibbs de exceso, es una desviación del comportamiento energético de la mezcla.
 
 Cuando se hace un modelamiento mediante estos modelos de exceso se sigue la siguiente estrategia.
-\insertimage[]{img/imagenes/modelexces}{width=10cm}{En primera instancia se realiza un cálculo teórico de los valores de los coeficientes de actividad. Estos valores luego son analizados y se realiza un ajuste a modelos, con los cuales se pueden resolver los problemas planteados.}
+\insertimage[]{img/imagenes/modelexces}{width=15cm}{En primera instancia se realiza un cálculo teórico de los valores de los coeficientes de actividad. Estos valores luego son analizados y se realiza un ajuste a modelos, con los cuales se pueden resolver los problemas planteados.}
 
 Es gracias a estos modelos que podemos modelar sistemas que presentan azeótropos.
 
@@ -551,3 +561,156 @@ También tenemos casos en los cuales el volumen de exceso es negativo, por lo cu
 En este gráfico podemos ver un caso en el cual el volumen de exceso es negativo para cierta composición. Por lo cual, en estas composiciones el volumen de la mezcla es menor al de la mezcla ideal. En estos casos
 se dice que hay una interacción positiva entre los compuestos, dado que estos interactuan, decrementando el volumen de la mezcla real.
 
+\subsubsection{Entalpía de Exceso}
+
+La entalpía de exceso se define de la misma manera que el volumen de exceso, de forma que
+
+\insertequation{
+    H^{E}=H-H^{is}=H-\sum_i x_iH_i
+}{}
+
+Cuando tenemos que $H^{E}>0$ el calor de la mezcla es endotérmico, es decir, al mezclarse se libera calor; mientras que si $H^{E}<0$ la mezcla es endotérmica, es decir, al mezclarse se absorve calor.
+
+Esta entalpía puede verse de la siguiente forma en un gráfico Entalpía de exceso vs composición.
+
+\insertimage[]{img/imagenes/entalpiaexceso}{width=10cm}{Gráfico de entalpía de exceso vs composición, podemos darnos cuenta que los cambios de presión son despresiables en esta propiedad.}
+
+\subsubsection{Energía de Gibbs de Exceso}
+
+La energía de Gibbs de exceso se puede definir de la siguiente manera
+
+\insertequation{
+    G^E=G-G^{is}
+}{}
+
+Dado que hay un componente entrópico en la energía de Gibbs, se da que $G^{is}≠ \sum_i x_iG_i$. Por lo cual, para encontrar la energía de Gibbs de exceso se realiza el siguiente procesdimiento.
+
+\insertalign{
+    G^{E}&=G-G^{is}\\
+    &=\left(G-\sum_i x_iG_i\right)-\left(G^{is}-\sum_i x_iG_i\right) \\
+    &= \Delta G_{mix}-\Delta G_{mix}^{is}\\
+    &= \Delta G_{mix}-RT \sum_i x_i \ln x_i \label{eqn: ge1}
+}
+
+Aquí hay que tener presente que 
+\insertalign{
+    \Delta G_{mix}&=\left(G-\sum_i x_iG_i\right) \\
+    \Delta G_{mix}^{is} &= \left(G^{is}-\sum_i x_iG_i\right) = RT \sum_i x_i \ln x_i
+}
+
+Hay que recordar la siguiente ecuación
+
+\insertequation{
+    \mu_i - \mu_i^{\circ}=RT \ln \frac{\hat{f}_i}{\hat{f}_i^{\circ}}
+}
+
+Donde esta última razón se define como \textbf{actividad}, la cual es la relación entre la fracción molar del líquido y el coeficiente de actividad. Esta sigue la siguiente ecuación:
+
+\insertequation{
+    a_i = \frac{\hat{f}_i}{\hat{f}_i^{\circ}} = x_i \gamma_i
+}{}
+
+Luego podemos desarrollar la expresión de $\Delta G_{mix}$ usando condiciones standard de T y P
+
+\insertalign{
+    \Delta G_{mix} &= G-\sum_i x_i G_i\\
+    &= \sum_i x_i \left(\mu_i - G_i\right)\\
+    &= RT \sum_i x_i \ln \frac{\hat{f}_i}{f_i}\\
+    &= RT \sum_i x_i \ln a_i\\
+    &=  RT \sum_i x_i \ln x_i \gamma_i \label{eqn: ge2}
+}
+
+Luego, sustituyendo en la ecuación \ref{eqn: ge1}, tenemos
+\insertalign{
+    G^{E} &= RT \sum_i x_i \ln x_i \gamma_i - RT \sum_i x_i \ln x_i \\
+    G^{E}&= RT \sum_i x_i \ln \gamma_i
+}
+
+Los coeficientes de actividad están relacionadas con las derivadas de la energía de Gibbs de exceso mediante las propiedades parciales molares.
+Podemos definir la energía de Gibbs de exceso de la siguiente manera, por medio de la ecuación \ref{eqn: parcialmolar1}
+\insertequation{
+    G^{E}= \sum_i x_i \overline{G}_i^{E}
+}
+
+Luego, mediante la ecuación \ref{eqn: muG} y \ref{eqn: ge2} tenemos que
+
+\insertequation{
+    \left( 
+        \frac{\partial \underline{G}^{E}}{\partial n_i} 
+    \right)_{T,P,n_{j≠i}} =  \overline{G}_i^{E} = \mu_i^{E}=RT \ln \gamma_i \label{eqn: ge3mu}
+}{}
+
+Este método va a ser útil para el análisis de los diferentes modelos de $G^{E}$.
+\clearpage
+\subsection{Modelos de $G^{E}$}
+\subsubsection{Margules de un parámetro}
+El modelo más simple para la expresión del Gibbs de exceso es el de la ecuación de Margules de un parámetro.
+
+Este modelo viene de que el $G^{E}$ se comporta como una función cuadrática, como podemos ver en la siguiente gráfica.
+
+\insertimage[]{img/imagenes/gexes}{width=10cm}{Gráficos de $G^{E}$ versus composición, en suma de deferentes modelos para el $G^{E}$.}
+
+Como podemos ver, esta gráfica esboza una parábola, por lo cual el modelo de Margules de un parámetro, para un sistema binario, es el siguiente
+
+\insertequation{
+    \frac{G^{E}}{RT} = A_{12}x_1x_2
+}{}
+
+Y podemos también, a partir de este modelo, predecir el coeficiente de actividad
+
+\insertequation{
+    \ln \gamma_i = A_{12}(1-x_i)^2
+}{}
+
+\textbf{Demostración del modelo de coeficiente de activad}
+
+Esta demostración se realizará para el modelo de Margules de un parámetro, pero es importante entender que esta metodología 
+es transversal a los diferentes modelos.
+
+Partiendo de la ecuación del modelo de Margules de un parámetro tenemos que, a partir de la ecuación \ref{eqn: parcialmolar2}
+
+\insertalign{
+    \frac{\underline{G}^{E}}{RT} &= n\frac{G^{E}}{RT}\\
+    &= n A_{12}x_1x_2\\
+    &= (A_{12}n_2)\left(\frac{n_1}{n}\right)
+}
+
+Luego, mediante la ecuación \ref{eqn: ge3mu} tenemos que
+
+\insertalign{
+    \frac{1}{RT} \left( 
+        \frac{\partial \underline{G}^{E}}{\partial n_i} 
+        \right)_{T,P,n_2} &= \ln \gamma_i \\
+        \frac{1}{RT} \left(\frac{\partial (A_{12}n_2)\left(\frac{n_1}{n}\right)}{\partial n_i} \right) &= \ln \gamma_i \\
+        A_{12}n_2 \left[ \frac{1}{n}-\frac{n_1}{n^2} \right]    &= \ln \gamma_i \\
+        A_{12} \frac{n_2}{n}\left[1-\frac{n_1}{n}\right]&= \ln \gamma_i \\
+        A_{12} x_2 (1-x1) &= \ln \gamma_i \\
+        A_{12} (1-x_1)^2 &= \ln \gamma_i \\
+}
+
+Ya teniendo el parámetro de la ecuación de Margules de un parámetro, podemos predecir los coeficientes de actividad, y a partir de esto los diferentes parámetros que definen al equilibrio líquido-vapor. 
+Esto puede ser visto en el siguiente diagrama.
+
+\insertimage{img/imagenes/model1}{width=5cm}{Protocolo de trabajo de los diferentes modelos para el $G^{E}$}
+
+\subsubsection{Redlich-Kister}
+
+En el diagrama antes mostrado, si bien el $G^{E}$ se comporta \textbf{como} una parábola, no es una parábola como tal. A partir de esto, Redlich-Kister desarrollaron
+un modelo completamente empírico para el ajuste del $G^{E}$, esta se define por la siguiente ecuación
+
+\insertequation{
+    \frac{G^{E}}{RT} = x_1x_2 (B_{12} + C_{12}(x_1-x_2)+D_{12}(x_1-x_2)^2+ ...)
+}{}
+
+A partir de esta ecuación tambien se puede definir el modelo de Margules de dos parámetros, dado que es una simplificación de Redlich-Kister.
+El modelo de Margules de dos parámetros es 
+
+\insertequation{
+    \frac{G^{E}}{RT} = x_1x_2 (A_{21}x_1+A_{12}x_2)
+}{}
+
+Y además
+\insertalign{
+    \ln \gamma_1 = x_2^2 \left( A_{12} + 2 (A_{21}-A_{12})x_1 \right)\\
+    \ln \gamma_2 = x_1^2 \left( A_{21} + 2 (A_{12}-A_{21})x_2 \right)
+}
