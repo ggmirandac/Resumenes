@@ -2320,6 +2320,14 @@ INPUT ./img/imagenes/model1.png
 INPUT img/imagenes/model1.png
 INPUT ./img/imagenes/model1.png
 INPUT ./img/imagenes/model1.png
+INPUT ./img/imagenes/ue1.png
+INPUT img/imagenes/ue1.png
+INPUT ./img/imagenes/ue1.png
+INPUT ./img/imagenes/ue1.png
+INPUT ./img/imagenes/ue2.png
+INPUT img/imagenes/ue2.png
+INPUT ./img/imagenes/ue2.png
+INPUT ./img/imagenes/ue2.png
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex
 INPUT /usr/local/texlive/2022/texmf-dist/tex/generic/babel/locale/es/babel-spanish.tex

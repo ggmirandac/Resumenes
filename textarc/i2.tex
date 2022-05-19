@@ -662,7 +662,7 @@ Y podemos también, a partir de este modelo, predecir el coeficiente de activida
     \ln \gamma_i = A_{12}(1-x_i)^2
 }{}
 
-\textbf{Demostración del modelo de coeficiente de activad}
+\subsubsubsection{Demostración del modelo de coeficiente de actividad}
 
 Esta demostración se realizará para el modelo de Margules de un parámetro, pero es importante entender que esta metodología 
 es transversal a los diferentes modelos.
@@ -714,3 +714,118 @@ Y además
     \ln \gamma_1 = x_2^2 \left( A_{12} + 2 (A_{21}-A_{12})x_1 \right)\\
     \ln \gamma_2 = x_1^2 \left( A_{21} + 2 (A_{12}-A_{21})x_2 \right)
 }
+
+\subsubsection{Ajustes de modelos}
+
+Los modelos que se tienen se pueden ajustar por medio de datos experimentales, los cuales son utilizados como insumo en sistemas de ecuaciones, de los cuales hay que despejar los parámetros de los modelos para el $G^{E}$.
+
+Uno de los datos para el ajuste más usados son los de dilución infinita.
+
+\subsubsubsection{Ajuste a dilución infinita}
+
+Un componente se puede catalogar en dilución infinita cuando solo una traza de este está presente. Esto es, cuando la mezcla binaria es 
+cercana a la pureza de algún componente, pero no aún. Los coeficientes de actividad toman valores especiales cerca de la dilución infinita.
+
+\insertalign{
+    \lim_{x_i\rightarrow1 }\gamma_i &=1 \\
+    \lim_{x_i\rightarrow0 }\gamma_i &=\gamma_i^{\infty} \\
+}
+
+Esto quiere decir que, cuando tenemos una mezcla cercana a la pureza del compuesto $i$, su coeficiente de actividad es 1. Pero cuando la pureza es cercana a 0 (en dilución infinita) su coeficiente de actividad es $\gamma_i^{\infty}$.
+
+De modo que cuando calculamos estos límitar para, por ejemplo, el modelo de Margules de dos parámetros, llegamos a que
+\insertalign{
+    A_{12}=\ln \gamma_1^{\infty}\\
+    A_{21}=\ln \gamma_2^{\infty}\\
+}
+
+Lo relevante de este tipo de ajuste es que el coeficiente de actividad en dilución infinita es medible.
+
+\subsubsection{Funciones Objetivo}
+
+Cuando estamos ajustando los modelos de $G^{E}$ a datos experimentales generamos funciones objetivo, las cuales son funciones que por medio de su minimización nos permiten saber los parámetros de los 
+modelos para cualquier composición.
+
+Las funciones objetivo que usualmente se usan son
+\insertalign{
+    FO_p=\sum_i \left(P_{calc}-P_{exp}\right)^2_i \\
+    FO_{G^{E}}=\sum_i \left(G^{E}_{calc}-G^{E}_{exp}\right)^2_i \\
+    FO_\gamma = \left[  \left( \frac{\gamma_a^{exp}-\gamma_a^{calc}}{\gamma_a^{exp}} \right)^2 +   \left( \frac{\gamma_b^{exp}-\gamma_b^{calc}}{\gamma_b^{exp}} \right)^2   \right]
+}
+
+\subsubsection{Coeficiente de Actividad Tipo Van der Waals}
+
+La ecuación de estado de Van der Waals es un punto de partida para la modelación de los coeficientes de actividad
+de forma teórica, sin la necesidad de datos empíricos. Para esto, antes hay que entender las reglas de mezclado
+
+\subsubsubsection{Reglas de Mezclado}
+
+Las ecuaciones que se introducen para representar las mezclas se denominan \textbf{reglas de mezclado}.
+
+Para una ecuación de estado tipo Van der Waals, el parámetro $b$ representa el tamaño finito de una molécula:
+
+\insertequation{
+    b=\sum_i x_i b_i
+}{}
+
+Mientras que el parámetro $a$ presenta un análisis más complejo, el cual tiene que ver con la energía.
+
+\insertequation{
+    U-U^{ig}=-a\rho= -a/V
+}{}
+
+Si tomamos en cuanta las probabilidades de interacción, tendrémos una \textbf{regla de mezclado cuadrática}:
+
+\insertalign{
+    a=x_1^2 a_{11}+2x_1x_2 a_{12}+x_2^2 a_{22} = \sum_i \sum_j x_i x_j a_{ij}\\
+    a_{12}=(1-k_{12})(a_{11}a_{22})^{1/2}
+}{}
+
+Desde esta métodología derivan varios modelos. Estos se distiguen por las distintas aproximaciones en términos de las ecuaciones resultantes.
+Dentro de estas podemos encontrar los modelos de solución regular:
+\begin{itemize}
+    \item Modelo de van Laar
+    \item Modelo de Scatchard-Hildebrand
+\end{itemize}
+
+Cabe mencionar que un modelo de solución regular asume moléculas pequeñas y sin mucha interacción, las cuales cumplen que para $G^{E}$
+\insertequation{
+    G^{E}=U^{E}+PV^{E}-TS^{E}
+}{}
+Los valores de $V^{E}$ y $S^{E}$ cumplen que $V^{E}=S^{E}=0$. Por lo cual $G^{E}=U^{E}$.
+
+\subsubsection{Modelo de van Laar}
+
+En base a un modelo de solución regular, podemos llegar a que el $U^{E}$ se puede calcular de la siguiente manera:
+
+\insertimage[]{img/imagenes/ue1}{width=7.5cm}{}
+\insertimage[]{img/imagenes/ue2}{width=12.5cm}{}
+
+De esta manera tenemos que 
+\insertalign{
+    U^{E}&=\frac{x_{1} x_{2} V_{1} V_{2}}{x_{1} V_{1}+x_{2} V_{2}} Q \\
+    Q &=\left(\frac{a_{11}}{V_{1}^{2}}+\frac{a_{22}}{V_{2}^{2}}-2 \frac{a_{12}}{V_{1} V_{2}}\right)
+}
+Donde los parámetros se definen como:
+
+\insertalign{
+    A_{12}=\frac{Q V_1}{RT} \\
+    A_{21}=\frac{Q V_2}{RT} \\
+    \frac{A_{12}}{A_{21}}=\frac{V_1}{V_2}
+}
+
+Por lo cual tenemos que 
+
+\insertalign{
+    \frac{G^{E}}{RT}&=\frac{U^{E}}{RT}=\frac{A_{12}A_{21}x_1x_2}{(x_1A_{12}+x_2A_{21})}\\
+    &=\frac{A_{12}A_{21}n_1n_2}{(n_1A_{12}+n_2A_{21})}
+}
+
+Realizando el mismo procesdimiento que se realizó en la sección de demostración de coeficiente de actividad llegamos a que 
+\insertalign{
+    \ln \gamma_1&=\frac{A_{12}}{\left[1+\frac{A_{12}x_1}{A_{21}x_2}\right]^2}\\
+    \ln \gamma_2&=\frac{A_{21}}{\left[
+        1+\frac{A_{21}x_2}{A_{12}x_1} \right]^2}
+}
+
+Estas ecuaciones son útiles dado que se puede obtener el parámetro desde un punto del equilibrio líquido-vapor.

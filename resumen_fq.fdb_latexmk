@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1652842283 "/Users/gabrielmiranda/Desktop/Universicosas/Resumenes/resumen_fq.tex" "resumen_fq.pdf" "resumen_fq" 1652842289
+["pdflatex"] 1652927805 "/Users/gabrielmiranda/Desktop/Universicosas/Resumenes/resumen_fq.tex" "resumen_fq.pdf" "resumen_fq" 1652927813
   "/Users/gabrielmiranda/Desktop/Universicosas/Resumenes/resumen_fq.tex" 1652763143 1952 f32cd10569557b82df20c0b18115f653 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -313,11 +313,13 @@
   "img/imagenes/residualvdw.png" 1651540882 23790 5a27df12b914b496725d48f6b4a7a0c8 ""
   "img/imagenes/residualvirial.png" 1651540882 48516 f48621c915b212230b7377620d7b857d ""
   "img/imagenes/tvscomp1.jpeg" 1651542494 156213 1cbaa8428b94c1ca25e08d06c67dfe16 ""
+  "img/imagenes/ue1.png" 1652926885 74206 3dea3189bb305d1c8c232c37b5793617 ""
+  "img/imagenes/ue2.png" 1652926910 195983 0e7c6b45284082d8b739297f1670501c ""
   "img/imagenes/vexceso.png" 1652814884 324793 35df01372d3ddfe2888b8898de456660 ""
   "img/imagenes/vexceso2.png" 1652815494 238406 b1d64d7b45c27f35888c70748edaa059 ""
-  "resumen_fq.aux" 1652842288 43434 ab38706397c0ff50cc4a5282e04df605 "pdflatex"
+  "resumen_fq.aux" 1652927812 47876 1b52de2a3d85649fa35b20166bafa78d "pdflatex"
   "resumen_fq.tex" 1652763143 1952 f32cd10569557b82df20c0b18115f653 ""
-  "resumen_fq.toc" 1652842288 5527 f2d7f96f61886da1837daf9dab6ead8f "pdflatex"
+  "resumen_fq.toc" 1652927812 6304 753d91eecce614e876716a7d421608ae "pdflatex"
   "src/cfg/final.tex" 1650336002 14421 2b55e2c2adc012c65f036753c6469236 ""
   "src/cfg/init.tex" 1650336002 31609 a2447b0ea13ec8f3d20a3f54cd567e5b ""
   "src/cfg/page.tex" 1650336002 23768 851d47931a01338d75b45ce1aad3785b ""
@@ -341,7 +343,7 @@
   "src/style/other.tex" 1650336002 1562 c09ed47646c682f35c5c498a0f01f3ce ""
   "template.tex" 1650336002 2521 f810808c8bd19fa1808715a655eb2448 ""
   "textarc/i1.tex" 1651542740 43481 3b6aa8eb921fc0d22f42e88d6c33ee0c ""
-  "textarc/i2.tex" 1652842283 32097 1cba3bbba37c77ef75652db6ff61164b ""
+  "textarc/i2.tex" 1652927804 36931 64e577a2211c95f564851ad3a340fc78 ""
   (generated)
   "resumen_fq.aux"
   "resumen_fq.log"
