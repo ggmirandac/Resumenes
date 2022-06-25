@@ -829,3 +829,165 @@ Realizando el mismo procesdimiento que se realizó en la sección de demostraci�
 }
 
 Estas ecuaciones son útiles dado que se puede obtener el parámetro desde un punto del equilibrio líquido-vapor.
+\subsubsection{Modelo de Scatchard-Hilderbrand}
+
+La teoría de Scatchar-Hilderbrand asume que $k_{12}$  y por tanto $a_{12}=\sqrt{a_{11}a_{22}}$. Por lo tanto se tiene que:
+
+\begin{align}
+    U^{E}=\frac{x_{1} x_{2} V_{1} V_{2}}{x_{1} V_{1}+x_{2} V_{2}}\left(\frac{a_{11}}{V_{1}^{2}}+\frac{a_{22}}{V_{2}^{2}}-2 \sqrt{\frac{a_{11}}{V_{1}^{2}} \frac{a_{22}}{V_{2}^{2}}} \frac{x_{1} x_{2} V_{1} V_{2}}{x_{1} V_{1}+x_{2} V_{2}}\left(\frac{\sqrt{a_{11}}}{V_{1}}-\frac{\sqrt{a_{22}}}{V_{2}}\right)^{2}\right)
+\end{align}
+
+Los creadores del modelo reconocieron los parámetros como una relación entre la fracción de volumen y la energía de dispersión-atracción del compuesto puro. A este término lo llamaron \textbf{parámetro de solubilidad}. Volvieron a escribir la ecuación de la siguiente manera:
+
+\begin{align}
+    U^{E}=\phi_1\phi_2(\delta_1-\delta_2)^2 (x_1V_1+x_2V_2)
+\end{align}
+Se define de esta menera:
+\textbf{Fracción de volumen}:
+\begin{align}
+    \phi_i\equiv x_iV_i / \sum_i x_i V_i
+\end{align}
+\textbf{Parámetro de solubulidad}:
+\begin{align}
+    \delta_i\equiv \sqrt{a_{ii}}/V_i
+\end{align}
+Desde datos experimentales llegamos a que:
+
+\begin{align}
+    \delta_i\equiv \sqrt{\frac{\Delta U_i^{vap}}{V_i}}=\sqrt{\frac{\Delta H_i^{vap}-RT}{V_i}}
+\end{align}
+De esta manera, los coeficientes de actividad por medio del modelo de Scatchard-Hilderbrand es:
+
+\begin{align}
+    RT\ln \gamma_1 = V_1 \phi_2^2 (\delta_1-\delta_2)\\
+    RT\ln \gamma_2 = V_2 \phi_2^2 (\delta_1-\delta_2)
+\end{align}
+
+Estos parámetros se pueden ver en la siguiente tabla:
+
+\insertimage[]{img/imagenes/stachard.png}{width=15cm}{Los parámetros de solubilidad en $(J/cm^3)^{1/2}$ y el volumen molar en $(cm^3/mol)$}
+
+\subsubsection{Teoría de composición local}
+
+Uno de los mayores supuestos de las mezclas de Van der Waals fue que las interacciones eran independientes unas de las otras, y por lo tanto la regla de mezclado cuadrática nos daría buenos resultados. 
+Sin embargo, en mezclas donde las fuerzas de interacción son radicalmente opuestas (hay variadas interacciones) no trae buenos resultados.
+
+Para este tipo de mezclas utilizaremos la teoría de la composición local, esta reconoce la posibilidad que composiciones locales del compuesto se desvien desde la composicion esperada.
+Esta teoría se puede ver en la siguiente imagen:
+
+\insertimage[]{img/imagenes/complocal.png}{width=15cm}{Se pueden ver los diferentes interaccioens distintas que se dan cuando hay composiciones locales diferentes.}
+
+En esta teoría se asumen pesos relativos de estar cerca de una o de la otra molécula:
+\begin{align}
+    \frac{x_{21}{x_11}}=\frac{x_2}{x_1}\Omega_{21}\\
+    \frac{x_{12}}{x_{22}}=\frac{x_1}{x_2}\Omega_{12}
+\end{align}
+Desarrollando la expresión cerca de moléculas 1:
+\begin{align}
+    x_{11}+x_{21}=1\\
+    x_{21}=x_{11}\frac{x_{2}}{x_{1}}\Omega_{21}
+\end{align}
+
+De esta forma llegamos a que:
+\begin{align}
+    x_{11}=\frac{x_1}{x_1+x_2\Omega_{21}}\\
+    x_{21}=\frac{x_2\Omega_{21}}{x_1+x_2\Omega_{21}}
+\end{align}
+
+De esta forma, tenemos que se generan dos sectores, y se genera la siguiente expresión
+
+\begin{equation}
+       (M-M^{ig})=x_1(M-M^{ig})^{(1)}+x_2(M-M^{ig})^{(2)}
+\end{equation}
+
+Con esto llegamos a:
+
+\begin{align}
+    U-U^{i g}&=\frac{N_{A}}{2}\left[x_{1} N_{c, 1}\left(x_{11} \varepsilon_{11}+x_{21} \varepsilon_{21}\right)+x_{2} N_{c, 2}\left(x_{12} \varepsilon_{12}+x_{22} \varepsilon_{22}\right)\right] \\
+U^{E}&=\frac{N_{A}}{2}\left[\frac{x_{1} x_{2} \Omega_{21} N_{c, 1}\left(\varepsilon_{21}-\varepsilon_{11}\right)}{x_{1}+x_{2} \Omega_{21}}+\frac{x_{2} x_{1} \Omega_{12} N_{c, 2}\left(\varepsilon_{12}-\varepsilon_{22}\right)}{x_{1} \Omega_{12}+x_{2}}\right]
+\end{align}
+
+Con esto podemos llegar a diferentes modelos de $G^{E}$.
+
+\subsubsubsection{Ecuación de Wilson}
+
+Esta ecuación es la primera aproximación para el cálculo de los coeficientes de actividad mediante la teórica de composición local. Esta se expresa como:
+
+\begin{align}
+    \frac{G^{E}}{R T}&=-x_{1} \ln \left(x_{1}+x_{2} \Lambda_{12}\right)-x_{2} \ln \left(x_{1} \Lambda_{21}+x_{2}\right)\\
+    \ln \gamma_{1}&=-\ln \left(x_{1}+x_{2} \Lambda_{12}\right)+x_{2}\left(\frac{\Lambda_{12}}{x_{1}+x_{2} \Lambda_{12}}-\frac{\Lambda_{21}}{x_{1} \Lambda_{21}+x_{2}}\right)\\
+    \ln \gamma_{2}&=-\ln \left(x_{1} \Lambda_{21}+x_{2}\right)-x_{1}\left(\frac{\Lambda_{12}}{x_{1}+x_{2} \Lambda_{12}}-\frac{\Lambda_{21}}{x_{1} \Lambda_{21}+x_{2}}\right)\\
+    \Lambda_{12}&=\frac{V_{2}}{V_{1}} \exp \left(\frac{-A_{12}}{R T}\right) \text{ y } \Lambda_{21}=\frac{V_{1}}{V_{2}} \exp \left(\frac{-A_{21}}{R T}\right)\\
+\end{align}
+Esta ecuación no describe de buena forma el equilibrio líquido-líquido dado que este requiera de la presencia de cierta inestabilidad en el sistema, la cual no puede ser expresada por esta ecuación.
+
+\subsubsubsection{Non-Random Two Liquid - NRTL}
+
+Este es otro modelo del cálculo de coeficientes de actividad:
+\begin{align}
+    \frac{G^{E}}{R T}&=x_{1} x_{2}\left[\frac{\tau_{12} G_{12}}{x_{1} G_{12}+x_{2}}+\frac{\tau_{21} G_{21}}{x_{1}+x_{2} G_{21}}\right] \\
+    \ln \gamma_{1}&=x_{2}^{2}\left[\frac{\tau_{12} G_{12}}{\left(x_{1} G_{12}+x_{2}\right)^{2}}+\tau_{21}\left(\frac{G_{21}}{x_{1}+x_{2} G_{21}}\right)^{2}\right]\\
+    \ln \gamma_{2}&=x_{1}^{2}\left[\frac{\tau_{21} G_{21}}{\left(x_{1}+x_{2} G_{21}\right)^{2}}+\tau_{12}\left(\frac{G_{12}}{x_{1} G_{12}+x_{2}}\right)^{2}\right]\\
+    G_{i j}&=\exp \left(-\alpha_{i j} \tau_{i j}\right)\\
+    \tau_{i j}&=\frac{\Delta g_{i j}}{R T}
+\end{align}
+Este modelo es ajustado a datos experimentales, se tiene que realizar una optimización del factor $\tau_{12},\tau_{21}$ asumiendo un $\alpha \in [0-0.47]$.
+
+\subsubsubsection{UNIversal QUAsi Chemical model - UNIQUAC}
+
+Este es un modelo de ajuste a los coeficientes de activadad de gran potencial.
+
+Este modelo se compone de dos partes, una parte combinatoria y una residual.
+
+\begin{align}
+    \left(\frac{G^{E}}{R T}\right)^{C}&=\left(x_{1} \ln \frac{\Phi_{1}}{x_{1}}+x_{2} \ln \frac{\Phi_{2}}{x_{2}}\right)-5\left[q_{1} x_{1} \ln \left(\frac{\Phi_{1}}{\theta_{1}}\right)+q_{2} x_{2} \ln \left(\frac{\Phi_{2}}{\theta_{2}}\right)\right]\\
+    \left(\frac{G^{E}}{R T}\right)^{R}&=-x_{1} q_{1} \ln \left(\theta_{1}+\theta_{2} \tau_{21}\right)-x_{2} q_{2} \ln \left(\theta_{1} \tau_{12}+\theta_{2}\right)
+\end{align}
+
+Y para el cálculo de los coeficientes de actividad:
+
+
+\begin{align}
+    \ln \gamma_{i}&=\ln \gamma_{i}^{C}+\ln \gamma_{i}^{R} \\
+    \ln \gamma_{1}^{C}&=\ln \frac{\Phi_{1}}{x_{1}}+1-\frac{\Phi_{1}}{x_{1}}-5 q_{1}\left(\ln \frac{\Phi_{1}}{\theta_{1}}+1-\frac{\Phi_{1}}{\theta_{1}}\right) \\
+    \ln \gamma_{1}^{R}&=q_{1}\left(1-\ln \left(\theta_{1}+\theta_{2} \tau_{21}\right)-\frac{\theta_{1}}{\theta_{1}+\theta_{2} \tau_{21}}-\frac{\theta_{2} \tau_{12}}{\theta_{1} \tau_{12}+\theta_{2}}\right) \\
+    \Phi_{j} &\equiv \frac{x_{j} r_{j}}{\sum_{i} x_{i} r_{i}} \quad \theta_{j} \equiv \frac{x_{j} q_{j}}{\sum_{i} x_{i} q_{i}}\\
+    r_{j}&=\sum_{k} v_{k}^{(j)} R_{k}  \quad q_{j}=\sum_{k} v_{k}^{(j)} Q_{k}
+\end{align}
+
+En este modelo tenemos los parámetros R y Q los cuales son parámetros dados, estos pueden ser encontrados en la Dormund Data Bank.
+
+De esta forma, queda que los coeficientes de actividad para una mezcla binaria son:
+
+\begin{align}
+    &\ln \gamma_{1}=\ln \left(\Phi_{1} / x_{1}\right)+\left(1-\Phi_{1} / x_{1}\right)-5 q_{1}\left[\ln \left(\Phi_{1} / \theta_{1}\right)+\left(1-\Phi_{1} / \theta_{1}\right)\right] \\
+&+q_{1}\left[1-\ln \left(\theta_{1}+\theta_{2} \tau_{21}\right)-\theta_{1} /\left(\theta_{1}+\theta_{2} \tau_{21}\right)-\theta_{2} \tau_{12} /\left(\theta_{1} \tau_{12}+\theta_{2}\right)\right] \nonumber\\
+&\ln \gamma_{2}=\ln \left(\Phi_{2} / x_{2}\right)+\left(1-\Phi_{2} / x_{2}\right)-5 q_{2}\left[\ln \left(\Phi_{2} / \theta_{2}\right)+\left(1-\Phi_{2} / \theta_{2}\right)\right] \\
+&+q_{2}\left[1-\ln \left(\theta_{1} \tau_{12}+\theta_{2}\right)-\theta_{1} \tau_{21} /\left(\theta_{1}+\theta_{2} \tau_{21}\right)-\theta_{2} /\left(\theta_{1} \tau_{12}+\theta_{2}\right)\right] \nonumber
+\end{align}
+
+\subsubsubsection{UNIversal Functional Activity Coefficient model - UNIFAC}
+
+UNIFAC es una extensión de UNICUAQ sin parámetros ajustables a datos experimentales. Los datos para calcular los coeficientes de actividad mediante unifac se obtienen a partir de grandes bases de datos. Este tipo de modelos se denominan \textbf{modelos de contribución de grupos} dado que cada grupo de la molécula contribuye a calcular los R, Q, y $A_{ij}$-$A_{ji}$ de la molécula.
+Este modelo se calcula de la misma forma que UNICUAQ:
+\begin{align}
+    \ln \gamma_k=\ln\gamma_k^{C}+\ln \gamma_k^{R}
+\end{align}
+De esta el termino combinatorial es el mismo que el de UNICUAQ, mientras que el término residual se calcula como:
+
+\begin{align}
+    \ln \gamma_{1}^{R}&=\frac{\mu_{1}-\mu_{1}^{o}}{R T}=\sum_{m} v_{m}^{(1)}\left[\ln \Gamma_{m}-\ln \Gamma_{m}^{(1)}\right]\\
+    \ln \Gamma_{m}&=Q_{m}\left[1-\ln \sum_{i} \Theta_{i} \Psi_{i m}-\sum_{j} \frac{\Theta_{j} \Psi_{m j}}{\sum_{i} \Theta_{i} \Psi_{i j}}\right]\\
+    \Theta_{j}&\equiv \frac{X_{j} Q_{j}}{\sum X_{i} Q_{i}}\\
+    \Psi_{m j}&=\exp \left(\frac{-a_{m j}}{T}\right)\\
+    X_{j}&=\frac{\sum_{\text {molecules } i} v_{j}^{(i)} x_{i}}{\sum_{\text {molecules } i} \sum_{\text {groups } k} v_{k}^{(i)} x_{i}}
+\end{align}
+
+En este término UNIFAC considera energías de interacción entre grupos funcionales y no entre moléculas. Las moléculas se dividen en subgrupos y se consideran interacciones
+entre grupos funcionales y subgrupos de moléculas.
+\insertimage[]{img/imagenes/unifac.png}{width=15cm}{Podemos ver como se segmentan los grupos de la molécula, generando los parámetros UNIFAC de la molécula, los cuales son obtenidos a partir de una base de datos como Dortmund Data Bank.}
+
+En la siguiente tabla podemos ver también el parametro $A_{ij}$ que define la interacción entre los grupos funcionales de la molécula.
+\insertimage[]{img/imagenes/unifac2.png}{width=15cm}{}
+
+
