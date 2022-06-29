@@ -1,2 +1,444 @@
 \clearpage
 \subsection{Equilibrio líquido-líquido}
+
+El equilibrio líquido-líquido se basa en el principio de la generación de dos fases cuando dos líquidos se mezclan.
+Un ejemplo de esto es la mezcla del agua y el aceite, en donde se generan dos fases, una fase $\alpha$ y una fase $\beta$.
+
+\insertimage[]{img/imagenes/ell.png}{width=3cm}{Diagrama de equilibrio líquido-líquido bifásico}.
+
+Este equilibrio presenta las propiedades típicas de un equilibrio, \textbf{isofugacidad}. De esta forma podemos encontrar la siguiente expresión
+\begin{align}
+    \hat{f}_i^{\alpha}&=\hat{f}_i^{\beta}\\
+    \gamma_i^{\alpha}x_i^{\alpha}P_i^{sat}&=\gamma_i^{\beta}x_i^{\beta}P_i^{sat}\\
+    \gamma_i^{\alpha}x_i^{\alpha}&=\gamma_i^{\beta}x_i^{\beta}\\
+\end{align}
+
+Estas composiciones se conocen como \textbf{solubilidades mutuas}.
+
+También se puede dar en el que coexistan tres fases, siendo dos líquidas y una gaseosa.
+\insertimage[]{img/imagenes/ellv.png}{width=3cm}{Equilibrio trifásico, Líquido-líquido-vapor.}
+
+En este tipo de equilibrio la isofugacidad toma la siguiente forma
+\begin{align}
+    \hat{f}_i^{\alpha}&=\hat{f}_i^{\beta}=\hat{f}_i^{V}\\
+    \gamma_i^{\alpha}x_i^{\alpha}P_i^{sat}&=\gamma_i^{\beta}x_i^{\beta}P_i^{sat}=y_iP
+\end{align}
+
+\subsubsection{Estabilidad y Energía de Gibbs de exceso}
+
+Cuando estamos hablando de equilibrio líquido-líquido hay que tener presente la 
+inestabilidad del sistema, la cual puede medirse por medio de la enegía de Gibbs de exceso.
+Esta energía sigue la siguiente ecuación.
+
+\insertalign{
+    G&=\Delta G_{mix}+\sum_i x_i G_i\\
+    &=G^{E}+\Delta G_{mix}^{is}+\sum_i x_iG_i\\
+    \Rightarrow \Delta G_{mix}&=G^{E}+\Delta G_{mix}^{is}\\
+    &=G^{E}+RT\sum_i x_i \ln x_i
+}
+
+Es esta expresión del $\Delta G_{mix}$ la que nos va a ayudar a analizar el equilibrio líquido-líquido.
+
+\begin{images}{Diagramas varios.}
+    \addimage{img/imagenes/lle1.png}{width=5.5cm}{Diagrama G/RT vs composición.}
+    \addimage{img/imagenes/lle2.png}{width=6cm}{Diagrama de las diferentes variables representadas en las líneas de los gráficos.}
+\end{images}
+
+Podemos notar del diagrama anterior que el $\Delta G_{mix}/RT$ presenta sectores convexos, curvas hacia abajo, las cuales van a representar los sectores en donde se encuentran los equilibrios líquido-líquido.
+Ahondando más en esto, en la siguiente imagen se representa el diagrama $\Delta G_{mix}/RT$ vs composición. Podemos notar que hay nos guatitas, a partir de una de ellas se debe lanzar una línea tangencial y donde esta toque 
+a la segunda guatita se indicará la composición de la fase líquida. Es imporante notar que los dos puntos que tocará esta línea tangente serán las composiciones de las dos fases líquidas en equilibrio líquido-líquido.
+\insertimage[]{img/imagenes/dGmix1.png}{width=6cm}{Diagrama  $\Delta G_{mix}/RT$ vs composición.}
+
+Otro ejemplo de lo anterior puede ser visto en la siguiente imagen. En donde se presenta la recta tangente que une los dos puntos estables, los cuales representan las composiciones de las dos fases en equilibrio. Sumado a lo anterior 
+se presentan las fases estables y metaestables, se pueden encontrar al ser sectores cercanos a los puntos estables (metaestables) y sectores lejanos entre los estables (inestable.)
+\insertimage[]{img/imagenes/dGmix2.png}{width=10cm}{Diagrama  $\Delta G_{mix}/RT$ vs composición.}
+
+Estos gráficos antes presentados son calculados por medio del $\Delta G_{mix}/RT$, esta cantidad puede ser obtenida a partir de las siguiente ecuaciones:
+\begin{align}
+    \Delta G_{mix}&=G^{E}+RT\sum_i x_i \ln x_i\\
+    \Delta G_{mix}&=RT \sum x_i \ln \gamma_i + RT\sum_i x_i \ln x_i \\
+    \intertext{Por lo cual}
+    \frac{\Delta G_{mix}}{RT}&=\sum_i x_i \ln \gamma_i + \sum_i x_i \ln x_i \\
+    &= \sum_i x_i \ln \gamma_i x_i
+\end{align}
+
+\subsubsection{LLE usando actividades}
+
+De manera análoga a VLE uno puede definir el coeficiente de partición en LLE como:
+\begin{align}
+    K_i=\frac{x_i^{\beta}}{x_i^{\alpha}}=\frac{\gamma_i^{\beta}}{\gamma_i^{\alpha}}
+\end{align}
+
+Se pueden ocupar los cálculos flash para encontrar estas condicones. Para esto es necesario un algoritmo apropiado. 
+Asumiendo que $x_i^{\alpha}$ debe sumar 1 se puede llegar a la siguiente expresión
+\begin{align}
+    x_1^{\alpha}=\frac{1-K_2}{K1-K2} \text{ and } x_1^{\beta}=x_1^{\alpha}K_1
+\end{align}
+Utilizando esta ecuación podemos generar el siguiente algoritmo para encontrar las composiciones de las diferentes fases en el equilibrio
+\begin{enumerate}
+    \item En primer lugar se debe asumir que la fase $\alpha$ es pura en 1 y la fase $\beta$ es pura en 2. Así se calculan los coeficientes de actividad iniciales. Como son composiciones puras, son los coeficientes de actividad en dilusión infinita.
+    \item Se calcula $K_{i,old}=\gamma_i^{\beta}/\gamma_i^{\alpha}$ donde $\gamma_i$ son evaluados en la composición inicial.
+    \item Calcular un nuevo $ x_{1,new}^{\alpha}=(1-K_{2,old})/(K_{1,old}-K_{2,old})$ y $x_{2,new}^{\alpha}=1-x_{1,new}^{\alpha}$.
+    \item Calcular $x_{1,new}^{\beta}=K_{1,old} x_{1,new}^{\alpha}$,$x_{2,new}^{\beta}=1-x_{1,new}^{\beta}$
+    \item Determinar $\gamma_{i,new}$ para cada fase líquida desde los valores de $x_{i,new}$.
+    \item Calcular $K_{i,new}=\gamma_i^{\beta}/\gamma_i^{\alpha}$.
+    \item Actualizar $x_{i,old}$ y $K_{i,old}$.
+    \item Iterar.
+\end{enumerate}
+\subsubsection{Diagramas de fase binarios}
+
+Los equilibrio líquido-líquido, al igual que los equilibrios líquido-vapor, generan "campanas" en donde se generan los equilibrios, y donde fuera se encuentra en una fase miscible.
+Estos diagramas tienen la siguiente forma.
+
+\insertimage[]{img/imagenes/llediagram.png}{width=15cm}{Diagramas de fase binarios para equilibrio líquido-líquido bicomponente.}
+
+Como podemos apreciar en estos diagramas las campanas de color blanco son sectores donde se generan dos fases, una $\alpha$ y otra $\beta$. Y estos diagramas se ven igual que las lentejas del equilibrio líquido-vapor.
+Cabe mencionar que estos diagramas pueden presentar un Lower critical Solution temperatura (LCST) o Upper Critical Solution Temperature (UCST), estos puntos son la parte más arriba de la campana para el UCST y la parte más baja de la campana para el LCST, cabe mencionar que se pueden dar los dos en el mismo diagrama.
+
+\subsubsection{Diagramas de fase ternarios}
+
+Estos diagramas de fase son para mezclas líquido-líquido de tres componentes, estos pueden leerse de la siguiente manera.
+
+\insertimage[]{img/imagenes/lle3.jpg}{width=15cm}{Diagrama ternario de equilibrio líquido-líquido.}
+
+En este diagrama es importante entender que se genera una campana la cual genera un equilibrio pero las composiciones de estos presentan 3 compuestos. Luego las composiciones de estas fases en el equilibrio se ven de la misma forma que mirar cualquier punto en este diagrama.
+Cabe mencionar que en este diagrama podemos ver también las fases puras del compuesto.
+
+\insertimage[]{img/imagenes/lle4.png}{width=15cm}{Diagrama ternario de equilibrio líquido-líquido, fases puras. Fuente: Apuntes Clase 24-1 2022, autor Dr. Roberto Canales.}
+\clearpage
+\section{Reacciones químicas}
+\subsection{Estequimetría}
+Con el propósito del cálculo termodinámico, una reacción química representa un proceso en el cual los reactivos son convertidas en productos. Un ejemplo de esto es la formación del amoníaco:
+\begin{equation}
+    \frac{3}{2}H_2+\frac{1}{2}N_2\Leftrightarrow NH_3
+\end{equation}
+
+Los coeficientes estequimétricos que aparecen en la ecuación anterios nos aseguran que la ecuación está balanceada.
+Se representan con la letra $\nu$ y se utiliza la siguiente convención: Negativo para los reactantes y Positivo para los productos. De esta manera para esta reacción tenemos:
+\begin{equation}
+    \nu_{H_2}=-\frac{3}{2}\quad\nu_{N_2}=-\frac{1}{2}\quad\nu_{NH_3}=+1
+\end{equation}
+
+Los coeficientes estequimétricos representan la razón por la cual el reactante y el producto participan en la reacción química. Como la razón se mantiene al multiplicar por el mismo número, estos coeficientes pueden ser representados de diferentes maneras. Es importante ser consistente con la Estequimetría que se está usando.
+
+La suma de los coeficiente estequimétricos es:
+\begin{equation}
+    \nu = \sum_i \nu_i
+\end{equation}
+
+Este valor es el número total de moles cuando la reacción procede desde la izquierda a la derecha siguiendo la Estequimetría escogida. 
+\subsection{Avance de la reacción}
+No todos los cambios son independientes de otros, debido a que están relacionados mediante le Estequimetría. De esta menera podemos definir los siguientes cambios en las 
+cantidad de moles:
+
+\begin{align}
+    |\delta n_{N_2}|=\frac{1}{2}\frac{|\delta n_{H_2}|}{\frac{3}{2}} \quad |\delta n_{NH_3}|=1\frac{|\delta n_{H_2}|}{\frac{3}{2}}
+\end{align}
+
+De esta manera podemos darnos cuenta que el cambio en los moles de $N_2$ y $NH_3$ va a depender de los cambios en los moles de $H_2$.
+
+Este resultado puede ser visto desde el sigueinte punto de vista:
+\begin{equation}
+    \frac{\delta n_{H_2}}{\nu_{H_2}}= \frac{\delta n_{N_2}}{\nu_{N_2}}= \frac{\delta n_{NH_3}}{\nu_{NH_3}}
+\end{equation}
+El valor común de la razón $\delta n_i/\nu_i$ es llamado \textit{avance de la reacción $\zeta$}. La ecuación generalizada para el avance de la reacción es
+\begin{align}
+    \zeta=\frac{n_i-n_{i0}}{\nu_i}
+\end{align}
+
+Resolviendo para el número de moles de la especie $i$ después de la reacción:
+\begin{align}
+    n_i=n_{i0}+\zeta \nu_i
+\end{align}
+
+De esta manera el total de moles sumando todas las especies es
+
+\begin{align}
+    n=n_0 + \zeta \nu
+\end{align}
+Donde este $\nu$ corresponde a $\sum \nu_i$. 
+
+Finalmente, la fracción molar de la especie $i$ después de la reacción es 
+\begin{align}
+    x_i=\frac{n_i}{n}=\frac{n_{i0}+\zeta \nu_i}{n_0 + \zeta \nu}
+\end{align}
+
+En la siguiente imagen se puede encontrar una manera de solucionar este tipo de problemas de una forma visual, sin tantas ecuaciones.
+
+\insertimage[]{img/imagenes/reac1.jpg}{width=15cm}{Diagrama de resolución de problemas de avance de reacción.}
+
+\subsection{Entalpía reacción}
+\subsubsection{Entalpía estándar de reacción}
+
+Cualquier proceso donde, desde un estado inicial, los reactantes se llevan a un estado final donde se transforman
+en productos conlleva un cambio de entalpía. Este cambio se puede ejemplificar como:
+
+\begin{align}
+    \Delta H_{reacción}=H_{productos}-H_{reactantes}
+\end{align}
+Para realizar los cálculos se necesita de un estado de referencia. Para esto se definen los estados estándar de cada fase. De esta forma:
+
+\begin{itemize}
+    \item Para gases (g): El estado estándar es la sustancia pura en estado de gas ideal a 1 bar.
+    \item Para líquidos (l): El estado estándar es la sustancia pura en fase líquida a 1 bar.
+    \item Para sólidos (s): El estado estándar es la sustancia sólida a 1 bar:
+    \item Para fase acuosa (aq): El estado estándar es la solución acousa a 1 bar que obedece la ley de Henry a una concentración a 1 molal.
+\end{itemize}
+
+El estado estándar específica la presión y pureza del componente. Es por esto que todas las propiedaddes del estado estándar son solo funciones de la temperatura.
+Las entalías estándar de reacción están tabuladas para la reacción de formación de especies. Por convenciónn, las entalpías de formación estándar de los elementos puros es 0 (por ejemplo para $H_2$). Los valores tabulados permiten el cálculo de las entalpía de reacción de calquier reacción.
+De forma que la entalpía de una reacción queda definida como:
+
+\begin{align}
+    \Delta H_{R}^\circ = \sum_i \nu_i \Delta H_{f,298,i}^\circ
+\end{align}
+
+Se dirá que la reacción es exotérmica (libera calor) cuando $\Delta H_R^\circ <0$ y en el caso contrario se dirá que es endotérmica (absorbe calor), $\Delta H_R^\circ>0$.
+
+\subsubsection{Efecto de la temperatura en la entalpía}
+
+Cuando la reacción ocurre en condiciones diferentes a las estándar tabuladas (25°C) se debe realizar un ajuste dado por los caminos que sigue la reacción. La reacción total viene dada por
+\begin{align}
+    \Delta H_R^\circ(T)=\Delta H_1+ \Delta H_{R,298}\circ+\Delta H_3
+\end{align}
+Donde 
+\begin{align}
+    \Delta H_1=\left(\sum_i \int_T^{298}\nu_iC_{P,i}^\circ dT\right)_{reactantes}\\
+    \Delta H_3=\left(\sum_i \int_T^{298}\nu_iC_{P,i}^\circ dT\right)_{productos}
+\end{align}
+
+De manera que 
+\begin{align}
+    \Delta H_R^\circ(T)=\Delta H_{298}^\circ+\int_{298}^T\left(\sum_i \nu_iC_{P,i}^\circ \right) dT
+\end{align}
+
+Podemos hacer el siguiente arreglo
+\begin{align}
+    \Delta C_P^\circ=\sum_i \nu_iC_{P,i}^\circ
+\end{align}
+Quedando finalmente la siguiente expresión para el $\Delta H_R^\circ$.
+\begin{align}
+    \Delta H_R^\circ(T)=\Delta H_{298}^\circ+\int_{298}^T\left(\Delta C_P^\circ \right) dT
+\end{align}
+
+Donde por lo general el $C_P^\circ$ sigue una formula similar a la siguiente:
+\begin{align}
+    \frac{C_P^\circ}{RT}=c_0+c_1T+c_2T^2+c_3T^3+c_4T^4
+\end{align}
+
+\subsubsection{Balance de Energía en Reacciones}
+
+Dada la propiedad antes definida, los balances de energía para los sistemas con reacciones quedan definidos por la siguiente expresión.
+\begin{align}
+    \Delta(\dot{n}H)=\zeta \Delta H_{rxn}^\circ (T_0)+\sum_{in}\int_{T_{in}}^{T_0}n_{0i}C_{Pi}dT+\sum_{out}\int_{T_0}^{T_{out}}n_i C_{Pi}dT
+\end{align}
+
+\subsection{Actividad}
+Los cálculos de equilibrio químico se facilitan al ocupar el concepto de actividad introducido anteriormente. La actividad queda definida en función de la fugacidad del estado estándar de la siguiente manera:
+\begin{align}
+    a_i=\frac{\hat{f}_i}{f_i^\circ}
+\end{align}
+De esta manera, la actividad también puede relacionarse con el potencial químico mediante las siguientes ecuaciones:
+
+\begin{align}
+    \ln \frac{\hat{f}^B_i}{\hat{f}^A_i}=\frac{\mu_i^B-\mu_i^A}{RT}\\
+    \mu_i=\mu_i^\circ+RT\ln a_i
+\end{align}
+De esta manera al conocer la actividad se puede calcular el potencial químico.
+
+\subsubsection{Actividad en un Gas}
+
+El estado estándar para un gas (g) es \textit{un gas puro en estado ideal a la temperatura del sistema y 1 bar}. Utilizando esta información se puede calcular la actividad:
+\begin{align}
+    \hat{f}_i=y_i\hat{\varphi}_iP\\
+    f_i^\circ = P^\circ\\
+    \intertext{de forma que la actividad es}
+    a_i=y_i \hat{\varphi}_i\frac{P}{P^\circ}
+\end{align}
+
+De esta manera se puede calcular la actividad mediante el calculo del coeficiente de fugacidad mediante una EoS para la fase gaseosa.
+\subsubsection{Actividad de un líquido}
+
+A través de la fugacidad de un líquido
+\begin{align}
+    \hat{f}_i=\gamma_i x_i f_{i,puro}
+\end{align}
+De esta manera se calcula la actividad mediante
+\begin{align}
+    a_i=\frac{\hat{f}_i}{f_i^\circ}=\frac{\gamma_ix_if_{i,puro}}{f_i^\circ}
+\end{align}
+
+Luego, el factor de Poynting va a corresponder a la razón entre la fugacidad pura y la fugacidad estándar, por lo cual la actividad de esta fase es
+\begin{align}
+    a_i=\gamma_ix_i\exp\left(\frac{P-P^\circ}{RT}V_i\right)
+\end{align}
+
+Luego, mediante las asuncionciones tipicas vistas en secciones anteriores, llegamos a que 
+\begin{align}
+    a_i=\gamma_ix_i
+\end{align}
+
+\subsubsection{Actividad de un sólido}
+
+Los sólidos no se mezclan con otras sustancias, incluso si son parte de una mezcla multicomponente, estos siempre permaneceran puros. En la mayoría de los casos, los sólidos se pueden catalogar como completamente inmiscibles. Bajo estas condiciones, la fugacidad del sólido es
+\begin{align}
+    f_i(x_i,T,P)=f_{i,puro}(T,P)
+\end{align}
+Ambas fugacidades están relacionadas por el factor de Poynting
+\begin{align}
+    f_i=f_i^\circ \exp\left( \frac{P-P^\circ}{RT}V_i \right)
+\end{align}
+
+Dejando como resultado que la actividad del sólido es 
+\begin{align}
+    a_i=\exp\left( \frac{P-P^\circ}{RT}V_i \right)
+\end{align}
+
+A menos que la presión sea sustancialmente mayor a 1 bar, el factor de Poynting puede ser despreciado para sólidos.
+
+\subsection{Constante de equilibrio}
+
+En principio, todas las reacciones son reversibles. Esto quiere decir que hay reactantes que tienen tendencia a convertirse en productos y productos que tienen tendencia a recombertirse en reactantes. En el equilibrio la 
+transferencia neta cesa y la combinación del sistema se vuelve constante. A presión y temperatura costante el equilibrio es el estado donde se minimiza la energía libre de Gibbs.
+Para el sistema de amoníaco:
+\begin{equation}
+    \frac{3}{2}H_2+\frac{1}{2}N_2\Leftrightarrow NH_3
+\end{equation}
+Si luego generamos una perturbación en el sistema entonces:
+
+\begin{align}
+    \Delta \underline{G}=-\frac{3\zeta}{2}\mu_{H_2}-\frac{\zeta}{2}\mu_{N_2}+\zeta \mu_{NH_3}=\left(-\frac{3}{2}\mu_{H_2}-\frac{1}{2}\mu_{N_2}+\mu_{NH_3}\right)\zeta
+\end{align}
+
+Luego este cambio en el $\Delta G$ puede ser gráficado de la siguiente manera:
+\insertimage[]{img/imagenes/deltaGreac.png}{width=10cm}{Diagram de la energía libre de Gibbs a la hora de haber una reacción.}
+
+\subsubsection{Cambio en la Energía Libre de Gibbs}
+
+El pequeño cambio se mueve a tráves de una tangente, dejando la energía libre de Gibbs sin cambios o:
+
+\begin{align}
+    -\frac{3}{2}\mu_{H_2}-\frac{1}{2}\mu_{N_2}+\mu_{NH_3}=0
+\end{align}
+
+Para cualquier reacción se tendría entonces que:
+\begin{align}
+    \sum_i \nu_i \mu_i=0
+\end{align}
+Para los cambios en el equilibrio.
+
+Aplicando la ecuación de potencial químico:
+\begin{align}
+    \sum_i \nu_i \mu_i^\circ + RT \sum_i \ln a_i^{\nu_i}=0
+\end{align}
+
+El primer término es el potencial químico estándar de la reaación a una temperatura T:
+
+\begin{align}
+    \sum_i \nu_i \mu_i^\circ = \Delta G^\circ
+\end{align}
+
+Por otro lado, la multiplicación de logaritmos posee la siguiente propiedad:
+\begin{align}
+    \ln a_i^{\nu_i} = \prod_i a_i^{\nu_i}
+\end{align}
+
+Donde $\prod$ es como una sumatoria, pero con multiplicación.
+Luego, reescribiendo la ecuación llegamos a que
+
+\begin{align}
+    -\frac{\Delta G^\circ}{RT}=\ln\left(\prod_i a_i^{\nu_i}\right)
+\end{align}
+
+De esta forma se define la constante de equilibrio de una reacción a las condicones estándar como:
+\begin{align}
+    K=\exp\left( -\frac{\Delta G^\circ}{RT}\right)
+\end{align}
+
+Finalmente también esta puede ser calculada de la otra forma:
+\begin{align}
+    K=\prod_i a_i^{\nu_i}
+\end{align}
+\subsubsection{Constante de Equilibrio y Temperatura}
+
+La constante de equilibrio a 298 K es calculada directamente de los datos tabulados de la energía libre de Gibss de formación. Una vez conocemos este valor, se puede extrapolar la información hacia otras temperaturas.
+
+Cabe mencionar que la forma de calcular la energía libre de Gibbs de reacción es la siguiente:
+\begin{align}
+    \Delta G_R^\circ =\sum_i \nu_i G_{f,i}^\circ
+\end{align}
+
+Luegp, la extrapolación hacia otras temperaturas es la siguiente:
+\begin{align}
+    d\left(\frac{G^{tot}}{RT}\right)&=-\frac{H^{tot}}{RT^2}dT+\frac{V^{tot}}{RT}dP + \sum_i \frac{\mu_i}{RT} dn_i\\
+    d\left(\frac{G^{\circ}}{RT}\right)&=-\frac{H^{\circ}}{RT^2}dT
+\end{align}
+
+Luego, utilizando el hecho de que $\frac{\Delta G^\circ}{RT}=-\ln K$ obtenemos que
+\begin{align}
+    \frac{d \ln K}{dT}=\frac{\Delta H^\circ}{RT^2}
+\end{align}
+
+Donde el $\Delta H^\circ$ va a depender de la temperatura a menos que se diga lo contrario.
+
+\subsubsection{Ecuación de Van't Hoff}
+Integrando la ecuación anterior podemos llegar a lo siguiente
+\begin{align}
+    \ln\frac{K(T)}{K(T_0)}=\int_{T_0}^{T}\frac{\Delta H^\circ}{RT^2}dT
+\end{align}
+
+Si asumimos que la entalpía de reacción no depende de la temperatura llegamos a que 
+\begin{align}
+    \int_{T_0}^{T}\frac{\Delta H^\circ}{RT^2}dT \approx -\frac{\Delta H^\circ }{R}\left(\frac{1}{T}-\frac{1}{T_0}\right)
+\end{align}
+Finalmente la constante de equibrio para una temperatura cualquiera queda definida por la siguiente ecuación:
+\begin{align}
+    K(T)\approx K(T_{298})\exp\left[ -\frac{\Delta H^\circ }{R}\left(\frac{1}{T}-\frac{1}{T_{298}}\right)  \right]
+\end{align}
+
+Notar que $T_0=298 K$.
+
+\subsubsection{Constante de Equilibrio para  una Reacción Gaseosa}
+Desde la realación
+\begin{align}
+    K=\prod_i a_i^{\nu_i}
+\end{align}
+LLegamos a que 
+\begin{align}
+    a_i=\frac{\hat{\varphi}y_i P}{P^\circ}
+\end{align}
+Lo que deja a la constante de equilibrio expresada como:
+\begin{align}
+    K=K_{\varphi}K_{y}\left(  \frac{P}{P_0}^{\nu}\right)=K_{\varphi}K_{y}\left(  P^{\nu}\right)
+\end{align}
+Se puede obviar $P_0$ dado que es 1 bar.
+
+De esta ecuación los términos utilizados son
+\begin{align}
+    K_y=\prod_i y_i^{\nu_i}\quad K_\varphi =\prod_i \varphi_i^{\nu_i}
+\end{align}
+
+Donde por lo general se puede decir que el término relacionado con $\varphi$ es 1.
+
+\subsubsection{Constante de Equilibrio para Líquidos y Sólidos}
+Para líquidos y sólidos tenemos que 
+\begin{align}
+    K=\prod_i a_i^{\nu_i}
+\end{align}
+
+Donde para líquidos:
+\begin{align}
+    a_i\approx\gamma_ix_i
+\end{align}
+Y para sólidos 
+\begin{align}
+    a_i\approx 1
+\end{align}
+
+La manera para calcular las composiciones en el equilibrio para composiciones gaseosas es la siguiente:
+
+\insertimage[]{img/imagenes/metodo1.jpeg}{width=12cm}{Metodología para determinar las composiciones en el equilibrio de composiciones gaseosas (perdón el desorden).}
+
+Luego, en el caso de tener que hacerlo para más de una reacción se debe seguir la sigueinte metodología
+
+\insertimage[]{img/imagenes/metodo2.jpeg}{width=12cm}{Metodología de resolución para más de una reacción química (perdón el desorden).}
